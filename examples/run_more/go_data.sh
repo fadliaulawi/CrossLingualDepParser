@@ -1,8 +1,8 @@
 #
 
 # get the treebank
-wget https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-2837/ud-treebanks-v2.2.tgz
-tar -xzvf ud-treebanks-v2.2.tgz
+wget https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-4758/ud-treebanks-v2.10.tgz
+tar -xzvf ud-treebanks-v2.10.tgz
 
 # data directory and codes
 git clone https://github.com/uclanlp/CrossLingualDepParser src
