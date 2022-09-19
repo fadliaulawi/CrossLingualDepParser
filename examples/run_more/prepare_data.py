@@ -17,7 +17,7 @@ LANGUAGE_LIST = (
     ["en", ["UD_English-EWT"], "IE.Germanic.West"],
 #    ["et", ["UD_Estonian-EDT"], "Uralic.Finnic"],
 #    ["fi", ["UD_Finnish-TDT"], "Uralic.Finnic"],
-#    ["fr", ["UD_French-GSD"], "IE.Romance.West"],
+    ["fr", ["UD_French-GSD"], "IE.Romance.West"],
 #    ["de", ["UD_German-GSD"], "IE.Germanic.West"],
 #    ["he", ["UD_Hebrew-HTB"], "Afro-Asiatic.Semitic"],
 #    ["hi", ["UD_Hindi-HDTB"], "IE.Indic"],
@@ -43,7 +43,7 @@ LANGUAGE_LIST = (
 TRAIN_LANG = "en"
 
 # confs
-UD2_DIR = "./ud-treebanks-v2.2/"
+UD2_DIR = "./ud-treebanks-v2.10/"
 OUT_DIR = "./data2.2_more/"
 LIB_DIR = "./data2.2_more/fastText_multilingual/"
 
@@ -52,7 +52,7 @@ import os, subprocess, sys, gzip
 
 sys.path.append(LIB_DIR)        # project embeddings
 
-from fasttext import FastVector
+#from fasttext import FastVector
 
 printing = lambda x: print(x, file=sys.stderr, flush=True)
 

@@ -36,9 +36,9 @@ PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=$RGPU python2 ../src/examples/GraphParse
 --word_path './model/alphabets/joint_embed.vec' \
 --char_embedding random \
 --punctuation 'PUNCT' 'SYM' \
---train "../data2.2_more/id_train.conllu" \
---dev "../data2.2_more/id_dev.conllu" \
---test "../data2.2_more/id_test.conllu" \
+--train "../data2.2_more/en_train.conllu" \
+--dev "../data2.2_more/en_dev.conllu" \
+--test "../data2.2_more/en_test.conllu" \
 --vocab_path './model/' \
 --model_path './model/' \
 --model_name 'network.pt' \
@@ -46,7 +46,7 @@ PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=$RGPU python2 ../src/examples/GraphParse
 --p_out 0.2 \
 --p_rnn 0.2 0.1 0.2 \
 --learning_rate 0.0001 \
---num_epochs 5 \
+--num_epochs 2 \
 --trans_hid_size 512 \
 --pos_dim 50 \
 --char_dim 50 \

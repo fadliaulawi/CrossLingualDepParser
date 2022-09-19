@@ -1,8 +1,0 @@
-2022-09-17 11:36:11,056 - VocabBuilder - INFO - 
-command-line params : ['--embed_paths', '../data2.2_more//wiki.multi.en.vec', '../data2.2_more//wiki.multi.id.vec', '--embed_lang_ids', 'en', 'id', '--data_paths', '../data2.2_more//en_train.conllu', '../data2.2_more//en_dev.conllu', '../data2.2_more//en_test.conllu', '../data2.2_more//id_train.conllu', '../data2.2_more//id_dev.conllu', '../data2.2_more//id_test.conllu', '--model_path', './model/']
-
-2022-09-17 11:36:11,056 - VocabBuilder - INFO - Namespace(data_paths=['../data2.2_more//en_train.conllu', '../data2.2_more//en_dev.conllu', '../data2.2_more//en_test.conllu', '../data2.2_more//id_train.conllu', '../data2.2_more//id_dev.conllu', '../data2.2_more//id_test.conllu'], embed_lang_ids=['en', 'id'], embed_paths=['../data2.2_more//wiki.multi.en.vec', '../data2.2_more//wiki.multi.id.vec'], model_path='./model/')
-
-2022-09-17 11:36:11,056 - VocabBuilder - INFO - Load embeddings
-2022-09-17 11:37:02,158 - VocabBuilder - INFO - Final combined un-pruned embeddings size: 400000.
-2022-09-17 11:37:02,158 - VocabBuilder - INFO - Creating Alphabets
