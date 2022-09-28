@@ -46,7 +46,7 @@ PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=$RGPU python2 ../src/examples/GraphParse
 --p_out 0.2 \
 --p_rnn 0.2 0.1 0.2 \
 --learning_rate 0.0001 \
---num_epochs 5 \
+--num_epochs 200 \
 --trans_hid_size 512 \
 --pos_dim 50 \
 --char_dim 50 \
