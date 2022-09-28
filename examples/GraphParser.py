@@ -384,6 +384,13 @@ def main():
                     param_group['lr'] = cur_lrate
             #
             word, char, pos, heads, types, masks, lengths = conllx_data.get_batch_variable(data_train, batch_size, unk_replace=unk_replace)
+            print("word", type(word), word))
+            print("char", type(char), char))
+            print("pos", type(pos), pos))
+            print("heads", type(heads), heads))
+            print("types", type(types), types))
+            print("masks", type(masks), masks))
+            print("lengths", type(lengths), lengths))
 
             optim.zero_grad()
             loss_arc, loss_type = network.loss(word, char, pos, heads, types, mask=masks, length=lengths)
@@ -444,6 +451,9 @@ def main():
         for batch in conllx_data.iterate_batch_variable(data_dev, batch_size):
             word, char, pos, heads, types, masks, lengths = batch
             heads_pred, types_pred = decode(word, char, pos, mask=masks, length=lengths, leading_symbolic=conllx_data.NUM_SYMBOLIC_TAGS)
+            print("heads_pred", type(heads_pred), heads_pred))
+            print("types_pred", type(types_pred), types_pred))
+            
             word = word.data.cpu().numpy()
             pos = pos.data.cpu().numpy()
             lengths = lengths.cpu().numpy()
