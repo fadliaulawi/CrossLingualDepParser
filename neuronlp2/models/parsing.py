@@ -282,7 +282,7 @@ class BiRecurrentConvBiAffine(nn.Module):
         # out_arc shape [batch, length, length]
         out_arc, out_type, mask, length = self.forward(input_word, input_char, input_pos, mask=mask, length=length,
                                                        hx=hx)
-        out_arc = out_arc.data
+	out_arc = out_arc.data
         batch, max_len, _ = out_arc.size()
         # set diagonal elements to -inf
         out_arc = out_arc + torch.diag(out_arc.new(max_len).fill_(-np.inf))
@@ -326,6 +326,8 @@ class BiRecurrentConvBiAffine(nn.Module):
         out_arc, out_type, mask, length = self.forward(input_word, input_char, input_pos, mask=mask, length=length,
                                                        hx=hx)
 
+        #print('out_arc', out_arc.size(), out_arc)
+	#print('out_type', out_type[0].size(), out_type[1].size(), out_type)
         # out_type shape [batch, length, type_space]
         type_h, type_c = out_type
         batch, max_len, type_space = type_h.size()
@@ -354,6 +356,7 @@ class BiRecurrentConvBiAffine(nn.Module):
         loss_type = F.log_softmax(out_type, dim=3).permute(0, 3, 1, 2)
         # [batch, num_labels, length, length]
         energy = torch.exp(loss_arc.unsqueeze(1) + loss_type)
+	#print('energy', energy.size(), energy)
 
         return parser.decode_MST(energy.data.cpu().numpy(), length, leading_symbolic=leading_symbolic, labeled=True)
 

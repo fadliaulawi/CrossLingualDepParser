@@ -166,7 +166,8 @@ def biaffine(model_path, model_name, test_path, punct_set, use_gpu, logger, args
         return one_data
 
     data_test = _read_one(test_path, False)
-
+    #print(type(data_test[0]), data_test[0])
+    #print(type(data_test[1]), data_test[1])
     # data_test = conllx_data.read_data_to_variable(test_path, word_alphabet, char_alphabet, pos_alphabet, type_alphabet,
     #                                               use_gpu=use_gpu, volatile=True, symbolic_root=True)
 
@@ -227,15 +228,24 @@ def biaffine(model_path, model_name, test_path, punct_set, use_gpu, logger, args
     sent = 0
     start_time = time.time()
 
-    for batch in conllx_data.iterate_batch_variable(data_test, 1):
+    for batch in conllx_data.iterate_batch_variable(data_test, 3):
         sys.stdout.write('%d, ' % sent)
         sys.stdout.flush()
         sent += 1
 
         word, char, pos, heads, types, masks, lengths = batch
+	print('word', word)
+	print('char', char)
+	print('pos', pos)
+	print('masks', masks)
+	print('lengths', lengths)
+	print('decode', decoding, type(decode))
+
         heads_pred, types_pred = decode(word, char, pos, mask=masks, length=lengths,
                                         leading_symbolic=conllx_data.NUM_SYMBOLIC_TAGS)
-        word = word.data.cpu().numpy()
+	print('heads_pred', heads_pred.size, heads_pred)
+	print('types_pred', types_pred.size, types_pred)
+	word = word.data.cpu().numpy()
         pos = pos.data.cpu().numpy()
         lengths = lengths.cpu().numpy()
         heads = heads.data.cpu().numpy()
@@ -247,7 +257,11 @@ def biaffine(model_path, model_name, test_path, punct_set, use_gpu, logger, args
         stats, stats_nopunc, stats_root, num_inst = parser.eval(word, pos, heads_pred, types_pred, heads, types,
                                                                 word_alphabet, pos_alphabet, lengths,
                                                                 punct_set=punct_set, symbolic_root=True)
-        ucorr, lcorr, total, ucm, lcm = stats
+        print('stats', stats)
+	print('stats_nopunc', stats_nopunc)
+	print('stats_root', stats_root)
+	print('num_inst', num_inst)
+	ucorr, lcorr, total, ucm, lcm = stats
         ucorr_nopunc, lcorr_nopunc, total_nopunc, ucm_nopunc, lcm_nopunc = stats_nopunc
         corr_root, total_root = stats_root
 
