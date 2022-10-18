@@ -51,9 +51,9 @@ class BiRecurrentConvBiAffine(nn.Module):
         self.use_gpu = use_gpu
         self.position_dim = position_dim
 
-		# bert
-		self.model = BertModel.from_pretrained('../../../data2.2_more/javanese-bert-small', local_files_only=True, output_hidden_states = True)
-		self.model.eval()
+        # bert
+        self.model = BertModel.from_pretrained('../../../data2.2_more/javanese-bert-small', local_files_only=True, output_hidden_states = True)
+        self.model.eval()
 
         if rnn_mode == 'RNN':
             RNN = VarMaskedRNN
@@ -135,30 +135,30 @@ class BiRecurrentConvBiAffine(nn.Module):
             word = self.dropout_in(word)
 
             input = word
-	
-		# bert
-		# input_word sudah dalam indexed_tokens
-		if 1 == 0:
-			for iw in input_word:
-				tokens_tensor = torch.tensor([iw])
-				segments_tensors = torch.tensor([[1] * len(iw)])
 
-				with torch.no_grad():
-					hidden_states = model(tokens_tensor, segments_tensors)[2]
+        # bert
+        # input_word sudah dalam indexed_tokens
+        if 1 == 0:
+            for iw in input_word:
+                tokens_tensor = torch.tensor([iw])
+                segments_tensors = torch.tensor([[1] * len(iw)])
 
-					token_embeddings = torch.stack(hidden_states, dim=0)
-					token_embeddings = torch.squeeze(token_embeddings, dim=1)
-					token_embeddings = token_embeddings.permute(1,0,2)
+                with torch.no_grad():
+                    hidden_states = model(tokens_tensor, segments_tensors)[2]
 
-					token_vecs_sum = []
-					for token in token_embeddings:
-						sum_vec = torch.sum(token[-4:], dim=0)    
-						token_vecs_sum.append(sum_vec)
-				
-				# token_vecs_sum size: [len(iw), 768]
-			
-			# cek tipe dan size dari word hasil word_embedding ori
-			# todo: ganti method vocab ke convert_tokens_to_ids nya bertTokenizer
+                    token_embeddings = torch.stack(hidden_states, dim=0)
+                    token_embeddings = torch.squeeze(token_embeddings, dim=1)
+                    token_embeddings = token_embeddings.permute(1,0,2)
+
+                    token_vecs_sum = []
+                    for token in token_embeddings:
+                        sum_vec = torch.sum(token[-4:], dim=0)    
+                        token_vecs_sum.append(sum_vec)
+
+                # token_vecs_sum size: [len(iw), 768]
+
+            # cek tipe dan size dari word hasil word_embedding ori
+            # todo: ganti method vocab ke convert_tokens_to_ids nya bertTokenizer
 
         if self.char:
             # [batch, length, char_length, char_dim]
