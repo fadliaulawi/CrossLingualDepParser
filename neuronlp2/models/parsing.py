@@ -132,6 +132,18 @@ class BiRecurrentConvBiAffine(nn.Module):
 	    print('word2', type(word), word.size(), word)
 
             input = word
+		
+	    with open("../../embed.txt", encoding='utf-8', 'w') as f:
+		output_word = [','.join([str(s.data.numpy()[0]) for s in sentences]) for sentences in input_word]
+		f.write('\n'.join(output_word))
+	    
+	    os.system("python3 ../../examples/utility_bert.py --act_type embed")
+	    
+	    with open("../../embed_res.txt", encoding='utf-8') as f:
+		lines = f.readlines()
+		input_word = [[eval(l) for l in line.split(',')] for line in lines]
+	    
+	    
 
         if self.char:
             # [batch, length, char_length, char_dim]
