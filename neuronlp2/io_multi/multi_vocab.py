@@ -31,7 +31,7 @@ def iter_file(filename):
     with open(filename, 'r') as file:
         ret = {"len": 0, "word": [], "pos": [], "type": []}
         for line in file:
-            line = line.decode('utf-8')
+            line = line
             line = line.strip()
             # yield and reset
             if len(line) == 0 or line[0] == "#":
