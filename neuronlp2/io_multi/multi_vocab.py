@@ -90,7 +90,7 @@ def create_alphabets(alphabet_directory, train_path, data_paths=None, max_vocabu
                     char_alphabet.add(char)
                 pos_alphabet.add(cur_pos)
                 type_alphabet.add(cur_type)
-                normed_word = utils.DIGIT_RE.sub(b"0", cur_word) if normalize_digits else cur_word
+                normed_word = utils.DIGIT_RE.sub("0", cur_word) if normalize_digits else cur_word
                 # add prefix
                 normed_word = lang_specific_word(normed_word, lang_id=lang_id_train)
                 if normed_word in vocab:
