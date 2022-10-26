@@ -41,7 +41,7 @@ class CoNLLXReader(object):
             line = self.__source_file.readline()
 
         length = len(lines)
-        print(normalize_digits)
+        #print(normalize_digits)
         if length == 0:
             return None
 
@@ -55,7 +55,7 @@ class CoNLLXReader(object):
         type_ids = []
         heads = []
 
-        print(lines)
+        #print(lines)
         if symbolic_root:
             words.append(ROOT)
             #word_ids.append(self.__word_alphabet.get_index(ROOT))
@@ -100,9 +100,9 @@ class CoNLLXReader(object):
 
             heads.append(head)
 
-        word_ids = self.tokenizer.convert_tokens_to_ids(['[CLS]'] + words)
-        #print(words)
-        #print(word_ids, symbolic_end)
+        word_ids = self.tokenizer.convert_tokens_to_ids(['[CLS]'] + words[1:])
+        #print(len(words), words)
+        #print(len(word_ids), word_ids)
 
         #raise Exception('dah')
 

@@ -133,6 +133,8 @@ class BiRecurrentConvBiAffine(nn.Module):
 
             input = word
 
+        print(self.char, self.pos)
+
         if self.char:
             # [batch, length, char_length, char_dim]
             char = self.char_embedd(input_char)
