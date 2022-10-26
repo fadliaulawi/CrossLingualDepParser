@@ -11,7 +11,7 @@ data2=$data_path/jv_test.conllu
 #data4=$data_path/id_dev.conllu
 #data5=$data_path/id_test.conllu
 
-PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES= python2 ../src/examples/vocab/build_joint_vocab_embed.py \
+PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES= python3 ../src/examples/vocab/build_joint_vocab_embed.py \
 --embed_paths $embed_path1 \
 --embed_lang_ids jv \
 --data_paths $data0 $data1 $data2 \
