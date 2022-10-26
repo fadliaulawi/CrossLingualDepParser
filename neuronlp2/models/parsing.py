@@ -285,7 +285,7 @@ class BiRecurrentConvBiAffine(nn.Module):
         # out_arc shape [batch, length, length]
         out_arc, out_type, mask, length = self.forward(input_word, input_char, input_pos, mask=mask, length=length,
                                                        hx=hx)
-	out_arc = out_arc.data
+        out_arc = out_arc.data
         batch, max_len, _ = out_arc.size()
         # set diagonal elements to -inf
         out_arc = out_arc + torch.diag(out_arc.new(max_len).fill_(-np.inf))

@@ -31,7 +31,7 @@ def iter_file(filename):
     with open(filename, 'r') as file:
         ret = {"len": 0, "word": [], "pos": [], "type": []}
         for line in file:
-            line = line
+            line = line.decode('utf-8')
             line = line.strip()
             # yield and reset
             if len(line) == 0 or line[0] == "#":
@@ -90,7 +90,7 @@ def create_alphabets(alphabet_directory, train_path, data_paths=None, max_vocabu
                     char_alphabet.add(char)
                 pos_alphabet.add(cur_pos)
                 type_alphabet.add(cur_type)
-                normed_word = utils.DIGIT_RE.sub("0", cur_word) if normalize_digits else cur_word
+                normed_word = utils.DIGIT_RE.sub(b"0", cur_word) if normalize_digits else cur_word
                 # add prefix
                 normed_word = lang_specific_word(normed_word, lang_id=lang_id_train)
                 if normed_word in vocab:
