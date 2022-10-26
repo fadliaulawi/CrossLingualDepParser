@@ -123,7 +123,7 @@ class BiRecurrentConvBiAffine(nn.Module):
         input = None
 
         if not self.no_word:
-	    print('input_word', type(input_word), input_word.size(), input_word)
+            #print('input_word', type(input_word), input_word.size(), input_word)
             # [batch, length, word_dim]
             word = self.word_embedd(input_word)
             #print('word1', type(word), word.size(), word)
