@@ -6,7 +6,6 @@ from .conllx_data import ROOT, ROOT_POS, ROOT_CHAR, ROOT_TYPE, END, END_POS, END
 from . import utils
 from ..io_multi import get_word_index_with_spec
 
-import os
 import re
 import sys
 from transformers import BertTokenizer
@@ -24,9 +23,8 @@ class CoNLLXReader(object):
         self.__type_alphabet = type_alphabet
         self.lang_id = lang_id
 
-        #print(os.listdir('../'))
-        self.tokenizer = BertTokenizer.from_pretrained('../data2.2_more/javanese-bert-small', local_files_only=True)
-
+        self.tokenizer =  BertTokenizer.from_pretrained('../../data2.2_more/javanese-bert-small', local_files_only=True)
+        
 
     def close(self):
         self.__source_file.close()
@@ -100,11 +98,11 @@ class CoNLLXReader(object):
 
             heads.append(head)
 
-        word_ids = self.tokenizer.convert_tokens_to_ids(['[CLS]'] + words)
-        #print(words)
-        #print(word_ids, symbolic_end)
+        word_ids = tokenizer.convert_tokens_to_ids(['[CLS]'] + words)
+        print(words)
+        print(word_ids)
 
-        #raise Exception('dah')
+        raise Exception('dah')
 
 
         if symbolic_end:
