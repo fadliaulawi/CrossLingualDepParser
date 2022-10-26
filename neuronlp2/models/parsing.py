@@ -126,10 +126,10 @@ class BiRecurrentConvBiAffine(nn.Module):
 	    print('input_word', type(input_word), input_word.size(), input_word)
             # [batch, length, word_dim]
             word = self.word_embedd(input_word)
-	    #print('word1', type(word), word.size(), word)
+            #print('word1', type(word), word.size(), word)
             # apply dropout on input
             word = self.dropout_in(word)
-	    #print('word2', type(word), word.size(), word)
+            #print('word2', type(word), word.size(), word)
 
             input = word
 
