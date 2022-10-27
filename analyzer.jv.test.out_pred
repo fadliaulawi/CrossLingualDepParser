@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4cf0d564d076d4a0d12ff399198d26551ed41afb532bec729b5d2c97b6c1a11f
-size 881
+1	!jv_“	_	_	PUNCT	_	5	punct
+2	<_UNK>	_	_	PRON	_	5	nsubj
+3	!jv_kudu	_	_	AUX	_	5	aux
+4	!jv_bisa	_	_	AUX	_	5	aux
+5	!jv_pinter	_	_	ADJ	_	0	root
+6	!jv_ya	_	_	INTJ	_	5	discourse
+7	!jv_,	_	_	PUNCT	_	8	punct
+8	!jv_Le	_	_	PROPN	_	5	vocative
+9	!jv_.	_	_	PUNCT	_	5	punct
+
+1	!jv_Amung	_	_	ADV	_	2	advmod
+2	!jv_Simbah	_	_	PROPN	_	5	nsubj
+3	!jv_Kakung	_	_	PROPN	_	2	flat
+4	!jv_kang	_	_	PRON	_	5	nsubj
+5	<_UNK>	_	_	VERB	_	0	root
+6	!jv_banjur	_	_	ADV	_	7	advmod
+7	<_UNK>	_	_	VERB	_	0	root
+8	!jv_kakang	_	_	NOUN	_	7	obj
+9	!jv_ku	_	_	PRON	_	8	nmod
+10	!jv_.	_	_	PUNCT	_	7	punct
+
+1	!jv_Ora	_	_	PART	_	3	advmod
+2	!jv_mung	_	_	ADV	_	3	advmod
+3	<_UNK>	_	_	X	_	8	dep
+4	!jv_,	_	_	PUNCT	_	3	punct
+5	!jv_musik	_	_	NOUN	_	8	nsubj
+6	!jv_e	_	_	DET	_	5	det
+7	!jv_uga	_	_	ADV	_	8	advmod
+8	!jv_dicampur	_	_	VERB	_	0	root
+9	!jv_karo	_	_	ADP	_	10	case
+10	!jv_gamelan	_	_	NOUN	_	8	obl
+11	!jv_.	_	_	PUNCT	_	8	punct
+
