@@ -19,7 +19,7 @@ import random
 
 import numpy as np
 import torch
-from torch.nn.utils import clip_grad_norm
+from torch.nn.utils import clip_grad_norm_
 from torch.optim import Adam, SGD, Adamax
 from neuronlp2.io import get_logger, conllx_data
 from neuronlp2.models import BiRecurrentConvBiAffine
@@ -389,15 +389,18 @@ def main():
 
             optim.zero_grad()
             loss_arc, loss_type = network.loss(word, char, pos, heads, types, mask=masks, length=lengths)
+            #print('l2', loss_arc, loss_type)
             loss = loss_arc + loss_type
+            #print('l3', loss)
             loss.backward()
-            clip_grad_norm(network.parameters(), clip)
+            #print('l4', loss)
+            clip_grad_norm_(network.parameters(), clip)
             optim.step()
 
             num_inst = word.size(0) if obj == 'crf' else masks.data.sum() - word.size(0)
-            train_err += loss.data[0] * num_inst
-            train_err_arc += loss_arc.data[0] * num_inst
-            train_err_type += loss_type.data[0] * num_inst
+            train_err += loss.item() * num_inst
+            train_err_arc += loss_arc.item() * num_inst
+            train_err_type += loss_type.item() * num_inst
             train_total += num_inst
 
             time_ave = (time.time() - start_time) / batch

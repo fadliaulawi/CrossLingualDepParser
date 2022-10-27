@@ -37,6 +37,10 @@ class BiRecurrentConvBiAffine(nn.Module):
 
         #print(embedd_word.size(), 'ew')
         #self.word_embedd = nn.Embedding(num_words, word_dim, init_embedding=embedd_word)
+
+        pos = False
+        char = False
+
         self.pos_embedd = nn.Embedding(num_pos, pos_dim, _weight=embedd_pos) if pos else None
         self.char_embedd = nn.Embedding(num_chars, char_dim, _weight=embedd_char) if char else None
         self.conv1d = nn.Conv1d(char_dim, num_filters, kernel_size, padding=kernel_size - 1) if char else None
@@ -53,11 +57,12 @@ class BiRecurrentConvBiAffine(nn.Module):
         self.position_dim = position_dim
 
         self.word_embedd = None
-        self.pos = False
         self.model = BertModel.from_pretrained('../data2.2_more/javanese-bert-small', local_files_only=True, output_hidden_states=True)
         self.model.eval()
 
-        #print('pos_em', self.pos_embedd, 'a', num_pos, 'b', pos_dim)
+        word_dim = 768
+
+        #print(word_dim, pos_dim, num_filters)
         #print(rnn_mode)
         if rnn_mode == 'RNN':
             pass
@@ -89,6 +94,7 @@ class BiRecurrentConvBiAffine(nn.Module):
             if self.multi_head_attn:
                 pos_emb_size = position_dim
                 d_model = pos_emb_size + dim_enc
+                #print(pos_emb_size, dim_enc)
                 if position_dim > 0:
                     self.position_embedding = nn.Embedding(max_sent_length, pos_emb_size)
                     if not train_position:
@@ -153,7 +159,8 @@ class BiRecurrentConvBiAffine(nn.Module):
                 token_vecs_sum = []
 
                 for token in token_embeddings:
-                    cat_vec = torch.cat((token[-1], token[-2], token[-3], token[-4]), dim=0)
+                    #cat_vec = torch.cat((token[-1], token[-2], token[-3], token[-4]), dim=0)
+                    cat_vec = torch.sum(token[-4:], dim=0)
                     token_vecs_sum.append(cat_vec)
 
                 token_numpy = np.array([t.numpy() for t in token_vecs_sum])
@@ -170,12 +177,12 @@ class BiRecurrentConvBiAffine(nn.Module):
             # apply dropout on input
             #word = self.dropout_in(word)
             #print('word2', type(word), word.size(), word)
-            input = self.dropout_in(input)
+            #input = self.dropout_in(input)
 
             #input = word
 
         #print(self.char, self.pos)
-        #print(type(input), input.size(), input)
+        #print(input.size())
 
         if self.char:
             # [batch, length, char_length, char_dim]
