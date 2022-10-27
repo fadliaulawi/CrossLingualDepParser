@@ -9,7 +9,7 @@ SEED=1234
 
 echo "Current seed is $SEED"
 
-PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=$RGPU python2 ../src/examples/GraphParser.py \
+PYTHONPATH=../srcwv/ CUDA_VISIBLE_DEVICES=$RGPU python2 ../src/examples/GraphParser.py \
 --mode FastLSTM \
 --no_CoRNN \
 --hidden_size 300 \
@@ -46,7 +46,7 @@ PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=$RGPU python2 ../src/examples/GraphParse
 --p_out 0.2 \
 --p_rnn 0.2 0.1 0.2 \
 --learning_rate 0.0001 \
---num_epochs 5 \
+--num_epochs 1000 \
 --trans_hid_size 512 \
 --pos_dim 50 \
 --char_dim 50 \
