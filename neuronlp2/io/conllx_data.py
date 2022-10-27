@@ -455,13 +455,13 @@ def read_data_to_variable(source_path, word_alphabet, char_alphabet, pos_alphabe
                 if word_alphabet.is_singleton(wid):
                     single[i, j] = 1
 
-        words = Variable(torch.from_numpy(wid_inputs), volatile=volatile)
-        chars = Variable(torch.from_numpy(cid_inputs), volatile=volatile)
-        pos = Variable(torch.from_numpy(pid_inputs), volatile=volatile)
-        heads = Variable(torch.from_numpy(hid_inputs), volatile=volatile)
-        types = Variable(torch.from_numpy(tid_inputs), volatile=volatile)
-        masks = Variable(torch.from_numpy(masks), volatile=volatile)
-        single = Variable(torch.from_numpy(single), volatile=volatile)
+        words = Variable(torch.from_numpy(wid_inputs))
+        chars = Variable(torch.from_numpy(cid_inputs))
+        pos = Variable(torch.from_numpy(pid_inputs))
+        heads = Variable(torch.from_numpy(hid_inputs))
+        types = Variable(torch.from_numpy(tid_inputs))
+        masks = Variable(torch.from_numpy(masks))
+        single = Variable(torch.from_numpy(single))
         lengths = torch.from_numpy(lengths)
         if use_gpu:
             words = words.cuda()
