@@ -273,7 +273,8 @@ def main():
         json.dump({'args': arguments, 'kwargs': kwargs}, open(arg_path, 'w'), indent=4)
 
     if freeze:
-        network.word_embedd.freeze()
+        #network.word_embedd.freeze()
+        pass
 
     if use_gpu:
         network.cuda()
@@ -315,7 +316,7 @@ def main():
     logger.info("decoding algorithm: %s" % decoding)
     logger.info(opt_info)
 
-    num_batches = num_data / batch_size + 1
+    num_batches = num_data // batch_size + 1
     dev_ucorrect = 0.0
     dev_lcorrect = 0.0
     dev_ucomlpete_match = 0.0
@@ -374,6 +375,7 @@ def main():
         start_time = time.time()
         num_back = 0
         network.train()
+        #print(num_batches, 'nb')
         for batch in range(1, num_batches + 1):
             # lrate schedule (before each step)
             step_num += 1

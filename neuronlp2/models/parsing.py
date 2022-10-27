@@ -7,13 +7,16 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
-from ..nn import TreeCRF, VarMaskedGRU, VarMaskedRNN, VarMaskedLSTM, VarMaskedFastLSTM
-from ..nn import SkipConnectFastLSTM, SkipConnectGRU, SkipConnectLSTM, SkipConnectRNN
-from ..nn import Embedding
+#from ..nn import TreeCRF, VarMaskedGRU, VarMaskedRNN, VarMaskedLSTM, VarMaskedFastLSTM
+from ..nn import VarMaskedFastLSTM
+#from ..nn import SkipConnectFastLSTM, SkipConnectGRU, SkipConnectLSTM, SkipConnectRNN
+#from ..nn import Embedding
 from ..nn import BiAAttention, BiLinear
 from neuronlp2.tasks import parser
 from ..transformer import TransformerEncoder
-from ..nn.modules.attention_aug import AugFeatureHelper, AugBiAAttention
+#from ..nn.modules.attention_aug import AugFeatureHelper, AugBiAAttention
+
+from transformers import BertModel
 
 class PriorOrder(Enum):
     DEPTH = 0
@@ -32,9 +35,10 @@ class BiRecurrentConvBiAffine(nn.Module):
                  ):
         super(BiRecurrentConvBiAffine, self).__init__()
 
-        self.word_embedd = Embedding(num_words, word_dim, init_embedding=embedd_word)
-        self.pos_embedd = Embedding(num_pos, pos_dim, init_embedding=embedd_pos) if pos else None
-        self.char_embedd = Embedding(num_chars, char_dim, init_embedding=embedd_char) if char else None
+        #print(embedd_word.size(), 'ew')
+        #self.word_embedd = nn.Embedding(num_words, word_dim, init_embedding=embedd_word)
+        self.pos_embedd = nn.Embedding(num_pos, pos_dim, _weight=embedd_pos) if pos else None
+        self.char_embedd = nn.Embedding(num_chars, char_dim, _weight=embedd_char) if char else None
         self.conv1d = nn.Conv1d(char_dim, num_filters, kernel_size, padding=kernel_size - 1) if char else None
         self.dropout_in = nn.Dropout2d(p=p_in)
         self.dropout_out = nn.Dropout2d(p=p_out)
@@ -48,15 +52,19 @@ class BiRecurrentConvBiAffine(nn.Module):
         self.use_gpu = use_gpu
         self.position_dim = position_dim
 
+        self.word_embedd = None
+        self.pos = False
+        self.model = BertModel.from_pretrained('../data2.2_more/javanese-bert-small', local_files_only=True, output_hidden_states=True)
 
+        #print('pos_em', self.pos_embedd, 'a', num_pos, 'b', pos_dim)
         if rnn_mode == 'RNN':
-            RNN = VarMaskedRNN
-        elif rnn_mode == 'LSTM':
-            RNN = VarMaskedLSTM
-        elif rnn_mode == 'FastLSTM':
+#            RNN = VarMaskedRNN
+#        elif rnn_mode == 'LSTM':
+#            RNN = VarMaskedLSTM
+#        elif rnn_mode == 'FastLSTM':
             RNN = VarMaskedFastLSTM
-        elif rnn_mode == 'GRU':
-            RNN = VarMaskedGRU
+#        elif rnn_mode == 'GRU':
+#            RNN = VarMaskedGRU
         else:
             raise ValueError('Unknown RNN mode: %s' % rnn_mode)
 
@@ -124,6 +132,7 @@ class BiRecurrentConvBiAffine(nn.Module):
 
         if not self.no_word:
             #print('input_word', type(input_word), input_word.size(), input_word)
+            print(input_word[0].size(), list(input_word[0]))
             # [batch, length, word_dim]
             word = self.word_embedd(input_word)
             #print('word1', type(word), word.size(), word)
