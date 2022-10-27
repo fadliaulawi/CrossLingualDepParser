@@ -64,8 +64,8 @@ class MultiHeadedAttention(nn.Module):
         if self.clip_dist > 0:
             self.edge_keys = nn.Parameter(torch.FloatTensor(2 * self.clip_dist + 1, self.d_k))
             self.edge_values = nn.Parameter(torch.FloatTensor(2 * self.clip_dist + 1, self.d_v))
-            torch.nn.init.xavier_normal(self.edge_keys)
-            torch.nn.init.xavier_normal(self.edge_values)
+            torch.nn.init.xavier_normal_(self.edge_keys)
+            torch.nn.init.xavier_normal_(self.edge_values)
 
     def forward(self, key, value, query, mask=None):
         """

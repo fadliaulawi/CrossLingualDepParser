@@ -55,13 +55,16 @@ class BiRecurrentConvBiAffine(nn.Module):
         self.word_embedd = None
         self.pos = False
         self.model = BertModel.from_pretrained('../data2.2_more/javanese-bert-small', local_files_only=True, output_hidden_states=True)
+        self.model.eval()
 
         #print('pos_em', self.pos_embedd, 'a', num_pos, 'b', pos_dim)
+        #print(rnn_mode)
         if rnn_mode == 'RNN':
+            pass
 #            RNN = VarMaskedRNN
 #        elif rnn_mode == 'LSTM':
 #            RNN = VarMaskedLSTM
-#        elif rnn_mode == 'FastLSTM':
+        elif rnn_mode == 'FastLSTM':
             RNN = VarMaskedFastLSTM
 #        elif rnn_mode == 'GRU':
 #            RNN = VarMaskedGRU
@@ -132,17 +135,47 @@ class BiRecurrentConvBiAffine(nn.Module):
 
         if not self.no_word:
             #print('input_word', type(input_word), input_word.size(), input_word)
-            print(input_word[0].size(), list(input_word[0]))
+            #print(input_word[0].size(), [i.item() for i in list(input_word[0])])
             # [batch, length, word_dim]
-            word = self.word_embedd(input_word)
+            tensors = []
+            for i in range(len(input_word)):
+                tokens_tensor = torch.tensor([[i.item() for i in list(input_word[i])]])
+                segments_tensor = torch.tensor([[1] * len(tokens_tensor[0])])
+                #print(tokens_tensor, segments_tensor)
+                with torch.no_grad():
+                    outputs = self.model(tokens_tensor, segments_tensor)
+                    hidden_states = outputs[2]
+
+                token_embeddings = torch.stack(hidden_states, dim=0)
+                token_embeddings = torch.squeeze(token_embeddings, dim=1)
+                token_embeddings = token_embeddings.permute(1,0,2)
+
+                token_vecs_sum = []
+
+                for token in token_embeddings:
+                    cat_vec = torch.cat((token[-1], token[-2], token[-3], token[-4]), dim=0)
+                    token_vecs_sum.append(cat_vec)
+
+                token_numpy = np.array([t.numpy() for t in token_vecs_sum])
+                tensors.append(token_numpy)
+
+            tensors = torch.FloatTensor(np.array(tensors))
+            input = Variable(tensors)
+            #print(tensors)
+            #print(tensors.size())
+            #raise Exception('dah')
+
+            #word = self.word_embedd(input_word)
             #print('word1', type(word), word.size(), word)
             # apply dropout on input
-            word = self.dropout_in(word)
+            #word = self.dropout_in(word)
             #print('word2', type(word), word.size(), word)
+            input = self.dropout_in(input)
 
-            input = word
+            #input = word
 
-        print(self.char, self.pos)
+        #print(self.char, self.pos)
+        #print(type(input), input.size(), input)
 
         if self.char:
             # [batch, length, char_length, char_dim]
@@ -186,6 +219,7 @@ class BiRecurrentConvBiAffine(nn.Module):
                     position_encoding = self.position_embedding(position_encoding)
                     # src_encoding = src_encoding + position_encoding
                     src_encoding = torch.cat([src_encoding, position_encoding], dim=2)
+                #print('src2', src_encoding)
                 src_encoding = self.transformer(src_encoding)
                 output, hn = src_encoding, None
             else:
