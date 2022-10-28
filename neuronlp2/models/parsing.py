@@ -126,6 +126,10 @@ class BiRecurrentConvBiAffine(nn.Module):
             # [batch, length, word_dim]
             word = self.word_embedd(input_word)
             # apply dropout on input
+            #print(type(word), word.size(), word)
+            #print(type(word[0]), word[0].size(), word[0])
+            #print(type(word[0][0]), word[0][0].size(), word[0][0])
+            #raise Exception('dah')
             word = self.dropout_in(word)
 
             input = word
@@ -192,13 +196,13 @@ class BiRecurrentConvBiAffine(nn.Module):
         # apply dropout
         # [batch, length, dim] --> [batch, 2 * length, dim]
         arc = torch.cat([arc_h, arc_c], dim=1)
-        type = torch.cat([type_h, type_c], dim=1)
+        types = torch.cat([type_h, type_c], dim=1)
 
         arc = self.dropout_out(arc.transpose(1, 2)).transpose(1, 2)
         arc_h, arc_c = arc.chunk(2, 1)
 
-        type = self.dropout_out(type.transpose(1, 2)).transpose(1, 2)
-        type_h, type_c = type.chunk(2, 1)
+        types = self.dropout_out(types.transpose(1, 2)).transpose(1, 2)
+        type_h, type_c = types.chunk(2, 1)
         type_h = type_h.contiguous()
         type_c = type_c.contiguous()
 
