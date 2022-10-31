@@ -100,7 +100,7 @@ class CoNLLXReader(object):
 
             heads.append(head)
 
-        word_ids = self.tokenizer.convert_tokens_to_ids(['[CLS]'] + words[1:])
+        word_ids = self.tokenizer.convert_tokens_to_ids(['[CLS]'] + [l.lower() for l in words[1:]])
         #print(len(words), words)
         #print(len(word_ids), word_ids)
 
