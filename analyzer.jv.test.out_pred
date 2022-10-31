@@ -1,14 +1,14 @@
-1	!jv_Présidhèn	_	_	PROPN	_	0	root
-2	!jv_Indonésia	_	_	PROPN	_	1	flat
+1	!jv_Presidhen	_	_	PROPN	_	0	root
+2	!jv_Indonesia	_	_	PROPN	_	1	flat
 3	!jv_(	_	_	PUNCT	_	1	punct
-4	!jv_0000	_	_	NUM	_	1	nummod
+4	!jv_0000	_	_	NUM	_	1	appos
 5	!jv_)	_	_	PUNCT	_	1	punct
 6	!jv_.	_	_	PUNCT	_	1	punct
 
 1	!jv_Raden	_	_	PROPN	_	3	nsubj
 2	!jv_Gathotkaca	_	_	PROPN	_	1	flat
 3	!jv_kaparingan	_	_	VERB	_	0	root
-4	!jv_pusaka	_	_	ADJ	_	3	obj
+4	!jv_pusaka	_	_	ADJ	_	3	xcomp
 5	!jv_dening	_	_	ADP	_	7	case
 6	!jv_ingkang	_	_	DET	_	7	det
 7	!jv_Rama	_	_	PROPN	_	3	obl
@@ -43,7 +43,7 @@
 5	!jv_gelem	_	_	VERB	_	1	advcl
 6	!jv_.	_	_	PUNCT	_	1	punct
 
-1	!jv_Piring	_	_	NOUN	_	6	obj
+1	!jv_Piring	_	_	NOUN	_	6	nsubj
 2	!jv_e	_	_	DET	_	1	det
 3	!jv_sing	_	_	PRON	_	4	nsubj
 4	!jv_anyar	_	_	ADJ	_	1	acl
@@ -198,14 +198,14 @@
 7	!jv_adhi	_	_	NOUN	_	10	nsubj
 8	!jv_ne	_	_	PRON	_	7	nmod
 9	!jv_ora	_	_	PART	_	10	advmod
-10	!jv_seneng	_	_	VERB	_	3	conj
+10	!jv_seneng	_	_	VERB	_	3	advcl
 11	!jv_.	_	_	PUNCT	_	3	punct
 
 1	!jv_Kabeh	_	_	PRON	_	2	nsubj
 2	!jv_bingung	_	_	ADJ	_	0	root
 3	!jv_,	_	_	PUNCT	_	2	punct
-4	<_UNK>	_	_	ADV	_	2	advmod
-5	!jv_udan	_	_	NOUN	_	8	nsubj
+4	<_UNK>	_	_	ADV	_	8	advmod
+5	!jv_udan	_	_	NOUN	_	2	nsubj
 6	!jv_e	_	_	DET	_	5	det
 7	!jv_sansaya	_	_	ADV	_	8	advmod
 8	!jv_deres	_	_	ADJ	_	2	advcl
@@ -222,7 +222,7 @@
 9	!jv_apa-apa	_	_	PRON	_	8	nmod
 10	!jv_.	_	_	PUNCT	_	5	punct
 
-1	!jv_Apa	_	_	PRON	_	3	nmod
+1	!jv_Apa	_	_	PRON	_	3	nsubj
 2	!jv_meneh	_	_	ADV	_	1	advmod
 3	!jv_penyanyi	_	_	NOUN	_	8	nsubj
 4	!jv_ne	_	_	DET	_	3	det
@@ -261,8 +261,8 @@
 4	!jv_tembang	_	_	NOUN	_	3	obl
 5	<_UNK>	_	_	ADJ	_	4	amod
 6	!jv_,	_	_	PUNCT	_	3	punct
-7	!jv_tembang	_	_	NOUN	_	4	nmod
-8	<_UNK>	_	_	NOUN	_	7	nmod
+7	!jv_tembang	_	_	NOUN	_	8	nmod
+8	<_UNK>	_	_	NOUN	_	4	nmod
 9	!jv_.	_	_	PUNCT	_	3	punct
 
 1	!jv_Dina	_	_	NOUN	_	3	nsubj
@@ -338,7 +338,7 @@
 
 1	!jv_Ingkang	_	_	PRON	_	2	nsubj
 2	!jv_kapisanan	_	_	ADJ	_	0	root
-3	!jv_inggih	_	_	AUX	_	6	cop
+3	!jv_inggih	_	_	AUX	_	6	aux
 4	!jv_punika	_	_	DET	_	3	fixed
 5	!jv_"	_	_	PUNCT	_	6	punct
 6	!jv_analisis	_	_	NOUN	_	2	obl
@@ -350,13 +350,13 @@
 12	!jv_"	_	_	PUNCT	_	6	punct
 13	!jv_.	_	_	PUNCT	_	6	punct
 
-1	!jv_Dhèwèké	_	_	PRON	_	3	nsubj
+1	!jv_Dheweke	_	_	PRON	_	3	nsubj
 2	!jv_wis	_	_	AUX	_	3	aux
-3	!jv_tau	_	_	VERB	_	0	root
+3	!jv_tau	_	_	VERB	_	4	advcl
 4	!jv_njabat	_	_	VERB	_	0	root
 5	!jv_kepala	_	_	X	_	4	obj
 6	<_UNK>	_	_	PROPN	_	5	flat
-7	!jv_Kebudayaan	_	_	PROPN	_	6	flat
+7	!jv_Kebudayaan	_	_	PROPN	_	4	obl
 8	!jv_ing	_	_	ADP	_	9	case
 9	!jv_Sumatera	_	_	PROPN	_	4	obl
 10	!jv_.	_	_	PUNCT	_	4	punct
@@ -390,7 +390,7 @@
 13	!jv_.	_	_	PUNCT	_	5	punct
 
 1	!jv_Sanadyan	_	_	SCONJ	_	2	mark
-2	!jv_katon	_	_	VERB	_	8	advcl
+2	!jv_katon	_	_	VERB	_	0	root
 3	<_UNK>	_	_	ADJ	_	2	xcomp
 4	!jv_,	_	_	PUNCT	_	2	punct
 5	!jv_grup	_	_	NOUN	_	8	nsubj
@@ -411,13 +411,13 @@
 4	!jv_(	_	_	PUNCT	_	2	punct
 5	!jv_00	_	_	NUM	_	3	nummod
 6	!jv_/	_	_	PUNCT	_	7	punct
-7	!jv_0	_	_	NUM	_	3	nummod
+7	!jv_0	_	_	NUM	_	5	flat
 8	!jv_/	_	_	PUNCT	_	9	punct
 9	!jv_0000	_	_	NUM	_	7	flat
 10	!jv_)	_	_	PUNCT	_	9	punct
 11	!jv_menika	_	_	DET	_	12	det
 12	!jv_kapacak	_	_	VERB	_	0	root
-13	!jv_bab	_	_	NOUN	_	12	obj
+13	!jv_bab	_	_	NOUN	_	12	obl
 14	!jv_lagu	_	_	NOUN	_	13	nmod
 15	!jv_metal	_	_	NOUN	_	14	nmod
 16	!jv_.	_	_	PUNCT	_	12	punct
@@ -435,7 +435,7 @@
 11	<_UNK>	_	_	PROPN	_	10	obj
 12	!jv_Rahayu	_	_	PROPN	_	11	flat
 13	<_UNK>	_	_	PROPN	_	11	flat
-14	!jv_.	_	_	PUNCT	_	10	punct
+14	!jv_.	_	_	PUNCT	_	3	punct
 
 1	<_UNK>	_	_	PROPN	_	7	nsubj
 2	!jv_Ponorogo	_	_	PROPN	_	1	flat
@@ -487,7 +487,7 @@
 1	<_UNK>	_	_	PROPN	_	2	nsubj
 2	<_UNK>	_	_	VERB	_	0	root
 3	!jv_kegiyatan	_	_	NOUN	_	2	obj
-4	!jv_é	_	_	PRON	_	3	nmod
+4	!jv_e	_	_	PRON	_	3	nmod
 5	!jv_kanti	_	_	SCONJ	_	6	mark
 6	<_UNK>	_	_	VERB	_	2	advcl
 7	!jv_tataran	_	_	NOUN	_	6	obj
@@ -569,10 +569,10 @@
 2	!jv_Mantri	_	_	NOUN	_	9	obl
 3	!jv_Luar	_	_	NOUN	_	2	nmod
 4	!jv_Negeri	_	_	NOUN	_	2	nmod
-5	<_UNK>	_	_	PROPN	_	4	nmod
+5	<_UNK>	_	_	PROPN	_	2	nmod
 6	<_UNK>	_	_	PROPN	_	5	flat
 7	!jv_,	_	_	PUNCT	_	9	punct
-8	!jv_Présidhèn	_	_	PROPN	_	9	nsubj
+8	!jv_Presidhen	_	_	PROPN	_	9	nsubj
 9	!jv_gagal	_	_	VERB	_	0	root
 10	!jv_nyegah	_	_	VERB	_	9	xcomp
 11	!jv_prekawis	_	_	NOUN	_	10	obj
@@ -612,7 +612,7 @@
 13	<_UNK>	_	_	NOUN	_	12	obl
 14	!jv_pinggir	_	_	NOUN	_	13	nmod
 15	!jv_desa	_	_	NOUN	_	13	nmod
-16	!jv_.	_	_	PUNCT	_	7	punct
+16	!jv_.	_	_	PUNCT	_	5	punct
 
 1	!jv_Saka	_	_	ADP	_	2	case
 2	<_UNK>	_	_	NOUN	_	8	obl
@@ -650,7 +650,7 @@
 3	!jv_sepi	_	_	ADJ	_	0	root
 4	!jv_,	_	_	PUNCT	_	3	punct
 5	!jv_mung	_	_	ADV	_	3	advmod
-6	!jv_wong	_	_	NOUN	_	1	nmod
+6	!jv_wong	_	_	NOUN	_	1	conj
 7	!jv_sing	_	_	PRON	_	8	nsubj
 8	!jv_mulih	_	_	VERB	_	3	advcl
 9	!jv_saka	_	_	ADP	_	10	case
@@ -704,7 +704,7 @@
 16	!jv_0	_	_	NUM	_	14	flat
 17	!jv_-	_	_	PUNCT	_	16	punct
 18	!jv_0	_	_	NUM	_	16	flat
-19	!jv_suku	_	_	X	_	18	flat
+19	!jv_suku	_	_	X	_	16	nmod
 20	!jv_kata	_	_	X	_	19	nmod
 21	!jv_.	_	_	PUNCT	_	2	punct
 
@@ -716,15 +716,15 @@
 6	!jv_Jalur	_	_	PROPN	_	0	root
 7	!jv_B	_	_	PROPN	_	6	flat
 8	!jv_,	_	_	PUNCT	_	6	punct
-9	!jv_kanthi	_	_	ADP	_	10	case
+9	!jv_kanthi	_	_	ADP	_	12	case
 10	!jv_arah	_	_	NOUN	_	6	nmod
 11	!jv_lor	_	_	NOUN	_	10	nmod
 12	!jv_wetan	_	_	NOUN	_	10	nmod
 13	!jv_dumugi	_	_	ADP	_	14	case
-14	!jv_kidul	_	_	NOUN	_	10	nmod
+14	!jv_kidul	_	_	NOUN	_	12	nmod
 15	!jv_kulon	_	_	NOUN	_	14	nmod
-16	!jv_,	_	_	PUNCT	_	6	punct
-17	<_UNK>	_	_	VERB	_	6	parataxis
+16	!jv_,	_	_	PUNCT	_	17	punct
+17	<_UNK>	_	_	VERB	_	6	advcl
 18	!jv_dipunbikak	_	_	VERB	_	17	advcl
 19	!jv_taun	_	_	NOUN	_	18	obl
 20	!jv_0000	_	_	NUM	_	19	nummod
@@ -735,7 +735,7 @@
 3	!jv_,	_	_	PUNCT	_	2	punct
 4	!jv_warga	_	_	NOUN	_	8	nsubj
 5	!jv_kono	_	_	NOUN	_	4	nmod
-6	!jv_akeh	_	_	DET	_	4	det
+6	!jv_akeh	_	_	DET	_	5	det
 7	!jv_sing	_	_	PRON	_	8	nsubj
 8	!jv_gawe	_	_	VERB	_	0	root
 9	<_UNK>	_	_	NOUN	_	8	obj
@@ -746,7 +746,7 @@
 14	!jv_lumrah	_	_	ADJ	_	9	acl
 15	!jv_e	_	_	DET	_	16	det
 16	!jv_dienggo	_	_	VERB	_	14	advcl
-17	!jv_abdi	_	_	NOUN	_	16	obj
+17	!jv_abdi	_	_	NOUN	_	16	obl
 18	!jv_dalem	_	_	ADJ	_	17	amod
 19	!jv_Keraton	_	_	PROPN	_	17	nmod
 20	!jv_.	_	_	PUNCT	_	8	punct
@@ -762,7 +762,7 @@
 9	!jv_/	_	_	PUNCT	_	10	punct
 10	!jv_RW	_	_	PROPN	_	7	nmod
 11	!jv_000	_	_	NUM	_	10	nummod
-12	!jv_,	_	_	PUNCT	_	5	punct
+12	!jv_,	_	_	PUNCT	_	13	punct
 13	!jv_penere	_	_	X	_	5	dep
 14	!jv_ing	_	_	ADP	_	15	case
 15	!jv_sisih	_	_	NOUN	_	5	obl
@@ -776,7 +776,7 @@
 2	!jv_e	_	_	DET	_	1	det
 3	!jv_tembung	_	_	NOUN	_	1	nmod
 4	!jv_krama	_	_	NOUN	_	3	nmod
-5	!jv_andhap	_	_	ADJ	_	1	amod
+5	!jv_andhap	_	_	ADJ	_	3	amod
 6	!jv_uga	_	_	ADV	_	8	advmod
 7	!jv_ora	_	_	PART	_	8	advmod
 8	!jv_beda	_	_	ADJ	_	0	root
@@ -826,14 +826,14 @@
 10	<_UNK>	_	_	PROPN	_	9	nmod
 11	<_UNK>	_	_	PROPN	_	10	flat
 12	!jv_lan	_	_	CCONJ	_	13	cc
-13	<_UNK>	_	_	NOUN	_	15	nsubj
+13	<_UNK>	_	_	NOUN	_	0	root
 14	!jv_pungkasan	_	_	ADJ	_	13	amod
-15	<_UNK>	_	_	VERB	_	0	root
+15	<_UNK>	_	_	VERB	_	14	advcl
 16	!jv_penerbangan	_	_	NOUN	_	15	obj
 17	!jv_ing	_	_	ADP	_	18	case
 18	!jv_tanggal	_	_	NOUN	_	15	obl
 19	!jv_0	_	_	NUM	_	18	nummod
-20	!jv_Fèbruari	_	_	PROPN	_	19	flat
+20	!jv_Februari	_	_	PROPN	_	19	flat
 21	!jv_0000	_	_	NUM	_	19	flat
 22	!jv_.	_	_	PUNCT	_	15	punct
 
@@ -865,7 +865,7 @@
 26	!jv_sakit	_	_	ADJ	_	25	amod
 27	!jv_.	_	_	PUNCT	_	7	punct
 
-1	!jv_Maskapé	_	_	NOUN	_	3	nsubj
+1	<_UNK>	_	_	NOUN	_	3	nsubj
 2	!jv_iki	_	_	DET	_	1	det
 3	<_UNK>	_	_	VERB	_	0	root
 4	!jv_jaringan	_	_	X	_	3	obj
@@ -875,40 +875,40 @@
 8	!jv_tujuan	_	_	X	_	6	obl
 9	!jv_ing	_	_	ADP	_	11	case
 10	!jv_00	_	_	NUM	_	11	nummod
-11	!jv_nagara	_	_	NOUN	_	8	nmod
+11	!jv_nagara	_	_	NOUN	_	6	obl
 12	!jv_,	_	_	PUNCT	_	13	punct
 13	!jv_kalebu	_	_	VERB	_	6	parataxis
 14	!jv_penerbangan	_	_	X	_	13	obl
 15	!jv_jarak	_	_	NOUN	_	14	nmod
-16	!jv_adoh	_	_	ADJ	_	17	amod
+16	!jv_adoh	_	_	ADJ	_	14	amod
 17	!jv_tumuju	_	_	VERB	_	13	advcl
 18	!jv_Afrika	_	_	PROPN	_	17	obj
 19	!jv_Timur	_	_	PROPN	_	18	flat
 20	!jv_,	_	_	PUNCT	_	21	punct
 21	!jv_Tengah	_	_	PROPN	_	18	flat
-22	!jv_,	_	_	PUNCT	_	21	punct
+22	!jv_,	_	_	PUNCT	_	24	punct
 23	!jv_lan	_	_	CCONJ	_	24	cc
 24	!jv_Barat	_	_	PROPN	_	18	conj
 25	!jv_.	_	_	PUNCT	_	3	punct
 
 1	!jv_Gunggung	_	_	NOUN	_	0	root
 2	<_UNK>	_	_	X	_	1	nmod
-3	!jv_isa	_	_	AUX	_	1	cop
+3	!jv_isa	_	_	AUX	_	1	aux
 4	!jv_macem-macem	_	_	ADJ	_	1	amod
 5	!jv_malah	_	_	ADV	_	4	advmod
 6	!jv_ning	_	_	ADP	_	7	case
-7	!jv_sèl	_	_	NOUN	_	1	nmod
+7	!jv_sel	_	_	NOUN	_	4	obl
 8	!jv_kang	_	_	PRON	_	9	nsubj
-9	!jv_padha	_	_	ADJ	_	7	amod
-10	!jv_conto	_	_	NOUN	_	9	obl
-11	!jv_né	_	_	DET	_	10	det
+9	!jv_padha	_	_	ADJ	_	10	amod
+10	!jv_conto	_	_	NOUN	_	7	nmod
+11	!jv_ne	_	_	DET	_	10	det
 12	!jv_ning	_	_	ADP	_	13	case
 13	<_UNK>	_	_	PROPN	_	10	nmod
 14	!jv_kang	_	_	PRON	_	15	nsubj
 15	!jv_gunggung	_	_	NOUN	_	13	nmod
 16	<_UNK>	_	_	X	_	15	nmod
-17	!jv_é	_	_	PRON	_	15	nmod
-18	!jv_antara	_	_	NOUN	_	15	nmod
+17	!jv_e	_	_	PRON	_	15	nmod
+18	!jv_antara	_	_	NOUN	_	16	nmod
 19	!jv_0	_	_	NUM	_	18	nummod
 20	!jv_,	_	_	PUNCT	_	21	punct
 21	!jv_0	_	_	NUM	_	19	flat
@@ -920,15 +920,15 @@
 1	!jv_Kanthi	_	_	ADP	_	2	case
 2	!jv_beasiswa	_	_	NOUN	_	5	obl
 3	!jv_,	_	_	PUNCT	_	2	punct
-4	!jv_dhèwèké	_	_	PRON	_	5	nsubj
+4	!jv_dheweke	_	_	PRON	_	5	nsubj
 5	!jv_manggon	_	_	VERB	_	0	root
 6	!jv_ing	_	_	ADP	_	7	case
-7	!jv_Amérika	_	_	PROPN	_	5	obl
-8	!jv_Sarékat	_	_	PROPN	_	7	flat
+7	!jv_Amerika	_	_	PROPN	_	5	obl
+8	!jv_Sarekat	_	_	PROPN	_	7	flat
 9	!jv_,	_	_	PUNCT	_	10	punct
 10	!jv_sinau	_	_	VERB	_	0	root
 11	!jv_lan	_	_	CCONJ	_	12	cc
-12	<_UNK>	_	_	VERB	_	10	conj
+12	!jv_entuk	_	_	VERB	_	10	conj
 13	!jv_gelar	_	_	NOUN	_	10	obj
 14	!jv_Master	_	_	PROPN	_	13	nmod
 15	!jv_saka	_	_	ADP	_	16	case
@@ -963,7 +963,7 @@
 15	!jv_kang	_	_	PRON	_	16	nsubj
 16	!jv_uga	_	_	ADV	_	19	advmod
 17	!jv_minangka	_	_	ADP	_	19	case
-18	!jv_akèh	_	_	DET	_	19	det
+18	!jv_akeh	_	_	DET	_	19	det
 19	!jv_grup	_	_	NOUN	_	11	nmod
 20	!jv_rock	_	_	X	_	19	nmod
 21	<_UNK>	_	_	X	_	19	nmod
@@ -989,13 +989,13 @@
 15	!jv_Umur	_	_	NOUN	_	8	nmod
 16	!jv_ku	_	_	PRON	_	15	nmod
 17	!jv_00	_	_	NUM	_	18	nummod
-18	!jv_taun	_	_	NOUN	_	8	conj
+18	!jv_taun	_	_	NOUN	_	10	obl
 19	!jv_lan	_	_	CCONJ	_	18	cc
 20	!jv_aku	_	_	PRON	_	22	nsubj
 21	!jv_pengen	_	_	AUX	_	22	aux
-22	!jv_duwé	_	_	VERB	_	10	conj
+22	!jv_duwe	_	_	VERB	_	10	conj
 23	!jv_jeneng	_	_	NOUN	_	22	obj
-24	!jv_gedhé	_	_	ADJ	_	23	amod
+24	!jv_gedhe	_	_	ADJ	_	23	amod
 25	!jv_kaya	_	_	ADP	_	26	case
 26	<_UNK>	_	_	PROPN	_	23	conj
 27	!jv_lan	_	_	CCONJ	_	28	cc
@@ -1014,22 +1014,22 @@
 9	!jv_Love	_	_	PROPN	_	8	flat
 10	<_UNK>	_	_	PROPN	_	9	flat
 11	!jv_,	_	_	PUNCT	_	12	punct
-12	!jv_The	_	_	PROPN	_	9	flat
-13	!jv_Mary	_	_	PROPN	_	14	flat
+12	!jv_The	_	_	PROPN	_	8	flat
+13	!jv_Mary	_	_	PROPN	_	9	flat
 14	!jv_Tyler	_	_	PROPN	_	8	flat
-15	!jv_Moore	_	_	PROPN	_	14	flat
+15	!jv_Moore	_	_	PROPN	_	9	flat
 16	!jv_Show	_	_	PROPN	_	14	flat
 17	!jv_,	_	_	PUNCT	_	19	punct
 18	!jv_lan	_	_	CCONJ	_	19	cc
 19	!jv_prakara	_	_	NOUN	_	14	conj
 20	!jv_kang	_	_	PRON	_	22	nsubj
 21	!jv_saiki	_	_	NOUN	_	22	obj
-22	!jv_ditayangaké	_	_	VERB	_	19	acl
+22	<_UNK>	_	_	VERB	_	19	acl
 23	!jv_ing	_	_	ADP	_	24	case
 24	!jv_TV	_	_	PROPN	_	22	obl
 25	!jv_Land	_	_	PROPN	_	24	flat
 26	<_UNK>	_	_	PROPN	_	24	flat
-27	!jv_ditayangaké	_	_	VERB	_	22	advcl
+27	<_UNK>	_	_	VERB	_	22	advcl
 28	!jv_ing	_	_	ADP	_	29	case
 29	!jv_Nick	_	_	PROPN	_	27	obl
 30	!jv_at	_	_	PROPN	_	29	flat
@@ -1047,15 +1047,15 @@
 9	!jv_wis	_	_	AUX	_	10	aux
 10	<_UNK>	_	_	VERB	_	0	root
 11	!jv_antara	_	_	NOUN	_	20	nmod
-12	!jv_né	_	_	PRON	_	13	nmod
+12	!jv_ne	_	_	PRON	_	13	nmod
 13	!jv_sampah	_	_	NOUN	_	20	nmod
-14	<_UNK>	_	_	ADJ	_	7	acl
+14	!jv_teles	_	_	ADJ	_	7	acl
 15	!jv_lan	_	_	CCONJ	_	16	cc
 16	!jv_sampah	_	_	NOUN	_	17	nsubj
 17	!jv_garing	_	_	ADJ	_	7	acl
 18	!jv_ing	_	_	ADP	_	19	case
-19	!jv_sajroning	_	_	NOUN	_	13	nmod
-20	!jv_bak	_	_	NOUN	_	16	nmod
+19	!jv_sajroning	_	_	NOUN	_	17	obl
+20	!jv_bak	_	_	NOUN	_	19	nmod
 21	!jv_sampah	_	_	NOUN	_	19	nmod
 22	!jv_;	_	_	PUNCT	_	23	punct
 23	<_UNK>	_	_	PROPN	_	17	nsubj
@@ -1063,19 +1063,19 @@
 25	!jv_00	_	_	NUM	_	23	parataxis
 26	!jv_)	_	_	PUNCT	_	23	punct
 27	!jv_,	_	_	PUNCT	_	23	punct
-28	!jv_gawéan	_	_	NOUN	_	17	nsubj
-29	!jv_é	_	_	PRON	_	13	nmod
-30	!jv_luwih	_	_	ADV	_	25	advmod
+28	<_UNK>	_	_	NOUN	_	17	nsubj
+29	!jv_e	_	_	PRON	_	13	nmod
+30	!jv_luwih	_	_	ADV	_	34	advmod
 31	<_UNK>	_	_	ADV	_	34	advmod
-32	!jv_amarga	_	_	SCONJ	_	40	mark
+32	!jv_amarga	_	_	SCONJ	_	34	mark
 33	!jv_wis	_	_	AUX	_	34	aux
 34	<_UNK>	_	_	VERB	_	14	conj
 35	!jv_sampah	_	_	NOUN	_	34	obj
-36	!jv_é	_	_	DET	_	35	det
+36	!jv_e	_	_	DET	_	35	det
 37	!jv_,	_	_	PUNCT	_	4	punct
 38	<_UNK>	_	_	PRON	_	40	nsubj
 39	!jv_ora	_	_	PART	_	40	advmod
-40	<_UNK>	_	_	VERB	_	34	advcl
+40	!jv_perlu	_	_	VERB	_	34	advcl
 41	<_UNK>	_	_	VERB	_	40	advcl
 42	!jv_.	_	_	PUNCT	_	4	punct
 
