@@ -14,7 +14,7 @@ LANGUAGE_LIST = (
 #    ["cs", ["UD_Czech-PDT", "UD_Czech-CAC", "UD_Czech-CLTT", "UD_Czech-FicTree"], "IE.Slavic.West"],
 #    ["da", ["UD_Danish-DDT"], "IE.Germanic.North"],
 #    ["nl", ["UD_Dutch-Alpino", "UD_Dutch-LassySmall"], "IE.Germanic.West"],
-    ["en", ["UD_English-EWT"], "IE.Germanic.West"],
+    ["en", ["UD_English-GUM"], "IE.Germanic.West"],
     ["et", ["UD_Estonian-EDT"], "Uralic.Finnic"],
     ["fi", ["UD_Finnish-TDT"], "Uralic.Finnic"],
 #    ["fr", ["UD_French-GSD"], "IE.Romance.West"],
