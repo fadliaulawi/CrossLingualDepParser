@@ -98,7 +98,7 @@ class WordVectors:
             fd.write("%d %d\n" % (self.num_words, self.embed_size))
             for w in self.words:
                 vec = self.vecs[w]
-                print_list = [w.encode('utf-8')] + ["%.6f" % float(z) for z in vec]
+                print_list = [w] + ["%.6f" % float(z) for z in vec]
                 fd.write(" ".join(print_list)+"\n")
 
     def filter(self, key_set):
@@ -118,11 +118,11 @@ class WordVectors:
         one = WordVectors()
         with open(fname) as fd:
             # first line
-            line = fd.readline().strip().decode('utf-8')
+            line = fd.readline().strip()
             try:
                 one.num_words, one.embed_size = [int(x) for x in line.split()]
                 print("Reading w2v num_words=%d, embed_size=%d." % (one.num_words, one.embed_size))
-                line = fd.readline().strip().decode('utf-8')
+                line = fd.readline().strip()
             except:
                 print("Reading w2v.")
             # the rest
@@ -136,7 +136,7 @@ class WordVectors:
                     assert len(vec) == one.embed_size, "Unmatched embed dimension."
                 one.vecs[word] = vec
                 one.words.append(word)
-                line = fd.readline().strip().decode('utf-8')
+                line = fd.readline().strip()
         # final
         if one.num_words is None:
             one.num_words = len(one.vecs)

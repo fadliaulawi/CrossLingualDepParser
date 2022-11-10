@@ -10,18 +10,18 @@ import torch
 from torch.autograd import Variable
 
 # Special vocabulary symbols - we always put them at the start.
-PAD = b"_PAD"
-PAD_POS = b"_PAD_POS"
-PAD_TYPE = b"_<PAD>"
-PAD_CHAR = b"_PAD_CHAR"
-ROOT = b"_ROOT"
-ROOT_POS = b"_ROOT_POS"
-ROOT_TYPE = b"_<ROOT>"
-ROOT_CHAR = b"_ROOT_CHAR"
-END = b"_END"
-END_POS = b"_END_POS"
-END_TYPE = b"_<END>"
-END_CHAR = b"_END_CHAR"
+PAD = "_PAD"
+PAD_POS = "_PAD_POS"
+PAD_TYPE = "_<PAD>"
+PAD_CHAR = "_PAD_CHAR"
+ROOT = "_ROOT"
+ROOT_POS = "_ROOT_POS"
+ROOT_TYPE = "_<ROOT>"
+ROOT_CHAR = "_ROOT_CHAR"
+END = "_END"
+END_POS = "_END_POS"
+END_TYPE = "_<END>"
+END_CHAR = "_END_CHAR"
 _START_VOCAB = [PAD, ROOT, END]
 
 UNK_ID = 0

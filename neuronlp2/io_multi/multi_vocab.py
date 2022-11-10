@@ -5,6 +5,7 @@
 import os.path
 import random
 import numpy as np
+import re
 from ..io.alphabet import Alphabet
 from ..io.logger import get_logger
 from ..io import utils
@@ -12,18 +13,18 @@ from ..io import utils
 from .lang_id import guess_language_id, lang_specific_word
 
 # Special vocabulary symbols - we always put them at the start.
-PAD = b"_PAD"
-PAD_POS = b"_PAD_POS"
-PAD_TYPE = b"_<PAD>"
-PAD_CHAR = b"_PAD_CHAR"
-ROOT = b"_ROOT"
-ROOT_POS = b"_ROOT_POS"
-ROOT_TYPE = b"_<ROOT>"
-ROOT_CHAR = b"_ROOT_CHAR"
-END = b"_END"
-END_POS = b"_END_POS"
-END_TYPE = b"_<END>"
-END_CHAR = b"_END_CHAR"
+PAD = "_PAD"
+PAD_POS = "_PAD_POS"
+PAD_TYPE = "_<PAD>"
+PAD_CHAR = "_PAD_CHAR"
+ROOT = "_ROOT"
+ROOT_POS = "_ROOT_POS"
+ROOT_TYPE = "_<ROOT>"
+ROOT_CHAR = "_ROOT_CHAR"
+END = "_END"
+END_POS = "_END_POS"
+END_TYPE = "_<END>"
+END_CHAR = "_END_CHAR"
 _START_VOCAB = [PAD, ROOT, END]
 
 # a generator that returns the stream of (orig_tokens, normed_words, pos, types)
@@ -31,7 +32,7 @@ def iter_file(filename):
     with open(filename, 'r') as file:
         ret = {"len": 0, "word": [], "pos": [], "type": []}
         for line in file:
-            line = line.decode('utf-8')
+            #line = line.decode('utf-8')
             line = line.strip()
             # yield and reset
             if len(line) == 0 or line[0] == "#":
@@ -90,7 +91,7 @@ def create_alphabets(alphabet_directory, train_path, data_paths=None, max_vocabu
                     char_alphabet.add(char)
                 pos_alphabet.add(cur_pos)
                 type_alphabet.add(cur_type)
-                normed_word = utils.DIGIT_RE.sub(b"0", cur_word) if normalize_digits else cur_word
+                normed_word = re.sub('\d', '0', cur_word) if normalize_digits else cur_word
                 # add prefix
                 normed_word = lang_specific_word(normed_word, lang_id=lang_id_train)
                 if normed_word in vocab:
@@ -129,7 +130,7 @@ def create_alphabets(alphabet_directory, train_path, data_paths=None, max_vocabu
                             char_alphabet.add(char)
                         pos_alphabet.add(cur_pos)
                         type_alphabet.add(cur_type)
-                        normed_word = utils.DIGIT_RE.sub(b"0", cur_word) if normalize_digits else cur_word
+                        normed_word = re.sub('\d', '0', cur_word) if normalize_digits else cur_word
                         # add prefix
                         normed_word = lang_specific_word(normed_word, lang_id=one_lang_id)
                         if embedd_dict is not None:

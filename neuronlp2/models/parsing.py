@@ -57,7 +57,7 @@ class BiRecurrentConvBiAffine(nn.Module):
         self.position_dim = position_dim
 
         self.word_embedd = None
-        self.model = BertModel.from_pretrained('../data2.2_more/javanese-bert-small', local_files_only=True, output_hidden_states=True)
+        self.model = BertModel.from_pretrained('../data2.2_more/bert-base-multilingual-cased', local_files_only=True, output_hidden_states=True)
         self.model.eval()
 
         word_dim = 768
