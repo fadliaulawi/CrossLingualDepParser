@@ -38,7 +38,7 @@ class CoNLLXWriter(object):
         self.__pos_alphabet = pos_alphabet
         self.__type_alphabet = type_alphabet
 
-        self.tokenizer = BertTokenizer.from_pretrained('../data2.2_more/javanese-bert-small', local_files_only=True)
+        self.tokenizer = BertTokenizer.from_pretrained('../data2.2_more/bert-base-multilingual-cased', local_files_only=True)
 
     def start(self, file_path):
         self.__source_file = open(file_path, 'w')

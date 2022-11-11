@@ -5,7 +5,7 @@ import numpy as np
 
 from transformers import BertTokenizer
 
-tokenizer = BertTokenizer.from_pretrained('../data2.2_more/javanese-bert-small', local_files_only=True)
+tokenizer = BertTokenizer.from_pretrained('../data2.2_more/bert-base-multilingual-cased', local_files_only=True)
 
 def is_uni_punctuation(word):
     match = re.match("^[^\w\s]+$]", word, flags=re.UNICODE)

@@ -25,7 +25,7 @@ class CoNLLXReader(object):
         self.lang_id = lang_id
 
         #print(os.listdir('../'))
-        self.tokenizer = BertTokenizer.from_pretrained('../data2.2_more/javanese-bert-small', local_files_only=True)
+        self.tokenizer = BertTokenizer.from_pretrained('../data2.2_more/bert-base-multilingual-cased', local_files_only=True)
 
 
     def close(self):
