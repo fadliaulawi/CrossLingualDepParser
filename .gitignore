@@ -1,2 +1,1 @@
-tmp/
-model/network.pt
+model/*.pt

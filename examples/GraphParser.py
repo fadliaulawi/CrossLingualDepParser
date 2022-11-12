@@ -11,6 +11,7 @@ import os
 sys.path.append(".")
 sys.path.append("..")
 
+from datetime import datetime
 import time
 import argparse
 import uuid
@@ -113,7 +114,7 @@ def main():
     # model's seed
     torch.manual_seed(args.seed)
 
-    logger = get_logger("GraphParser")
+    logger = get_logger("GraphParser", "tmp/train.log.txt")
 
     mode = args.mode
     obj = args.objective
@@ -184,6 +185,7 @@ def main():
 
     logger.info("Reading Data")
     use_gpu = torch.cuda.is_available()
+    use_gpu = False
 
     # ===== the reading
     def _read_one(path, is_train):
@@ -192,13 +194,13 @@ def main():
         one_data = conllx_data.read_data_to_variable(path, word_alphabet, char_alphabet, pos_alphabet, type_alphabet,
                                     use_gpu=use_gpu, volatile=(not is_train), symbolic_root=True, lang_id=lang_id,
                                                      len_thresh=(args.train_len_thresh if is_train else 100000))
-        return one_data
+        return one_data, lang_id
 
-    data_train = _read_one(train_path, True)
+    data_train, lang = _read_one(train_path, True)
     num_data = sum(data_train[1])
 
-    data_dev = _read_one(dev_path, False)
-    data_test = _read_one(test_path, False)
+    data_dev, _ = _read_one(dev_path, False)
+    data_test, _ = _read_one(test_path, False)
     # =====
 
     punct_set = None
@@ -367,7 +369,7 @@ def main():
     #
 
     for epoch in range(1, num_epochs + 1):
-        print('Epoch %d (%s, optim: %s, learning rate=%.6f, eps=%.1e, decay rate=%.2f (schedule=%d, patient=%d, decay=%d)): ' % (epoch, mode, opt, lr, eps, decay_rate, schedule, patient, decay))
+        logger.info('Epoch %d (%s, optim: %s, learning rate=%.6f, eps=%.1e, decay rate=%.2f (schedule=%d, patient=%d, decay=%d)): ' % (epoch, mode, opt, lr, eps, decay_rate, schedule, patient, decay))
         train_err = 0.
         train_err_arc = 0.
         train_err_type = 0.
@@ -420,7 +422,7 @@ def main():
         sys.stdout.write("\b" * num_back)
         sys.stdout.write(" " * num_back)
         sys.stdout.write("\b" * num_back)
-        print('train: %d loss: %.4f, arc: %.4f, type: %.4f, time: %.2fs' % (num_batches, train_err / train_total, train_err_arc / train_total, train_err_type / train_total, time.time() - start_time))
+        logger.info('train: %d loss: %.4f, arc: %.4f, type: %.4f, time: %.2fs' % (num_batches, train_err / train_total, train_err_arc / train_total, train_err_type / train_total, time.time() - start_time))
 
         ################################################################################################
         if epoch % args.check_dev != 0:
@@ -428,9 +430,9 @@ def main():
 
         # evaluate performance on dev data
         network.eval()
-        pred_filename = 'tmp/%spred_dev%d' % (str(uid), epoch)
+        pred_filename = 'tmp/%s_%s%s_pred_dev%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
         pred_writer.start(pred_filename)
-        gold_filename = 'tmp/%sgold_dev%d' % (str(uid), epoch)
+        gold_filename = 'tmp/%s_%s%s_gold_dev%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
         gold_writer.start(gold_filename)
 
         dev_ucorr = 0.0
@@ -449,7 +451,7 @@ def main():
         for batch in conllx_data.iterate_batch_variable(data_dev, batch_size):
             word, char, pos, heads, types, masks, lengths = batch
             heads_pred, types_pred = decode(word, char, pos, mask=masks, length=lengths, leading_symbolic=conllx_data.NUM_SYMBOLIC_TAGS)
-            
+
             word = word.data.cpu().numpy()
             pos = pos.data.cpu().numpy()
             lengths = lengths.cpu().numpy()
@@ -483,13 +485,13 @@ def main():
 
         pred_writer.close()
         gold_writer.close()
-        print('W. Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
+        logger.info('W. Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
             dev_ucorr, dev_lcorr, dev_total, dev_ucorr * 100 / dev_total, dev_lcorr * 100 / dev_total, dev_ucomlpete * 100 / dev_total_inst, dev_lcomplete * 100 / dev_total_inst))
-        print('Wo Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
+        logger.info('Wo Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
             dev_ucorr_nopunc, dev_lcorr_nopunc, dev_total_nopunc, dev_ucorr_nopunc * 100 / dev_total_nopunc,
             dev_lcorr_nopunc * 100 / dev_total_nopunc,
             dev_ucomlpete_nopunc * 100 / dev_total_inst, dev_lcomplete_nopunc * 100 / dev_total_inst))
-        print('Root: corr: %d, total: %d, acc: %.2f%%' %(dev_root_corr, dev_total_root, dev_root_corr * 100 / dev_total_root))
+        logger.info('Root: corr: %d, total: %d, acc: %.2f%%' %(dev_root_corr, dev_total_root, dev_root_corr * 100 / dev_total_root))
 
         if dev_lcorrect_nopunc < dev_lcorr_nopunc or (dev_lcorrect_nopunc == dev_lcorr_nopunc and dev_ucorrect_nopunc < dev_ucorr_nopunc):
             dev_ucorrect_nopunc = dev_ucorr_nopunc

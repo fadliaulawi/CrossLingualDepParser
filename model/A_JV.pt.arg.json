@@ -1,0 +1,42 @@
+{
+    "args": [
+        100,
+        2286,
+        50,
+        99,
+        50,
+        20,
+        50,
+        3,
+        "FastLSTM",
+        300,
+        6,
+        35,
+        512,
+        128
+    ],
+    "kwargs": {
+        "p_in": 0.2,
+        "p_out": 0.2,
+        "p_rnn": [
+            0.2,
+            0.1,
+            0.2
+        ],
+        "biaffine": true,
+        "pos": true,
+        "char": false,
+        "train_position": false,
+        "use_con_rnn": false,
+        "trans_hid_size": 512,
+        "d_k": 64,
+        "d_v": 64,
+        "multi_head_attn": true,
+        "num_head": 8,
+        "enc_use_neg_dist": false,
+        "enc_clip_dist": 10,
+        "position_dim": 0,
+        "max_sent_length": 200,
+        "no_word": false
+    }
+}
