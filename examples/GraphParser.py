@@ -12,6 +12,7 @@ sys.path.append(".")
 sys.path.append("..")
 
 from datetime import datetime
+import shutil
 import time
 import argparse
 import uuid
@@ -114,7 +115,7 @@ def main():
     # model's seed
     torch.manual_seed(args.seed)
 
-    logger = get_logger("GraphParser", "tmp/train.log.txt")
+    logger = get_logger("GraphParser")
 
     mode = args.mode
     obj = args.objective
@@ -202,6 +203,11 @@ def main():
     data_dev, _ = _read_one(dev_path, False)
     data_test, _ = _read_one(test_path, False)
     # =====
+    shutil.rmtree(f"tmp/{lang}", ignore_errors=True)
+    #with open(f'tmp/{lang}/train_log.txt', 'w') as fp:
+    #    pass
+    os.mkdir(f"tmp/{lang}")
+    lang_logger = get_logger("GraphParser Language", f"tmp/{lang}/train_log.txt")
 
     punct_set = None
     if punctuation is not None:
@@ -369,7 +375,7 @@ def main():
     #
 
     for epoch in range(1, num_epochs + 1):
-        logger.info('Epoch %d (%s, optim: %s, learning rate=%.6f, eps=%.1e, decay rate=%.2f (schedule=%d, patient=%d, decay=%d)): ' % (epoch, mode, opt, lr, eps, decay_rate, schedule, patient, decay))
+        lang_logger.info('Epoch %d (%s, optim: %s, learning rate=%.6f, eps=%.1e, decay rate=%.2f (schedule=%d, patient=%d, decay=%d)): ' % (epoch, mode, opt, lr, eps, decay_rate, schedule, patient, decay))
         train_err = 0.
         train_err_arc = 0.
         train_err_type = 0.
@@ -418,11 +424,12 @@ def main():
                 sys.stdout.write(log_info)
                 sys.stdout.flush()
                 num_back = len(log_info)
+                lang_logger.info(log_info)
 
         sys.stdout.write("\b" * num_back)
         sys.stdout.write(" " * num_back)
         sys.stdout.write("\b" * num_back)
-        logger.info('train: %d loss: %.4f, arc: %.4f, type: %.4f, time: %.2fs' % (num_batches, train_err / train_total, train_err_arc / train_total, train_err_type / train_total, time.time() - start_time))
+        lang_logger.info('train: %d loss: %.4f, arc: %.4f, type: %.4f, time: %.2fs' % (num_batches, train_err / train_total, train_err_arc / train_total, train_err_type / train_total, time.time() - start_time))
 
         ################################################################################################
         if epoch % args.check_dev != 0:
@@ -430,9 +437,9 @@ def main():
 
         # evaluate performance on dev data
         network.eval()
-        pred_filename = 'tmp/%s_%s%s_pred_dev%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
+        pred_filename = 'tmp/%s/%s%s_pred_dev%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
         pred_writer.start(pred_filename)
-        gold_filename = 'tmp/%s_%s%s_gold_dev%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
+        gold_filename = 'tmp/%s/%s%s_gold_dev%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
         gold_writer.start(gold_filename)
 
         dev_ucorr = 0.0
@@ -485,13 +492,13 @@ def main():
 
         pred_writer.close()
         gold_writer.close()
-        logger.info('W. Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
+        lang_logger.info('W. Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
             dev_ucorr, dev_lcorr, dev_total, dev_ucorr * 100 / dev_total, dev_lcorr * 100 / dev_total, dev_ucomlpete * 100 / dev_total_inst, dev_lcomplete * 100 / dev_total_inst))
-        logger.info('Wo Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
+        lang_logger.info('Wo Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
             dev_ucorr_nopunc, dev_lcorr_nopunc, dev_total_nopunc, dev_ucorr_nopunc * 100 / dev_total_nopunc,
             dev_lcorr_nopunc * 100 / dev_total_nopunc,
             dev_ucomlpete_nopunc * 100 / dev_total_inst, dev_lcomplete_nopunc * 100 / dev_total_inst))
-        logger.info('Root: corr: %d, total: %d, acc: %.2f%%' %(dev_root_corr, dev_total_root, dev_root_corr * 100 / dev_total_root))
+        lang_logger.info('Root: corr: %d, total: %d, acc: %.2f%%' %(dev_root_corr, dev_total_root, dev_root_corr * 100 / dev_total_root))
 
         if dev_lcorrect_nopunc < dev_lcorr_nopunc or (dev_lcorrect_nopunc == dev_lcorr_nopunc and dev_ucorrect_nopunc < dev_ucorr_nopunc):
             dev_ucorrect_nopunc = dev_ucorr_nopunc
@@ -511,9 +518,9 @@ def main():
             # torch.save(network, model_name)
             torch.save(network.state_dict(), model_name)
 
-            pred_filename = 'tmp/%spred_test%d' % (str(uid), epoch)
+            pred_filename = 'tmp/%s/%s%s_pred_test%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
             pred_writer.start(pred_filename)
-            gold_filename = 'tmp/%sgold_test%d' % (str(uid), epoch)
+            gold_filename = 'tmp/%s/%s%s_gold_test%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
             gold_writer.start(gold_filename)
 
             test_ucorrect = 0.0
