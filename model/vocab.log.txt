@@ -1,8 +1,8 @@
-2022-11-12 11:54:12,385 - VocabBuilder - INFO - 
-command-line params : ['--embed_paths', '../data2.2_more//wiki.jv.vec', '--embed_lang_ids', 'id', '--data_paths', '../data2.2_more//id_train.conllu', '../data2.2_more//id_dev.conllu', '../data2.2_more//id_test.conllu', '--model_path', './model/']
+2022-11-12 23:02:11,865 - VocabBuilder - INFO - 
+command-line params : ['--embed_paths', '../data2.2_more//wiki.jv.vec', '--embed_lang_ids', 'en', '--data_paths', '../data2.2_more//en_train.conllu', '../data2.2_more//en_dev.conllu', '../data2.2_more//en_test.conllu', '--model_path', './model/']
 
-2022-11-12 11:54:12,385 - VocabBuilder - INFO - Namespace(data_paths=['../data2.2_more//id_train.conllu', '../data2.2_more//id_dev.conllu', '../data2.2_more//id_test.conllu'], embed_lang_ids=['id'], embed_paths=['../data2.2_more//wiki.jv.vec'], model_path='./model/')
+2022-11-12 23:02:11,865 - VocabBuilder - INFO - Namespace(data_paths=['../data2.2_more//en_train.conllu', '../data2.2_more//en_dev.conllu', '../data2.2_more//en_test.conllu'], embed_lang_ids=['en'], embed_paths=['../data2.2_more//wiki.jv.vec'], model_path='./model/')
 
-2022-11-12 11:54:12,385 - VocabBuilder - INFO - Load embeddings
-2022-11-12 11:54:12,815 - VocabBuilder - INFO - Final combined un-pruned embeddings size: 10020.
-2022-11-12 11:54:12,815 - VocabBuilder - INFO - Creating Alphabets
+2022-11-12 23:02:11,865 - VocabBuilder - INFO - Load embeddings
+2022-11-12 23:02:12,296 - VocabBuilder - INFO - Final combined un-pruned embeddings size: 10020.
+2022-11-12 23:02:12,296 - VocabBuilder - INFO - Creating Alphabets
