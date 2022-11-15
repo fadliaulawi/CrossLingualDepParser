@@ -60,6 +60,10 @@ class BiRecurrentConvBiAffine(nn.Module):
         self.model = BertModel.from_pretrained('../data2.2_more/bert-base-multilingual-cased', local_files_only=True, output_hidden_states=True)
         self.model.eval()
 
+        if use_gpu:
+           self.model.cuda()
+           #print(self.model.get_device())
+
         word_dim = 768
 
         #print(word_dim, pos_dim, num_filters)
@@ -147,7 +151,10 @@ class BiRecurrentConvBiAffine(nn.Module):
             for i in range(len(input_word)):
                 tokens_tensor = torch.tensor([[i.item() for i in list(input_word[i])]])
                 segments_tensor = torch.tensor([[1] * len(tokens_tensor[0])])
-                #print(tokens_tensor, segments_tensor)
+                #print(self.model.device)
+                tokens_tensor = tokens_tensor.to('cuda:0')
+                segments_tensor = segments_tensor.to('cuda:0')
+                #print(self.model.device, tokens_tensor.device, segments_tensor.device)
                 with torch.no_grad():
                     outputs = self.model(tokens_tensor, segments_tensor)
                     hidden_states = outputs[2]
@@ -163,7 +170,7 @@ class BiRecurrentConvBiAffine(nn.Module):
                     cat_vec = torch.sum(token[-4:], dim=0)
                     token_vecs_sum.append(cat_vec)
 
-                token_numpy = np.array([t.numpy() for t in token_vecs_sum])
+                token_numpy = np.array([t.cpu().numpy() for t in token_vecs_sum])
                 tensors.append(token_numpy)
 
             tensors = torch.FloatTensor(np.array(tensors))
@@ -226,7 +233,7 @@ class BiRecurrentConvBiAffine(nn.Module):
                     position_encoding = self.position_embedding(position_encoding)
                     # src_encoding = src_encoding + position_encoding
                     src_encoding = torch.cat([src_encoding, position_encoding], dim=2)
-                #print('src2', src_encoding)
+                src_encoding = src_encoding.to('cuda:0')
                 src_encoding = self.transformer(src_encoding)
                 output, hn = src_encoding, None
             else:

@@ -396,8 +396,8 @@ def main():
             word, char, pos, heads, types, masks, lengths = conllx_data.get_batch_variable(data_train, batch_size, unk_replace=unk_replace)
 
             optim.zero_grad()
+
             loss_arc, loss_type = network.loss(word, char, pos, heads, types, mask=masks, length=lengths)
-            #print('l2', loss_arc, loss_type)
             loss = loss_arc + loss_type
             #print('l3', loss)
             loss.backward()
