@@ -106,6 +106,8 @@ def main():
     #
     args_parser.add_argument('--train_len_thresh', type=int, default=100, help='In training, discard sentences longer than this.')
 
+    args_parser.add_argument('--source_model_name', help='name for saving model file.', default='')
+
     #
     args = args_parser.parse_args()
 
@@ -155,6 +157,8 @@ def main():
     char_embedding = args.char_embedding
     char_path = args.char_path
 
+    source_model_name = args.source_model_name
+
     use_pos = args.pos
     pos_dim = args.pos_dim
     word_dict, word_dim = utils.load_embedding_dict(word_embedding, word_path)
@@ -169,6 +173,9 @@ def main():
     logger.info("Creating Alphabets")
     alphabet_path = os.path.join(vocab_path, 'alphabets/')
     model_name = os.path.join(model_path, model_name)
+    if source_model_name:
+        source_model_name = os.path.join(model_path, source_model_name)
+
     # todo(warn): exactly same for loading vocabs
     word_alphabet, char_alphabet, pos_alphabet, type_alphabet, max_sent_length = conllx_data.create_alphabets(alphabet_path, train_path, data_paths=[dev_path, test_path], max_vocabulary_size=50000, embedd_dict=word_dict)
 
@@ -373,6 +380,9 @@ def main():
     if use_warmup_schedule:
         logger.info("Use warmup lrate for the first epoch, from 0 up to %s." % (lr,))
     #
+
+    lang_logger.info("load model: %s" % (source_model_name))
+    network.load_state_dict(torch.load(source_model_name))
 
     for epoch in range(1, num_epochs + 1):
         lang_logger.info('Epoch %d (%s, optim: %s, learning rate=%.6f, eps=%.1e, decay rate=%.2f (schedule=%d, patient=%d, decay=%d)): ' % (epoch, mode, opt, lr, eps, decay_rate, schedule, patient, decay))
