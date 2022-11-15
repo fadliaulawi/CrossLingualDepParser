@@ -1,8 +1,8 @@
-2022-11-15 11:31:19,692 - VocabBuilder - INFO - 
-command-line params : ['--embed_paths', '../data2.2_more//wiki.jv.vec', '--embed_lang_ids', 'it', '--data_paths', '../data2.2_more//it_train.conllu', '../data2.2_more//it_dev.conllu', '../data2.2_more//it_test.conllu', '--model_path', './model/']
+2022-11-15 15:46:53,814 - VocabBuilder - INFO - 
+command-line params : ['--embed_paths', '../data2.2_more//wiki.jv.vec', '--embed_lang_ids', 'jv', '--data_paths', '../data2.2_more//jv_train.conllu', '../data2.2_more//jv_dev.conllu', '../data2.2_more//jv_test.conllu', '../data2.2_more//id_train.conllu', '../data2.2_more//id_dev.conllu', '../data2.2_more//id_test.conllu', '../data2.2_more//fr_train.conllu', '../data2.2_more//fr_dev.conllu', '../data2.2_more//fr_test.conllu', '../data2.2_more//it_train.conllu', '../data2.2_more//it_dev.conllu', '../data2.2_more//it_test.conllu', '--model_path', './model/']
 
-2022-11-15 11:31:19,692 - VocabBuilder - INFO - Namespace(data_paths=['../data2.2_more//it_train.conllu', '../data2.2_more//it_dev.conllu', '../data2.2_more//it_test.conllu'], embed_lang_ids=['it'], embed_paths=['../data2.2_more//wiki.jv.vec'], model_path='./model/')
+2022-11-15 15:46:53,814 - VocabBuilder - INFO - Namespace(data_paths=['../data2.2_more//jv_train.conllu', '../data2.2_more//jv_dev.conllu', '../data2.2_more//jv_test.conllu', '../data2.2_more//id_train.conllu', '../data2.2_more//id_dev.conllu', '../data2.2_more//id_test.conllu', '../data2.2_more//fr_train.conllu', '../data2.2_more//fr_dev.conllu', '../data2.2_more//fr_test.conllu', '../data2.2_more//it_train.conllu', '../data2.2_more//it_dev.conllu', '../data2.2_more//it_test.conllu'], embed_lang_ids=['jv'], embed_paths=['../data2.2_more//wiki.jv.vec'], model_path='./model/')
 
-2022-11-15 11:31:19,692 - VocabBuilder - INFO - Load embeddings
-2022-11-15 11:31:19,986 - VocabBuilder - INFO - Final combined un-pruned embeddings size: 10020.
-2022-11-15 11:31:19,986 - VocabBuilder - INFO - Creating Alphabets
+2022-11-15 15:46:53,814 - VocabBuilder - INFO - Load embeddings
+2022-11-15 15:46:54,115 - VocabBuilder - INFO - Final combined un-pruned embeddings size: 10020.
+2022-11-15 15:46:54,115 - VocabBuilder - INFO - Creating Alphabets
