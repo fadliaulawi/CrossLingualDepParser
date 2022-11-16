@@ -381,8 +381,9 @@ def main():
         logger.info("Use warmup lrate for the first epoch, from 0 up to %s." % (lr,))
     #
 
-    lang_logger.info("load model: %s" % (source_model_name))
-    network.load_state_dict(torch.load(source_model_name))
+    if source_model_name:
+        lang_logger.info("load model: %s" % (source_model_name))
+        network.load_state_dict(torch.load(source_model_name))
 
     for epoch in range(1, num_epochs + 1):
         lang_logger.info('Epoch %d (%s, optim: %s, learning rate=%.6f, eps=%.1e, decay rate=%.2f (schedule=%d, patient=%d, decay=%d)): ' % (epoch, mode, opt, lr, eps, decay_rate, schedule, patient, decay))
