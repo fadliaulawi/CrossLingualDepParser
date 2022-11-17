@@ -36,12 +36,12 @@ PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=1 python3 ../src/examples/GraphParser.py
 --word_path './model/alphabets/joint_embed.vec' \
 --char_embedding random \
 --punctuation 'PUNCT' 'SYM' \
---train "../data2.2_more/jv_train.conllu" \
---dev "../data2.2_more/jv_dev.conllu" \
---test "../data2.2_more/jv_test.conllu" \
+--train "../data2.2_more/ko_train.conllu" \
+--dev "../data2.2_more/ko_dev.conllu" \
+--test "../data2.2_more/ko_test.conllu" \
 --vocab_path './model/' \
 --model_path './model/' \
---model_name 'B_KO_JV.pt' \
+--model_name 'B_KO.pt' \
 --p_in 0.2 \
 --p_out 0.2 \
 --p_rnn 0.2 0.1 0.2 \
@@ -54,9 +54,7 @@ PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=1 python3 ../src/examples/GraphParser.py
 --position_dim 0 \
 --enc_clip_dist 10 \
 --batch_size 80 \
---seed $SEED \
---source_model_name 'B_KO.pt'
-
+--seed $SEED
 
 # --char \
 
