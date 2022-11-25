@@ -63,7 +63,7 @@ class BiRecurrentConvBiAffine(nn.Module):
         self.position_dim = position_dim
 
         self.word_embedd = None
-        self.model = BertModel.from_pretrained(bert_path, local_files_only=True, output_hidden_states=True)
+        self.model = BertModel.from_pretrained(bert_path, local_files_only=True, output_hidden_states=True, ignore_mismatched_sizes=True)
         self.model.eval()
 
         if use_gpu:
