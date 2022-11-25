@@ -9,7 +9,7 @@ SEED=1234
 
 echo "Current seed is $SEED"
 
-PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=1 python3 ../src/examples/GraphParser.py \
+PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=2 python3 ../src/examples/GraphParser.py \
 --mode FastLSTM \
 --no_CoRNN \
 --hidden_size 300 \
@@ -41,7 +41,7 @@ PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=1 python3 ../src/examples/GraphParser.py
 --test "../data2.2_more/ko_test.conllu" \
 --vocab_path './model/' \
 --model_path './model/' \
---model_name 'B_KO.pt' \
+--model_name 'KO.pt' \
 --p_in 0.2 \
 --p_out 0.2 \
 --p_rnn 0.2 0.1 0.2 \
