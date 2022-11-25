@@ -2,6 +2,12 @@ __author__ = 'max'
 
 from transformers import BertTokenizer
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+bert_path = f"../data2.2_more/{os.environ.get('bert')}"
+
 class CoNLL03Writer(object):
     def __init__(self, word_alphabet, char_alphabet, pos_alphabet, chunk_alphabet, ner_alphabet):
         self.__source_file = None
@@ -38,7 +44,7 @@ class CoNLLXWriter(object):
         self.__pos_alphabet = pos_alphabet
         self.__type_alphabet = type_alphabet
 
-        self.tokenizer = BertTokenizer.from_pretrained('../data2.2_more/bert-base-multilingual-cased', local_files_only=True)
+        self.tokenizer = BertTokenizer.from_pretrained(bert_path, local_files_only=True)
 
     def start(self, file_path):
         self.__source_file = open(file_path, 'w')

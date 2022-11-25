@@ -15,6 +15,12 @@ sys.path.append(".")
 sys.path.append("..")
 sys.path.append("../..")
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+bert_path = f"../data2.2_more/{os.environ.get('bert')}"
+
 class CoNLLXReader(object):
     def __init__(self, file_path, word_alphabet, char_alphabet, pos_alphabet, type_alphabet, lang_id=""):
         self.__source_file = open(file_path, 'r')
@@ -25,7 +31,7 @@ class CoNLLXReader(object):
         self.lang_id = lang_id
 
         #print(os.listdir('../'))
-        self.tokenizer = BertTokenizer.from_pretrained('../data2.2_more/bert-base-multilingual-cased', local_files_only=True)
+        self.tokenizer = BertTokenizer.from_pretrained(bert_path, local_files_only=True)
 
 
     def close(self):

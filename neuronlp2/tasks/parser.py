@@ -5,7 +5,13 @@ import numpy as np
 
 from transformers import BertTokenizer
 
-tokenizer = BertTokenizer.from_pretrained('../data2.2_more/bert-base-multilingual-cased', local_files_only=True)
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+bert_path = f"../data2.2_more/{os.environ.get('bert')}"
+
+tokenizer = BertTokenizer.from_pretrained(bert_path, local_files_only=True)
 
 def is_uni_punctuation(word):
     match = re.match("^[^\w\s]+$]", word, flags=re.UNICODE)

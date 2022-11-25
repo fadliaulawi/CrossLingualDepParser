@@ -9,7 +9,7 @@ SEED=1234
 
 echo "Current seed is $SEED"
 
-PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=1 python3 ../src/examples/GraphParser.py \
+PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=2 python3 ../src/examples/GraphParser.py \
 --mode FastLSTM \
 --no_CoRNN \
 --hidden_size 300 \
@@ -41,7 +41,7 @@ PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=1 python3 ../src/examples/GraphParser.py
 --test "../data2.2_more/jv_test.conllu" \
 --vocab_path './model/' \
 --model_path './model/' \
---model_name 'B_EN_JV.pt' \
+--model_name 'FS.pt' \
 --p_in 0.2 \
 --p_out 0.2 \
 --p_rnn 0.2 0.1 0.2 \
@@ -55,7 +55,7 @@ PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=1 python3 ../src/examples/GraphParser.py
 --enc_clip_dist 10 \
 --batch_size 80 \
 --seed $SEED \
---source_model_name 'B_EN.pt'
+#--source_model_name 'B_EN.pt'
 
 
 # --char \

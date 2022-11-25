@@ -18,6 +18,12 @@ from ..transformer import TransformerEncoder
 
 from transformers import BertModel
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+bert_path = f"../data2.2_more/{os.environ.get('bert')}"
+
 class PriorOrder(Enum):
     DEPTH = 0
     INSIDE_OUT = 1
@@ -57,7 +63,7 @@ class BiRecurrentConvBiAffine(nn.Module):
         self.position_dim = position_dim
 
         self.word_embedd = None
-        self.model = BertModel.from_pretrained('../data2.2_more/bert-base-multilingual-cased', local_files_only=True, output_hidden_states=True)
+        self.model = BertModel.from_pretrained(bert_path, local_files_only=True, output_hidden_states=True)
         self.model.eval()
 
         if use_gpu:

@@ -1,7 +1,7 @@
-model_name="A_JV.pt"
-cur_lang="jv"
+model_name="FS.pt"
+code="fs"
 which_set="test"
 
-PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=1 python3 ../src/examples/analyze.py --parser biaffine --ordered \
---punctuation 'PUNCT' 'SYM' --out_filename analyzer.$cur_lang.$which_set.out --model_name $model_name \
+PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=2 python3 ../src/examples/analyze.py --parser biaffine --ordered \
+--punctuation 'PUNCT' 'SYM' --out_filename res.$code --model_name $model_name \
 --test "../data2.2_more/jv_test.conllu" --model_path "./model/" --extra_embed "../data2.2_more/wiki.jv.vec" --gpu
