@@ -3,7 +3,7 @@ __author__ = 'max'
 import re
 import numpy as np
 
-from transformers import BertTokenizer
+from transformers import BertTokenizer, CamembertTokenizer
 
 import os
 from dotenv import load_dotenv
@@ -11,7 +11,10 @@ load_dotenv()
 
 bert_path = f"../data2.2_more/{os.environ.get('bert')}"
 
-tokenizer = BertTokenizer.from_pretrained(bert_path, local_files_only=True)
+if 'camembert' in bert_path:
+    tokenizer = CamembertTokenizer.from_pretrained(bert_path, local_files_only=True)
+else:
+    tokenizer = BertTokenizer.from_pretrained(bert_path, local_files_only=True)
 
 def is_uni_punctuation(word):
     match = re.match("^[^\w\s]+$]", word, flags=re.UNICODE)

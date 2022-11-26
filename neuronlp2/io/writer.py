@@ -1,6 +1,6 @@
 __author__ = 'max'
 
-from transformers import BertTokenizer
+from transformers import BertTokenizer, CamembertTokenizer
 
 import os
 from dotenv import load_dotenv
@@ -44,7 +44,10 @@ class CoNLLXWriter(object):
         self.__pos_alphabet = pos_alphabet
         self.__type_alphabet = type_alphabet
 
-        self.tokenizer = BertTokenizer.from_pretrained(bert_path, local_files_only=True)
+        if 'camembert' in bert_path:
+            self.tokenizer = CamembertTokenizer.from_pretrained(bert_path, local_files_only=True)
+        else:
+            self.tokenizer = BertTokenizer.from_pretrained(bert_path, local_files_only=True)
 
     def start(self, file_path):
         self.__source_file = open(file_path, 'w')
