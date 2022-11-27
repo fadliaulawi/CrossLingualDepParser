@@ -4,12 +4,12 @@
 
 mkdir -p tmp;
 
-#RGPU=1      # set up your GPU-ID
+RGPU=1      # set up your GPU-ID
 SEED=1234
 
 echo "Current seed is $SEED"
 
-PYTHONPATH=../srcwv/ CUDA_VISIBLE_DEVICES=1 python2 ../src/examples/GraphParser.py \
+PYTHONPATH=../srcwv/ CUDA_VISIBLE_DEVICES=$RGPU python2 ../src/examples/GraphParser.py \
 --mode FastLSTM \
 --no_CoRNN \
 --hidden_size 300 \
@@ -41,12 +41,12 @@ PYTHONPATH=../srcwv/ CUDA_VISIBLE_DEVICES=1 python2 ../src/examples/GraphParser.
 --test "../data2.2_more/jv_test.conllu" \
 --vocab_path './model/' \
 --model_path './model/' \
---model_name 'FS.pt' \
+--model_name 'network.pt' \
 --p_in 0.2 \
 --p_out 0.2 \
 --p_rnn 0.2 0.1 0.2 \
 --learning_rate 0.0001 \
---num_epochs 100 \
+--num_epochs 1000 \
 --trans_hid_size 512 \
 --pos_dim 50 \
 --char_dim 50 \
