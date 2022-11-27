@@ -227,7 +227,7 @@ def biaffine(model_path, model_name, test_path, punct_set, use_gpu, logger, args
     sent = 0
     start_time = time.time()
 
-    for batch in conllx_data.iterate_batch_variable(data_test, 3):
+    for batch in conllx_data.iterate_batch_variable(data_test, 1):
         sys.stdout.write('%d, ' % sent)
         sys.stdout.flush()
         sent += 1
