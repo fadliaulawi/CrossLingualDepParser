@@ -11,6 +11,8 @@ import os
 sys.path.append(".")
 sys.path.append("..")
 
+from datetime import datetime
+import shutil
 import time
 import argparse
 import uuid
@@ -103,6 +105,8 @@ def main():
     args_parser.add_argument('--train_position', action='store_true', help='train positional encoding for transformer.')
     #
     args_parser.add_argument('--train_len_thresh', type=int, default=100, help='In training, discard sentences longer than this.')
+	
+    args_parser.add_argument('--source_model_name', help='name for saving model file.', default='')
 
     #
     args = args_parser.parse_args()
@@ -153,6 +157,8 @@ def main():
     char_embedding = args.char_embedding
     char_path = args.char_path
 
+    source_model_name = args.source_model_name
+
     use_pos = args.pos
     pos_dim = args.pos_dim
     word_dict, word_dim = utils.load_embedding_dict(word_embedding, word_path)
@@ -167,6 +173,9 @@ def main():
     logger.info("Creating Alphabets")
     alphabet_path = os.path.join(vocab_path, 'alphabets/')
     model_name = os.path.join(model_path, model_name)
+    if source_model_name:
+        source_model_name = os.path.join(model_path, source_model_name)
+
     # todo(warn): exactly same for loading vocabs
     word_alphabet, char_alphabet, pos_alphabet, type_alphabet, max_sent_length = conllx_data.create_alphabets(alphabet_path, train_path, data_paths=[dev_path, test_path], max_vocabulary_size=50000, embedd_dict=word_dict)
 
@@ -184,6 +193,7 @@ def main():
 
     logger.info("Reading Data")
     use_gpu = torch.cuda.is_available()
+    #use_gpu = True
 
     # ===== the reading
     def _read_one(path, is_train):
@@ -192,14 +202,17 @@ def main():
         one_data = conllx_data.read_data_to_variable(path, word_alphabet, char_alphabet, pos_alphabet, type_alphabet,
                                     use_gpu=use_gpu, volatile=(not is_train), symbolic_root=True, lang_id=lang_id,
                                                      len_thresh=(args.train_len_thresh if is_train else 100000))
-        return one_data
+        return one_data, lang_id
 
-    data_train = _read_one(train_path, True)
+    data_train, lang = _read_one(train_path, True)
     num_data = sum(data_train[1])
 
-    data_dev = _read_one(dev_path, False)
-    data_test = _read_one(test_path, False)
+    data_dev, _ = _read_one(dev_path, False)
+    data_test, _ = _read_one(test_path, False)
     # =====
+    shutil.rmtree("tmp/{}".format(lang), ignore_errors=True)
+    os.mkdir("tmp/{}".format(lang))
+    lang_logger = get_logger("GraphParser Language", "tmp/{}/train_log.txt".format(lang))
 
     punct_set = None
     if punctuation is not None:
@@ -364,9 +377,12 @@ def main():
     if use_warmup_schedule:
         logger.info("Use warmup lrate for the first epoch, from 0 up to %s." % (lr,))
     #
+    if source_model_name:
+        lang_logger.info("load model: %s" % (source_model_name))
+        network.load_state_dict(torch.load(source_model_name))
 
     for epoch in range(1, num_epochs + 1):
-        print('Epoch %d (%s, optim: %s, learning rate=%.6f, eps=%.1e, decay rate=%.2f (schedule=%d, patient=%d, decay=%d)): ' % (epoch, mode, opt, lr, eps, decay_rate, schedule, patient, decay))
+        lang_logger.info('Epoch %d (%s, optim: %s, learning rate=%.6f, eps=%.1e, decay rate=%.2f (schedule=%d, patient=%d, decay=%d)): ' % (epoch, mode, opt, lr, eps, decay_rate, schedule, patient, decay))
         train_err = 0.
         train_err_arc = 0.
         train_err_type = 0.
@@ -411,11 +427,12 @@ def main():
                 sys.stdout.write(log_info)
                 sys.stdout.flush()
                 num_back = len(log_info)
+                lang_logger.info(log_info)
 
         sys.stdout.write("\b" * num_back)
         sys.stdout.write(" " * num_back)
         sys.stdout.write("\b" * num_back)
-        print('train: %d loss: %.4f, arc: %.4f, type: %.4f, time: %.2fs' % (num_batches, train_err / train_total, train_err_arc / train_total, train_err_type / train_total, time.time() - start_time))
+        lang_logger.info('train: %d loss: %.4f, arc: %.4f, type: %.4f, time: %.2fs' % (num_batches, train_err / train_total, train_err_arc / train_total, train_err_type / train_total, time.time() - start_time))
 
         ################################################################################################
         if epoch % args.check_dev != 0:
@@ -423,9 +440,9 @@ def main():
 
         # evaluate performance on dev data
         network.eval()
-        pred_filename = 'tmp/%spred_dev%d' % (str(uid), epoch)
+        pred_filename = 'tmp/%s/%s%s_pred_dev%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
         pred_writer.start(pred_filename)
-        gold_filename = 'tmp/%sgold_dev%d' % (str(uid), epoch)
+        gold_filename = 'tmp/%s/%s%s_gold_dev%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
         gold_writer.start(gold_filename)
 
         dev_ucorr = 0.0
@@ -478,13 +495,13 @@ def main():
 
         pred_writer.close()
         gold_writer.close()
-        print('W. Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
+        lang_logger.info('W. Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
             dev_ucorr, dev_lcorr, dev_total, dev_ucorr * 100 / dev_total, dev_lcorr * 100 / dev_total, dev_ucomlpete * 100 / dev_total_inst, dev_lcomplete * 100 / dev_total_inst))
-        print('Wo Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
+        lang_logger.info('Wo Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
             dev_ucorr_nopunc, dev_lcorr_nopunc, dev_total_nopunc, dev_ucorr_nopunc * 100 / dev_total_nopunc,
             dev_lcorr_nopunc * 100 / dev_total_nopunc,
             dev_ucomlpete_nopunc * 100 / dev_total_inst, dev_lcomplete_nopunc * 100 / dev_total_inst))
-        print('Root: corr: %d, total: %d, acc: %.2f%%' %(dev_root_corr, dev_total_root, dev_root_corr * 100 / dev_total_root))
+        lang_logger.info('Root: corr: %d, total: %d, acc: %.2f%%' %(dev_root_corr, dev_total_root, dev_root_corr * 100 / dev_total_root))
 
         if dev_lcorrect_nopunc < dev_lcorr_nopunc or (dev_lcorrect_nopunc == dev_lcorr_nopunc and dev_ucorrect_nopunc < dev_ucorr_nopunc):
             dev_ucorrect_nopunc = dev_ucorr_nopunc
@@ -504,9 +521,9 @@ def main():
             # torch.save(network, model_name)
             torch.save(network.state_dict(), model_name)
 
-            pred_filename = 'tmp/%spred_test%d' % (str(uid), epoch)
+            pred_filename = 'tmp/%s/%s%s_pred_test%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
             pred_writer.start(pred_filename)
-            gold_filename = 'tmp/%sgold_test%d' % (str(uid), epoch)
+            gold_filename = 'tmp/%s/%s%s_gold_test%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
             gold_writer.start(gold_filename)
 
             test_ucorrect = 0.0

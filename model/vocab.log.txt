@@ -1,8 +1,8 @@
-2022-10-31 02:18:24,494 - VocabBuilder - INFO - 
+2022-11-27 08:04:04,595 - VocabBuilder - INFO - 
 command-line params : ['--embed_paths', '../data2.2_more//wiki.jv.vec', '--embed_lang_ids', 'jv', '--data_paths', '../data2.2_more//jv_train.conllu', '../data2.2_more//jv_dev.conllu', '../data2.2_more//jv_test.conllu', '--model_path', './model/']
 
-2022-10-31 02:18:24,495 - VocabBuilder - INFO - Namespace(data_paths=['../data2.2_more//jv_train.conllu', '../data2.2_more//jv_dev.conllu', '../data2.2_more//jv_test.conllu'], embed_lang_ids=['jv'], embed_paths=['../data2.2_more//wiki.jv.vec'], model_path='./model/')
+2022-11-27 08:04:04,596 - VocabBuilder - INFO - Namespace(data_paths=['../data2.2_more//jv_train.conllu', '../data2.2_more//jv_dev.conllu', '../data2.2_more//jv_test.conllu'], embed_lang_ids=['jv'], embed_paths=['../data2.2_more//wiki.jv.vec'], model_path='./model/')
 
-2022-10-31 02:18:24,495 - VocabBuilder - INFO - Load embeddings
-2022-10-31 02:18:24,881 - VocabBuilder - INFO - Final combined un-pruned embeddings size: 10020.
-2022-10-31 02:18:24,881 - VocabBuilder - INFO - Creating Alphabets
+2022-11-27 08:04:04,596 - VocabBuilder - INFO - Load embeddings
+2022-11-27 08:04:55,480 - VocabBuilder - INFO - Final combined un-pruned embeddings size: 515226.
+2022-11-27 08:04:55,481 - VocabBuilder - INFO - Creating Alphabets
