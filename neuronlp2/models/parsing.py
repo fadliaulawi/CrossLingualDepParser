@@ -78,6 +78,8 @@ class BiRecurrentConvBiAffine(nn.Module):
             if self.multi_head_attn:
                 pos_emb_size = position_dim
                 d_model = pos_emb_size + dim_enc
+                #print('d', pos_emb_size, dim_enc)
+                #raise Exception('dah')
                 if position_dim > 0:
                     self.position_embedding = nn.Embedding(max_sent_length, pos_emb_size)
                     if not train_position:

@@ -8,6 +8,7 @@ from __future__ import print_function
 import os
 import sys
 import argparse
+import shutil
 
 sys.path.append(".")
 sys.path.append("..")
@@ -50,6 +51,8 @@ def main(a=None):
     # create vocabs
     logger.info("Creating Alphabets")
     alphabet_path = os.path.join(args.model_path, 'alphabets/')
+    shutil.rmtree('model/alphabets/', ignore_errors=True)
+
     assert not os.path.exists(alphabet_path), "Alphabet path exists, please build with a new path."
     word_alphabet, char_alphabet, pos_alphabet, type_alphabet, max_sent_length = create_alphabets(alphabet_path, args.data_paths[0], data_paths=args.data_paths[1:], embedd_dict=combined_word_dict, max_vocabulary_size=100000, creating_mode=True)
     # save filtered embed
