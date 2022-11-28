@@ -36,12 +36,12 @@ PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=2 python3 ../src/examples/GraphParser.py
 --word_path './model/alphabets/joint_embed.vec' \
 --char_embedding random \
 --punctuation 'PUNCT' 'SYM' \
---train "../data2.2_more/it_train.conllu" \
---dev "../data2.2_more/it_dev.conllu" \
---test "../data2.2_more/it_test.conllu" \
+--train "../data2.2_more/id_train.conllu" \
+--dev "../data2.2_more/id_dev.conllu" \
+--test "../data2.2_more/id_test.conllu" \
 --vocab_path './model/' \
 --model_path './model/' \
---model_name 'IT.pt' \
+--model_name 'IT-ID.pt' \
 --p_in 0.2 \
 --p_out 0.2 \
 --p_rnn 0.2 0.1 0.2 \
@@ -54,8 +54,8 @@ PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=2 python3 ../src/examples/GraphParser.py
 --position_dim 0 \
 --enc_clip_dist 10 \
 --batch_size 80 \
---seed $SEED
-#--source_model_name 'B_EN.pt'
+--seed $SEED \
+--source_model_name 'IT.pt'
 
 
 # --char \

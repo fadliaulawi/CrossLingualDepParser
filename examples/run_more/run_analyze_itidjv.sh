@@ -1,7 +1,10 @@
-model_name="C_IT_ID_JV.pt"
-cur_lang="itidjv"
+model_name="HTL-IT-ID.pt"
+code="htl_it_id"
 which_set="test"
 
-PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=1 python3 ../src/examples/analyze.py --parser biaffine --ordered \
---punctuation 'PUNCT' 'SYM' --out_filename analyzer.$cur_lang.$which_set.out --model_name $model_name \
+rm .env
+cp .envjv .env
+
+PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=2 python3 ../src/examples/analyze.py --parser biaffine --ordered \
+--punctuation 'PUNCT' 'SYM' --out_filename res_$code --model_name $model_name \
 --test "../data2.2_more/jv_test.conllu" --model_path "./model/" --extra_embed "../data2.2_more/wiki.jv.vec" --gpu
