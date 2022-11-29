@@ -2,7 +2,14 @@
 
 # build
 embed_path=../data2.2_more/
-embed_path1=$embed_path/wiki.jv.vec
+embed_path1=$embed_path/wiki.en.vec
+embed_path2=$embed_path/wiki.fr.vec
+embed_path3=$embed_path/wiki.hr.vec
+embed_path4=$embed_path/wiki.id.vec
+embed_path5=$embed_path/wiki.it.vec
+embed_path6=$embed_path/wiki.jv.vec
+embed_path7=$embed_path/wiki.ko.vec
+
 data_path=../data2.2_more/
 data0=$data_path/en_train.conllu
 data1=$data_path/en_dev.conllu
@@ -27,7 +34,7 @@ data19=$data_path/ko_dev.conllu
 data20=$data_path/ko_test.conllu
 
 PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=1 python3 ../src/examples/vocab/build_joint_vocab_embed.py \
---embed_paths $embed_path1 \
+--embed_paths $embed_path1 $embed_path2 $embed_path3 $embed_path4 $embed_path5 $embed_path6 $embed_path7 \
 --embed_lang_ids en fr hr id it jv ko \
 --data_paths $data0 $data1 $data2 $data3 $data4 $data5 $data6 $data7 $data8 $data9 $data10 $data11 $data12 $data13 $data14 $data15 $data16 $data17 $data18 $data19 $data20 \
 --model_path ./model/
