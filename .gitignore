@@ -1,2 +1,4 @@
 model/*.pt
 neuronlp2/
+vocabs/**/*.vec
+model/alphabets/*.vec
