@@ -119,7 +119,8 @@ def create_alphabets(alphabet_directory, train_path, data_paths=None, max_vocabu
             print('cosine similarity = ', cosine_dict(freq_dict, type_alph_dict))
 
     logger = get_logger("Create Alphabets")
-    word_alphabet = Alphabet('word', defualt_value=True, singleton=True)
+    # temp: set singleton to False
+    word_alphabet = Alphabet('word', defualt_value=True, singleton=False)
     char_alphabet = Alphabet('character', defualt_value=True)
     pos_alphabet = Alphabet('pos')
     type_alphabet = Alphabet('type')
@@ -229,7 +230,8 @@ def create_alphabets(alphabet_directory, train_path, data_paths=None, max_vocabu
     char_alphabet.close()
     pos_alphabet.close()
     type_alphabet.close()
-    logger.info("Word Alphabet Size (Singleton): %d (%d)" % (word_alphabet.size(), word_alphabet.singleton_size()))
+    # temp: size singleton to 0
+    logger.info("Word Alphabet Size (Singleton): %d (%d)" % (word_alphabet.size(), 0))
     logger.info("Character Alphabet Size: %d" % char_alphabet.size())
     logger.info("POS Alphabet Size: %d" % pos_alphabet.size())
     logger.info("Type Alphabet Size: %d" % type_alphabet.size())
@@ -451,9 +453,9 @@ def read_data_to_variable(source_path, word_alphabet, char_alphabet, pos_alphabe
             hid_inputs[i, inst_size:] = PAD_ID_TAG
             # masks
             masks[i, :inst_size] = 1.0
-            for j, wid in enumerate(wids):
-                if word_alphabet.is_singleton(wid):
-                    single[i, j] = 1
+            #for j, wid in enumerate(wids):
+                #if word_alphabet.is_singleton(wid):
+                #    single[i, j] = 1
 
         words = Variable(torch.from_numpy(wid_inputs), volatile=volatile)
         chars = Variable(torch.from_numpy(cid_inputs), volatile=volatile)
