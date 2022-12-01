@@ -24,13 +24,6 @@ load_dotenv()
 
 bert_path = f"../data2.2_more/{os.environ.get('bert')}"
 
-if 'camembert' in bert_path:
-    model = CamembertModel.from_pretrained(bert_path, local_files_only=True, output_hidden_states=True)
-else:
-    model = BertModel.from_pretrained(bert_path, local_files_only=True, output_hidden_states=True)
-
-model.eval()
-
 class PriorOrder(Enum):
     DEPTH = 0
     INSIDE_OUT = 1
@@ -70,9 +63,11 @@ class BiRecurrentConvBiAffine(nn.Module):
         self.position_dim = position_dim
 
         self.word_embedd = None
+        self.model = BertModel.from_pretrained(bert_path, local_files_only=True, output_hidden_states=True)
+        self.model.eval()
 
         if use_gpu:
-           model.cuda()
+           self.model.cuda()
            #print(self.model.get_device())
 
         word_dim = 768
@@ -167,7 +162,7 @@ class BiRecurrentConvBiAffine(nn.Module):
                 segments_tensor = segments_tensor.to('cuda:0')
                 #print(self.model.device, tokens_tensor.device, segments_tensor.device)
                 with torch.no_grad():
-                    outputs = model(tokens_tensor, segments_tensor)
+                    outputs = self.model(tokens_tensor, segments_tensor)
                     hidden_states = outputs[2]
 
                 token_embeddings = torch.stack(hidden_states, dim=0)
