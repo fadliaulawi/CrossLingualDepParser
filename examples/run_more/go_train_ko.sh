@@ -9,9 +9,6 @@ SEED=1234
 
 echo "Current seed is $SEED"
 
-rm .env
-cp .envko .env
-
 PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=2 python3 ../src/examples/GraphParser.py \
 --mode FastLSTM \
 --no_CoRNN \
