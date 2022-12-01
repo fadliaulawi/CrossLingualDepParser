@@ -1,2 +1,2 @@
 #it
-bert=bert-base-italian-xxl-cased
+bert=bert-base-italian-xxl-uncased

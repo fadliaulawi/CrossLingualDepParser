@@ -52,7 +52,7 @@ def main():
 
     args = args_parser.parse_args()
 
-    logger = get_logger("Analyzer")
+    logger = get_logger("Analyzer", filepath="res/res_{}_log.txt".format(args.out_filename.split('_')[1]))
 
     test_path = args.test
     model_path = args.model_path
@@ -285,15 +285,15 @@ def biaffine(model_path, model_name, test_path, punct_set, use_gpu, logger, args
     pred_writer.close()
     gold_writer.close()
 
-    print('\ntime: %.2fs' % (time.time() - start_time))
-    print('test W. Punct:  ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
+    logger.info('\ntime: %.2fs' % (time.time() - start_time))
+    logger.info('test W. Punct:  ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
         test_ucorrect, test_lcorrect, test_total, test_ucorrect * 100 / test_total, test_lcorrect * 100 / test_total,
         test_ucomlpete_match * 100 / test_total_inst, test_lcomplete_match * 100 / test_total_inst))
-    print('test Wo Punct:  ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
+    logger.info('test Wo Punct:  ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
         test_ucorrect_nopunc, test_lcorrect_nopunc, test_total_nopunc,
         test_ucorrect_nopunc * 100 / test_total_nopunc, test_lcorrect_nopunc * 100 / test_total_nopunc,
         test_ucomlpete_match_nopunc * 100 / test_total_inst, test_lcomplete_match_nopunc * 100 / test_total_inst))
-    print('test Root: corr: %d, total: %d, acc: %.2f%%' % (
+    logger.info('test Root: corr: %d, total: %d, acc: %.2f%%' % (
         test_root_correct, test_total_root, test_root_correct * 100 / test_total_root))
 
 
