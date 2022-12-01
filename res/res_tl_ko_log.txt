@@ -1,0 +1,13 @@
+2022-12-01 02:42:24,765 - Analyzer - INFO - punctuations(2): SYM PUNCT
+2022-12-01 02:42:24,781 - Analyzer - INFO - Word Alphabet Size: 2286
+2022-12-01 02:42:24,781 - Analyzer - INFO - Character Alphabet Size: 493
+2022-12-01 02:42:24,781 - Analyzer - INFO - POS Alphabet Size: 20
+2022-12-01 02:42:24,781 - Analyzer - INFO - Type Alphabet Size: 40
+2022-12-01 02:42:24,781 - Analyzer - INFO - use gpu: True, decoding: mst
+2022-12-01 02:42:24,782 - Analyzer - INFO - Reading: guess that the language of file ../data2.2_more/jv_test.conllu is jv.
+2022-12-01 02:42:26,573 - Analyzer - INFO - model: ./model/TL-KO.pt
+2022-12-01 02:42:28,890 - Analyzer - INFO - 
+time: 2.06s
+2022-12-01 02:42:28,890 - Analyzer - INFO - test W. Punct:  ucorr: 615, lcorr: 503, total: 1008, uas: 61.01%, las: 49.90%, ucm: 10.96%, lcm: 2.74%
+2022-12-01 02:42:28,890 - Analyzer - INFO - test Wo Punct:  ucorr: 526, lcorr: 417, total: 868, uas: 60.60%, las: 48.04%, ucm: 13.70%, lcm: 2.74%
+2022-12-01 02:42:28,890 - Analyzer - INFO - test Root: corr: 57, total: 73, acc: 78.08%

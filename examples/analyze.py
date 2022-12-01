@@ -52,7 +52,7 @@ def main():
 
     args = args_parser.parse_args()
 
-    logger = get_logger("Analyzer", filepath="res/res_{}_log.txt".format(args.out_filename.split('_')[1]))
+    logger = get_logger("Analyzer", filepath="res/res_{}_log.txt".format('_'.join(args.out_filename.split('_')[1:])))
 
     test_path = args.test
     model_path = args.model_path
