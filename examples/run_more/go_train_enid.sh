@@ -9,10 +9,7 @@ SEED=1234
 
 echo "Current seed is $SEED"
 
-rm .env
-cp .envid .env
-
-PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=2 python3 ../src/examples/GraphParser.py \
+PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=1 python3 ../src/examples/GraphParser.py \
 --mode FastLSTM \
 --no_CoRNN \
 --hidden_size 300 \
@@ -59,7 +56,6 @@ PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=2 python3 ../src/examples/GraphParser.py
 --batch_size 80 \
 --seed $SEED \
 --source_model_name 'EN.pt'
-
 
 # --char \
 
