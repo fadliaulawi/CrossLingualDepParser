@@ -1,2 +1,5 @@
 #ko
 bert=bert-base
+cls=2
+sep=3
+pad=0

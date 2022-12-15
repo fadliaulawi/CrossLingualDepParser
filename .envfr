@@ -1,2 +1,5 @@
 #fr
 bert=camembert-base
+cls=5
+sep=6
+pad=1

@@ -1,2 +1,5 @@
 #en
 bert=bert-base-uncased
+cls=101
+sep=102
+pad=0
