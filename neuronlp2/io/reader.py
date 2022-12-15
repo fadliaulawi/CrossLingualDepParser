@@ -38,7 +38,7 @@ class CoNLLXReader(object):
     def close(self):
         self.__source_file.close()
 
-    def getNext(self, normalize_digits=True, symbolic_root=False, symbolic_end=False):
+    def getNext(self, normalize_digits=True, symbolic_root=False, symbolic_end=True):
         lines = []
         line = self.__source_file.readline()
         while line is not None and len(line.strip()) > 0:
@@ -65,7 +65,7 @@ class CoNLLXReader(object):
         #print(lines)
         if symbolic_root:
             words.append(ROOT)
-            #word_ids.append(self.__word_alphabet.get_index(ROOT))
+            word_ids.append(int(os.environ.get('cls')))
             char_seqs.append([ROOT_CHAR, ])
             char_id_seqs.append([self.__char_alphabet.get_index(ROOT_CHAR), ])
             postags.append(ROOT_POS)
@@ -96,7 +96,7 @@ class CoNLLXReader(object):
             words.append(word)
             # ===== modified: with lang_id prefix (with backoff to default lang)
             one_word_id = get_word_index_with_spec(self.__word_alphabet, word, self.lang_id)
-            word_ids.append(one_word_id)
+            #word_ids.append(one_word_id)
             # =====
 
             postags.append(pos)
@@ -107,16 +107,17 @@ class CoNLLXReader(object):
 
             heads.append(head)
 
-        word_ids = self.tokenizer.convert_tokens_to_ids(['[CLS]'] + [l.lower() for l in words[1:]])
+        #print(word_ids)
+        word_ids.extend(self.tokenizer.convert_tokens_to_ids([l.lower() for l in words[1:]]))
         #print(len(words), words)
-        #print(len(word_ids), word_ids)
+        #print(word_ids)
 
         #raise Exception('dah')
 
 
         if symbolic_end:
             words.append(END)
-            word_ids.append(self.__word_alphabet.get_index(END))
+            word_ids.append(int(os.environ.get('sep')))
             char_seqs.append([END_CHAR, ])
             char_id_seqs.append([self.__char_alphabet.get_index(END_CHAR), ])
             postags.append(END_POS)

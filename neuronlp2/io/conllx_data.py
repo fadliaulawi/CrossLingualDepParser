@@ -24,8 +24,12 @@ END_TYPE = "_<END>"
 END_CHAR = "_END_CHAR"
 _START_VOCAB = [PAD, ROOT, END]
 
+import os
+from dotenv import load_dotenv 
+load_dotenv()
+
 UNK_ID = 0
-PAD_ID_WORD = 1
+PAD_ID_WORD = int(os.environ.get('pad'))
 PAD_ID_CHAR = 1
 PAD_ID_TAG = 0
 
@@ -239,7 +243,7 @@ def create_alphabets(alphabet_directory, train_path, data_paths=None, max_vocabu
 
 
 def read_data(source_path, word_alphabet, char_alphabet, pos_alphabet, type_alphabet, max_size=None,
-              normalize_digits=True, symbolic_root=False, symbolic_end=False, lang_id="", len_thresh=None):
+              normalize_digits=True, symbolic_root=False, symbolic_end=True, lang_id="", len_thresh=None):
     data = [[] for _ in _buckets]
     max_char_length = [0 for _ in _buckets]
     print('Reading data from %s' % source_path)
@@ -401,7 +405,7 @@ def iterate_batch(data, batch_size, word_alphabet=None, unk_replace=0., shuffle=
 
 
 def read_data_to_variable(source_path, word_alphabet, char_alphabet, pos_alphabet, type_alphabet, max_size=None,
-                          normalize_digits=True, symbolic_root=False, symbolic_end=False,
+                          normalize_digits=True, symbolic_root=False, symbolic_end=True,
                           use_gpu=False, volatile=False, lang_id="", len_thresh=100000):
     data, max_char_length = read_data(source_path, word_alphabet, char_alphabet, pos_alphabet, type_alphabet,
                                       max_size=max_size, normalize_digits=normalize_digits, symbolic_root=symbolic_root,
