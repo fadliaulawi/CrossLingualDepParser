@@ -1,261 +1,261 @@
-2022-12-16 03:52:43,173 - GraphParser Language - INFO - load model: ./model/EN.pt
-2022-12-16 03:52:43,224 - GraphParser Language - INFO - Epoch 1 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:52:48,926 - GraphParser Language - INFO - train: 8 loss: 7.0471, arc: 3.6085, type: 3.4385, time: 5.70s
-2022-12-16 03:52:48,926 - GraphParser Language - INFO - Epoch 2 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:52:53,481 - GraphParser Language - INFO - train: 8 loss: 4.2984, arc: 2.1424, type: 2.1560, time: 4.55s
-2022-12-16 03:52:53,481 - GraphParser Language - INFO - Epoch 3 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:52:58,296 - GraphParser Language - INFO - train: 8 loss: 3.3855, arc: 1.7283, type: 1.6572, time: 4.81s
-2022-12-16 03:52:58,296 - GraphParser Language - INFO - Epoch 4 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:53:02,825 - GraphParser Language - INFO - train: 8 loss: 3.1005, arc: 1.6355, type: 1.4651, time: 4.53s
-2022-12-16 03:53:02,825 - GraphParser Language - INFO - Epoch 5 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:53:07,442 - GraphParser Language - INFO - train: 8 loss: 2.7768, arc: 1.4750, type: 1.3018, time: 4.62s
-2022-12-16 03:53:08,178 - GraphParser Language - INFO - W. Punct: ucorr: 615, lcorr: 429, total: 1023, uas: 60.12%, las: 41.94%, ucm: 9.59%, lcm: 5.48%
-2022-12-16 03:53:08,178 - GraphParser Language - INFO - Wo Punct: ucorr: 516, lcorr: 332, total: 860, uas: 60.00%, las: 38.60%, ucm: 10.96%, lcm: 5.48%
-2022-12-16 03:53:08,178 - GraphParser Language - INFO - Root: corr: 56, total: 73, acc: 76.71%
-2022-12-16 03:53:08,951 - GraphParser Language - INFO - Epoch 6 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:53:13,881 - GraphParser Language - INFO - train: 8 loss: 2.4830, arc: 1.2950, type: 1.1879, time: 4.93s
-2022-12-16 03:53:13,881 - GraphParser Language - INFO - Epoch 7 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:53:18,741 - GraphParser Language - INFO - train: 8 loss: 2.4469, arc: 1.3052, type: 1.1417, time: 4.86s
-2022-12-16 03:53:18,741 - GraphParser Language - INFO - Epoch 8 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:53:22,830 - GraphParser Language - INFO - train: 8 loss: 2.3735, arc: 1.2864, type: 1.0871, time: 4.09s
-2022-12-16 03:53:22,831 - GraphParser Language - INFO - Epoch 9 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:53:27,175 - GraphParser Language - INFO - train: 8 loss: 1.9867, arc: 1.0405, type: 0.9461, time: 4.34s
-2022-12-16 03:53:27,175 - GraphParser Language - INFO - Epoch 10 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:53:31,997 - GraphParser Language - INFO - train: 8 loss: 1.9864, arc: 1.0509, type: 0.9356, time: 4.82s
-2022-12-16 03:53:32,699 - GraphParser Language - INFO - W. Punct: ucorr: 634, lcorr: 473, total: 1023, uas: 61.97%, las: 46.24%, ucm: 12.33%, lcm: 4.11%
-2022-12-16 03:53:32,699 - GraphParser Language - INFO - Wo Punct: ucorr: 538, lcorr: 378, total: 860, uas: 62.56%, las: 43.95%, ucm: 13.70%, lcm: 4.11%
-2022-12-16 03:53:32,699 - GraphParser Language - INFO - Root: corr: 56, total: 73, acc: 76.71%
-2022-12-16 03:53:33,511 - GraphParser Language - INFO - Epoch 11 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:53:37,998 - GraphParser Language - INFO - train: 8 loss: 2.1176, arc: 1.1535, type: 0.9641, time: 4.49s
-2022-12-16 03:53:37,998 - GraphParser Language - INFO - Epoch 12 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:53:42,852 - GraphParser Language - INFO - train: 8 loss: 1.8950, arc: 1.0070, type: 0.8880, time: 4.85s
-2022-12-16 03:53:42,852 - GraphParser Language - INFO - Epoch 13 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:53:47,676 - GraphParser Language - INFO - train: 8 loss: 1.9506, arc: 1.0624, type: 0.8882, time: 4.82s
-2022-12-16 03:53:47,676 - GraphParser Language - INFO - Epoch 14 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:53:51,723 - GraphParser Language - INFO - train: 8 loss: 1.5901, arc: 0.8519, type: 0.7383, time: 4.05s
-2022-12-16 03:53:51,723 - GraphParser Language - INFO - Epoch 15 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:53:56,113 - GraphParser Language - INFO - train: 8 loss: 1.8236, arc: 1.0045, type: 0.8191, time: 4.39s
-2022-12-16 03:53:56,820 - GraphParser Language - INFO - W. Punct: ucorr: 654, lcorr: 500, total: 1023, uas: 63.93%, las: 48.88%, ucm: 16.44%, lcm: 4.11%
-2022-12-16 03:53:56,820 - GraphParser Language - INFO - Wo Punct: ucorr: 550, lcorr: 397, total: 860, uas: 63.95%, las: 46.16%, ucm: 16.44%, lcm: 4.11%
-2022-12-16 03:53:56,820 - GraphParser Language - INFO - Root: corr: 57, total: 73, acc: 78.08%
-2022-12-16 03:53:57,599 - GraphParser Language - INFO - Epoch 16 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:54:02,450 - GraphParser Language - INFO - train: 8 loss: 1.6446, arc: 0.8763, type: 0.7683, time: 4.85s
-2022-12-16 03:54:02,450 - GraphParser Language - INFO - Epoch 17 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:54:07,223 - GraphParser Language - INFO - train: 8 loss: 1.3568, arc: 0.7201, type: 0.6368, time: 4.77s
-2022-12-16 03:54:07,223 - GraphParser Language - INFO - Epoch 18 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:54:11,069 - GraphParser Language - INFO - train: 8 loss: 1.5725, arc: 0.8387, type: 0.7339, time: 3.85s
-2022-12-16 03:54:11,070 - GraphParser Language - INFO - Epoch 19 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:54:15,483 - GraphParser Language - INFO - train: 8 loss: 1.3190, arc: 0.7055, type: 0.6134, time: 4.41s
-2022-12-16 03:54:15,483 - GraphParser Language - INFO - Epoch 20 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:54:20,478 - GraphParser Language - INFO - train: 8 loss: 1.4583, arc: 0.7939, type: 0.6644, time: 4.99s
-2022-12-16 03:54:21,179 - GraphParser Language - INFO - W. Punct: ucorr: 662, lcorr: 517, total: 1023, uas: 64.71%, las: 50.54%, ucm: 16.44%, lcm: 5.48%
-2022-12-16 03:54:21,180 - GraphParser Language - INFO - Wo Punct: ucorr: 557, lcorr: 413, total: 860, uas: 64.77%, las: 48.02%, ucm: 16.44%, lcm: 5.48%
-2022-12-16 03:54:21,180 - GraphParser Language - INFO - Root: corr: 50, total: 73, acc: 68.49%
-2022-12-16 03:54:21,955 - GraphParser Language - INFO - Epoch 21 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:54:25,829 - GraphParser Language - INFO - train: 8 loss: 1.5290, arc: 0.8375, type: 0.6915, time: 3.87s
-2022-12-16 03:54:25,829 - GraphParser Language - INFO - Epoch 22 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:54:30,055 - GraphParser Language - INFO - train: 8 loss: 1.4003, arc: 0.7523, type: 0.6480, time: 4.23s
-2022-12-16 03:54:30,055 - GraphParser Language - INFO - Epoch 23 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:54:34,868 - GraphParser Language - INFO - train: 8 loss: 1.2693, arc: 0.6912, type: 0.5780, time: 4.81s
-2022-12-16 03:54:34,869 - GraphParser Language - INFO - Epoch 24 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:54:39,774 - GraphParser Language - INFO - train: 8 loss: 0.9670, arc: 0.4989, type: 0.4681, time: 4.91s
-2022-12-16 03:54:39,774 - GraphParser Language - INFO - Epoch 25 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:54:44,297 - GraphParser Language - INFO - train: 8 loss: 1.0026, arc: 0.5342, type: 0.4684, time: 4.52s
-2022-12-16 03:54:44,993 - GraphParser Language - INFO - W. Punct: ucorr: 649, lcorr: 502, total: 1023, uas: 63.44%, las: 49.07%, ucm: 15.07%, lcm: 4.11%
-2022-12-16 03:54:44,993 - GraphParser Language - INFO - Wo Punct: ucorr: 547, lcorr: 401, total: 860, uas: 63.60%, las: 46.63%, ucm: 15.07%, lcm: 4.11%
-2022-12-16 03:54:44,993 - GraphParser Language - INFO - Root: corr: 50, total: 73, acc: 68.49%
-2022-12-16 03:54:44,993 - GraphParser Language - INFO - Epoch 26 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
-2022-12-16 03:54:48,931 - GraphParser Language - INFO - train: 8 loss: 1.1516, arc: 0.6348, type: 0.5168, time: 3.94s
-2022-12-16 03:54:48,931 - GraphParser Language - INFO - Epoch 27 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
-2022-12-16 03:54:53,864 - GraphParser Language - INFO - train: 8 loss: 0.9114, arc: 0.4700, type: 0.4414, time: 4.93s
-2022-12-16 03:54:53,864 - GraphParser Language - INFO - Epoch 28 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
-2022-12-16 03:54:57,829 - GraphParser Language - INFO - train: 8 loss: 1.0659, arc: 0.5712, type: 0.4947, time: 3.96s
-2022-12-16 03:54:57,829 - GraphParser Language - INFO - Epoch 29 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
-2022-12-16 03:55:02,932 - GraphParser Language - INFO - train: 8 loss: 0.7397, arc: 0.3814, type: 0.3583, time: 5.10s
-2022-12-16 03:55:02,932 - GraphParser Language - INFO - Epoch 30 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
-2022-12-16 03:55:07,320 - GraphParser Language - INFO - train: 8 loss: 1.0009, arc: 0.5446, type: 0.4563, time: 4.39s
-2022-12-16 03:55:08,021 - GraphParser Language - INFO - W. Punct: ucorr: 652, lcorr: 502, total: 1023, uas: 63.73%, las: 49.07%, ucm: 16.44%, lcm: 4.11%
-2022-12-16 03:55:08,021 - GraphParser Language - INFO - Wo Punct: ucorr: 551, lcorr: 402, total: 860, uas: 64.07%, las: 46.74%, ucm: 16.44%, lcm: 4.11%
-2022-12-16 03:55:08,021 - GraphParser Language - INFO - Root: corr: 47, total: 73, acc: 64.38%
-2022-12-16 03:55:08,022 - GraphParser Language - INFO - Epoch 31 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
-2022-12-16 03:55:12,877 - GraphParser Language - INFO - train: 8 loss: 0.5879, arc: 0.3038, type: 0.2840, time: 4.86s
-2022-12-16 03:55:12,878 - GraphParser Language - INFO - Epoch 32 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
-2022-12-16 03:55:17,703 - GraphParser Language - INFO - train: 8 loss: 0.8931, arc: 0.4806, type: 0.4125, time: 4.83s
-2022-12-16 03:55:17,703 - GraphParser Language - INFO - Epoch 33 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
-2022-12-16 03:55:22,670 - GraphParser Language - INFO - train: 8 loss: 0.8717, arc: 0.4688, type: 0.4029, time: 4.97s
-2022-12-16 03:55:22,670 - GraphParser Language - INFO - Epoch 34 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
-2022-12-16 03:55:27,430 - GraphParser Language - INFO - train: 8 loss: 0.9467, arc: 0.5085, type: 0.4381, time: 4.76s
-2022-12-16 03:55:27,430 - GraphParser Language - INFO - Epoch 35 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
-2022-12-16 03:55:31,891 - GraphParser Language - INFO - train: 8 loss: 0.7920, arc: 0.4226, type: 0.3694, time: 4.46s
-2022-12-16 03:55:32,590 - GraphParser Language - INFO - W. Punct: ucorr: 655, lcorr: 513, total: 1023, uas: 64.03%, las: 50.15%, ucm: 16.44%, lcm: 4.11%
-2022-12-16 03:55:32,590 - GraphParser Language - INFO - Wo Punct: ucorr: 552, lcorr: 411, total: 860, uas: 64.19%, las: 47.79%, ucm: 16.44%, lcm: 4.11%
-2022-12-16 03:55:32,590 - GraphParser Language - INFO - Root: corr: 47, total: 73, acc: 64.38%
-2022-12-16 03:55:32,590 - GraphParser Language - INFO - Epoch 36 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
-2022-12-16 03:55:37,644 - GraphParser Language - INFO - train: 8 loss: 0.7727, arc: 0.4129, type: 0.3598, time: 5.05s
-2022-12-16 03:55:37,644 - GraphParser Language - INFO - Epoch 37 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
-2022-12-16 03:55:41,870 - GraphParser Language - INFO - train: 8 loss: 0.8423, arc: 0.4574, type: 0.3850, time: 4.23s
-2022-12-16 03:55:41,870 - GraphParser Language - INFO - Epoch 38 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
-2022-12-16 03:55:46,241 - GraphParser Language - INFO - train: 8 loss: 0.6890, arc: 0.3823, type: 0.3067, time: 4.37s
-2022-12-16 03:55:46,241 - GraphParser Language - INFO - Epoch 39 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
-2022-12-16 03:55:50,676 - GraphParser Language - INFO - train: 8 loss: 0.6436, arc: 0.3537, type: 0.2899, time: 4.44s
-2022-12-16 03:55:50,677 - GraphParser Language - INFO - Epoch 40 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
-2022-12-16 03:55:55,495 - GraphParser Language - INFO - train: 8 loss: 0.6068, arc: 0.3340, type: 0.2729, time: 4.82s
-2022-12-16 03:55:56,197 - GraphParser Language - INFO - W. Punct: ucorr: 650, lcorr: 508, total: 1023, uas: 63.54%, las: 49.66%, ucm: 15.07%, lcm: 4.11%
-2022-12-16 03:55:56,197 - GraphParser Language - INFO - Wo Punct: ucorr: 551, lcorr: 410, total: 860, uas: 64.07%, las: 47.67%, ucm: 15.07%, lcm: 4.11%
-2022-12-16 03:55:56,197 - GraphParser Language - INFO - Root: corr: 49, total: 73, acc: 67.12%
-2022-12-16 03:55:56,197 - GraphParser Language - INFO - Epoch 41 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
-2022-12-16 03:56:00,881 - GraphParser Language - INFO - train: 8 loss: 0.7299, arc: 0.4045, type: 0.3254, time: 4.68s
-2022-12-16 03:56:00,881 - GraphParser Language - INFO - Epoch 42 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
-2022-12-16 03:56:05,152 - GraphParser Language - INFO - train: 8 loss: 0.3345, arc: 0.1917, type: 0.1428, time: 4.27s
-2022-12-16 03:56:05,152 - GraphParser Language - INFO - Epoch 43 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
-2022-12-16 03:56:08,949 - GraphParser Language - INFO - train: 8 loss: 0.7721, arc: 0.4386, type: 0.3335, time: 3.80s
-2022-12-16 03:56:08,950 - GraphParser Language - INFO - Epoch 44 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
-2022-12-16 03:56:12,905 - GraphParser Language - INFO - train: 8 loss: 0.6988, arc: 0.3992, type: 0.2996, time: 3.96s
-2022-12-16 03:56:12,905 - GraphParser Language - INFO - Epoch 45 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
-2022-12-16 03:56:16,672 - GraphParser Language - INFO - train: 8 loss: 0.6363, arc: 0.3459, type: 0.2904, time: 3.77s
-2022-12-16 03:56:17,388 - GraphParser Language - INFO - W. Punct: ucorr: 650, lcorr: 511, total: 1023, uas: 63.54%, las: 49.95%, ucm: 13.70%, lcm: 4.11%
-2022-12-16 03:56:17,389 - GraphParser Language - INFO - Wo Punct: ucorr: 552, lcorr: 414, total: 860, uas: 64.19%, las: 48.14%, ucm: 13.70%, lcm: 4.11%
-2022-12-16 03:56:17,389 - GraphParser Language - INFO - Root: corr: 48, total: 73, acc: 65.75%
-2022-12-16 03:56:18,173 - GraphParser Language - INFO - Epoch 46 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:56:22,913 - GraphParser Language - INFO - train: 8 loss: 0.5630, arc: 0.3084, type: 0.2546, time: 4.74s
-2022-12-16 03:56:22,913 - GraphParser Language - INFO - Epoch 47 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:56:27,751 - GraphParser Language - INFO - train: 8 loss: 0.5133, arc: 0.2725, type: 0.2408, time: 4.84s
-2022-12-16 03:56:27,751 - GraphParser Language - INFO - Epoch 48 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:56:32,697 - GraphParser Language - INFO - train: 8 loss: 0.5827, arc: 0.3163, type: 0.2665, time: 4.95s
-2022-12-16 03:56:32,697 - GraphParser Language - INFO - Epoch 49 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:56:37,040 - GraphParser Language - INFO - train: 8 loss: 0.5149, arc: 0.2842, type: 0.2307, time: 4.34s
-2022-12-16 03:56:37,040 - GraphParser Language - INFO - Epoch 50 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:56:41,439 - GraphParser Language - INFO - train: 8 loss: 0.5522, arc: 0.3052, type: 0.2470, time: 4.40s
-2022-12-16 03:56:42,142 - GraphParser Language - INFO - W. Punct: ucorr: 664, lcorr: 528, total: 1023, uas: 64.91%, las: 51.61%, ucm: 13.70%, lcm: 4.11%
-2022-12-16 03:56:42,142 - GraphParser Language - INFO - Wo Punct: ucorr: 562, lcorr: 426, total: 860, uas: 65.35%, las: 49.53%, ucm: 13.70%, lcm: 4.11%
-2022-12-16 03:56:42,142 - GraphParser Language - INFO - Root: corr: 47, total: 73, acc: 64.38%
-2022-12-16 03:56:42,921 - GraphParser Language - INFO - Epoch 51 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:56:47,461 - GraphParser Language - INFO - train: 8 loss: 0.4567, arc: 0.2582, type: 0.1986, time: 4.54s
-2022-12-16 03:56:47,461 - GraphParser Language - INFO - Epoch 52 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:56:52,012 - GraphParser Language - INFO - train: 8 loss: 0.5740, arc: 0.3228, type: 0.2512, time: 4.55s
-2022-12-16 03:56:52,012 - GraphParser Language - INFO - Epoch 53 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:56:56,161 - GraphParser Language - INFO - train: 8 loss: 0.5612, arc: 0.3116, type: 0.2496, time: 4.15s
-2022-12-16 03:56:56,161 - GraphParser Language - INFO - Epoch 54 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:57:00,525 - GraphParser Language - INFO - train: 8 loss: 0.4897, arc: 0.2793, type: 0.2104, time: 4.36s
-2022-12-16 03:57:00,525 - GraphParser Language - INFO - Epoch 55 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
-2022-12-16 03:57:04,444 - GraphParser Language - INFO - train: 8 loss: 0.4317, arc: 0.2438, type: 0.1880, time: 3.92s
-2022-12-16 03:57:05,159 - GraphParser Language - INFO - W. Punct: ucorr: 645, lcorr: 510, total: 1023, uas: 63.05%, las: 49.85%, ucm: 15.07%, lcm: 4.11%
-2022-12-16 03:57:05,159 - GraphParser Language - INFO - Wo Punct: ucorr: 541, lcorr: 407, total: 860, uas: 62.91%, las: 47.33%, ucm: 15.07%, lcm: 4.11%
-2022-12-16 03:57:05,159 - GraphParser Language - INFO - Root: corr: 46, total: 73, acc: 63.01%
-2022-12-16 03:57:05,159 - GraphParser Language - INFO - Epoch 56 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
-2022-12-16 03:57:10,089 - GraphParser Language - INFO - train: 8 loss: 0.3503, arc: 0.1977, type: 0.1525, time: 4.93s
-2022-12-16 03:57:10,089 - GraphParser Language - INFO - Epoch 57 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
-2022-12-16 03:57:14,587 - GraphParser Language - INFO - train: 8 loss: 0.4571, arc: 0.2551, type: 0.2019, time: 4.50s
-2022-12-16 03:57:14,588 - GraphParser Language - INFO - Epoch 58 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
-2022-12-16 03:57:18,956 - GraphParser Language - INFO - train: 8 loss: 0.3925, arc: 0.2116, type: 0.1810, time: 4.37s
-2022-12-16 03:57:18,956 - GraphParser Language - INFO - Epoch 59 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
-2022-12-16 03:57:23,828 - GraphParser Language - INFO - train: 8 loss: 0.3494, arc: 0.2037, type: 0.1457, time: 4.87s
-2022-12-16 03:57:23,828 - GraphParser Language - INFO - Epoch 60 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
-2022-12-16 03:57:28,391 - GraphParser Language - INFO - train: 8 loss: 0.2287, arc: 0.1243, type: 0.1043, time: 4.56s
-2022-12-16 03:57:29,097 - GraphParser Language - INFO - W. Punct: ucorr: 649, lcorr: 514, total: 1023, uas: 63.44%, las: 50.24%, ucm: 17.81%, lcm: 5.48%
-2022-12-16 03:57:29,097 - GraphParser Language - INFO - Wo Punct: ucorr: 549, lcorr: 415, total: 860, uas: 63.84%, las: 48.26%, ucm: 17.81%, lcm: 5.48%
-2022-12-16 03:57:29,097 - GraphParser Language - INFO - Root: corr: 46, total: 73, acc: 63.01%
-2022-12-16 03:57:29,098 - GraphParser Language - INFO - Epoch 61 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
-2022-12-16 03:57:33,532 - GraphParser Language - INFO - train: 8 loss: 0.3620, arc: 0.2030, type: 0.1590, time: 4.43s
-2022-12-16 03:57:33,532 - GraphParser Language - INFO - Epoch 62 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
-2022-12-16 03:57:38,488 - GraphParser Language - INFO - train: 8 loss: 0.3152, arc: 0.1697, type: 0.1456, time: 4.96s
-2022-12-16 03:57:38,488 - GraphParser Language - INFO - Epoch 63 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
-2022-12-16 03:57:42,867 - GraphParser Language - INFO - train: 8 loss: 0.4364, arc: 0.2503, type: 0.1861, time: 4.38s
-2022-12-16 03:57:42,867 - GraphParser Language - INFO - Epoch 64 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
-2022-12-16 03:57:47,572 - GraphParser Language - INFO - train: 8 loss: 0.3582, arc: 0.2111, type: 0.1471, time: 4.70s
-2022-12-16 03:57:47,572 - GraphParser Language - INFO - Epoch 65 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
-2022-12-16 03:57:52,062 - GraphParser Language - INFO - train: 8 loss: 0.2134, arc: 0.1267, type: 0.0867, time: 4.49s
-2022-12-16 03:57:52,770 - GraphParser Language - INFO - W. Punct: ucorr: 649, lcorr: 511, total: 1023, uas: 63.44%, las: 49.95%, ucm: 15.07%, lcm: 5.48%
-2022-12-16 03:57:52,770 - GraphParser Language - INFO - Wo Punct: ucorr: 550, lcorr: 412, total: 860, uas: 63.95%, las: 47.91%, ucm: 15.07%, lcm: 5.48%
-2022-12-16 03:57:52,770 - GraphParser Language - INFO - Root: corr: 47, total: 73, acc: 64.38%
-2022-12-16 03:57:52,770 - GraphParser Language - INFO - Epoch 66 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
-2022-12-16 03:57:56,723 - GraphParser Language - INFO - train: 8 loss: 0.3756, arc: 0.2219, type: 0.1537, time: 3.95s
-2022-12-16 03:57:56,723 - GraphParser Language - INFO - Epoch 67 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
-2022-12-16 03:58:01,550 - GraphParser Language - INFO - train: 8 loss: 0.3548, arc: 0.2015, type: 0.1534, time: 4.83s
-2022-12-16 03:58:01,550 - GraphParser Language - INFO - Epoch 68 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
-2022-12-16 03:58:06,495 - GraphParser Language - INFO - train: 8 loss: 0.2906, arc: 0.1694, type: 0.1212, time: 4.94s
-2022-12-16 03:58:06,495 - GraphParser Language - INFO - Epoch 69 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
-2022-12-16 03:58:11,179 - GraphParser Language - INFO - train: 8 loss: 0.2991, arc: 0.1720, type: 0.1270, time: 4.68s
-2022-12-16 03:58:11,179 - GraphParser Language - INFO - Epoch 70 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
-2022-12-16 03:58:15,101 - GraphParser Language - INFO - train: 8 loss: 0.3082, arc: 0.1753, type: 0.1329, time: 3.92s
-2022-12-16 03:58:15,802 - GraphParser Language - INFO - W. Punct: ucorr: 645, lcorr: 520, total: 1023, uas: 63.05%, las: 50.83%, ucm: 13.70%, lcm: 2.74%
-2022-12-16 03:58:15,803 - GraphParser Language - INFO - Wo Punct: ucorr: 547, lcorr: 422, total: 860, uas: 63.60%, las: 49.07%, ucm: 15.07%, lcm: 2.74%
-2022-12-16 03:58:15,803 - GraphParser Language - INFO - Root: corr: 48, total: 73, acc: 65.75%
-2022-12-16 03:58:15,803 - GraphParser Language - INFO - Epoch 71 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
-2022-12-16 03:58:20,604 - GraphParser Language - INFO - train: 8 loss: 0.2547, arc: 0.1512, type: 0.1035, time: 4.80s
-2022-12-16 03:58:20,604 - GraphParser Language - INFO - Epoch 72 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
-2022-12-16 03:58:25,332 - GraphParser Language - INFO - train: 8 loss: 0.2568, arc: 0.1452, type: 0.1116, time: 4.73s
-2022-12-16 03:58:25,332 - GraphParser Language - INFO - Epoch 73 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
-2022-12-16 03:58:29,931 - GraphParser Language - INFO - train: 8 loss: 0.2944, arc: 0.1671, type: 0.1273, time: 4.60s
-2022-12-16 03:58:29,932 - GraphParser Language - INFO - Epoch 74 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
-2022-12-16 03:58:34,418 - GraphParser Language - INFO - train: 8 loss: 0.2927, arc: 0.1653, type: 0.1275, time: 4.49s
-2022-12-16 03:58:34,418 - GraphParser Language - INFO - Epoch 75 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
-2022-12-16 03:58:39,538 - GraphParser Language - INFO - train: 8 loss: 0.2244, arc: 0.1237, type: 0.1007, time: 5.12s
-2022-12-16 03:58:40,252 - GraphParser Language - INFO - W. Punct: ucorr: 656, lcorr: 517, total: 1023, uas: 64.13%, las: 50.54%, ucm: 17.81%, lcm: 4.11%
-2022-12-16 03:58:40,252 - GraphParser Language - INFO - Wo Punct: ucorr: 557, lcorr: 418, total: 860, uas: 64.77%, las: 48.60%, ucm: 17.81%, lcm: 4.11%
-2022-12-16 03:58:40,252 - GraphParser Language - INFO - Root: corr: 48, total: 73, acc: 65.75%
-2022-12-16 03:58:40,252 - GraphParser Language - INFO - Epoch 76 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=5, decay=0)): 
-2022-12-16 03:58:44,993 - GraphParser Language - INFO - train: 8 loss: 0.2742, arc: 0.1576, type: 0.1165, time: 4.74s
-2022-12-16 03:58:44,993 - GraphParser Language - INFO - Epoch 77 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=5, decay=0)): 
-2022-12-16 03:58:49,916 - GraphParser Language - INFO - train: 8 loss: 0.2380, arc: 0.1393, type: 0.0987, time: 4.92s
-2022-12-16 03:58:49,917 - GraphParser Language - INFO - Epoch 78 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=5, decay=0)): 
-2022-12-16 03:58:54,278 - GraphParser Language - INFO - train: 8 loss: 0.3056, arc: 0.1719, type: 0.1337, time: 4.36s
-2022-12-16 03:58:54,278 - GraphParser Language - INFO - Epoch 79 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=5, decay=0)): 
-2022-12-16 03:58:58,868 - GraphParser Language - INFO - train: 8 loss: 0.2038, arc: 0.1158, type: 0.0880, time: 4.59s
-2022-12-16 03:58:58,868 - GraphParser Language - INFO - Epoch 80 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=5, decay=0)): 
-2022-12-16 03:59:03,789 - GraphParser Language - INFO - train: 8 loss: 0.2016, arc: 0.1127, type: 0.0889, time: 4.92s
-2022-12-16 03:59:04,503 - GraphParser Language - INFO - W. Punct: ucorr: 653, lcorr: 523, total: 1023, uas: 63.83%, las: 51.12%, ucm: 15.07%, lcm: 4.11%
-2022-12-16 03:59:04,503 - GraphParser Language - INFO - Wo Punct: ucorr: 554, lcorr: 425, total: 860, uas: 64.42%, las: 49.42%, ucm: 16.44%, lcm: 4.11%
-2022-12-16 03:59:04,503 - GraphParser Language - INFO - Root: corr: 49, total: 73, acc: 67.12%
-2022-12-16 03:59:04,503 - GraphParser Language - INFO - Epoch 81 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=6, decay=0)): 
-2022-12-16 03:59:08,459 - GraphParser Language - INFO - train: 8 loss: 0.2682, arc: 0.1665, type: 0.1016, time: 3.96s
-2022-12-16 03:59:08,459 - GraphParser Language - INFO - Epoch 82 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=6, decay=0)): 
-2022-12-16 03:59:13,439 - GraphParser Language - INFO - train: 8 loss: 0.2132, arc: 0.1262, type: 0.0870, time: 4.98s
-2022-12-16 03:59:13,439 - GraphParser Language - INFO - Epoch 83 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=6, decay=0)): 
-2022-12-16 03:59:17,818 - GraphParser Language - INFO - train: 8 loss: 0.2897, arc: 0.1774, type: 0.1123, time: 4.38s
-2022-12-16 03:59:17,818 - GraphParser Language - INFO - Epoch 84 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=6, decay=0)): 
-2022-12-16 03:59:22,654 - GraphParser Language - INFO - train: 8 loss: 0.2272, arc: 0.1304, type: 0.0967, time: 4.84s
-2022-12-16 03:59:22,654 - GraphParser Language - INFO - Epoch 85 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=6, decay=0)): 
-2022-12-16 03:59:27,131 - GraphParser Language - INFO - train: 8 loss: 0.2219, arc: 0.1312, type: 0.0908, time: 4.48s
-2022-12-16 03:59:27,843 - GraphParser Language - INFO - W. Punct: ucorr: 655, lcorr: 515, total: 1023, uas: 64.03%, las: 50.34%, ucm: 16.44%, lcm: 5.48%
-2022-12-16 03:59:27,843 - GraphParser Language - INFO - Wo Punct: ucorr: 555, lcorr: 415, total: 860, uas: 64.53%, las: 48.26%, ucm: 16.44%, lcm: 5.48%
-2022-12-16 03:59:27,844 - GraphParser Language - INFO - Root: corr: 46, total: 73, acc: 63.01%
-2022-12-16 03:59:27,844 - GraphParser Language - INFO - Epoch 86 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=7, decay=0)): 
-2022-12-16 03:59:32,607 - GraphParser Language - INFO - train: 8 loss: 0.1778, arc: 0.1047, type: 0.0731, time: 4.76s
-2022-12-16 03:59:32,608 - GraphParser Language - INFO - Epoch 87 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=7, decay=0)): 
-2022-12-16 03:59:37,531 - GraphParser Language - INFO - train: 8 loss: 0.1573, arc: 0.0910, type: 0.0663, time: 4.92s
-2022-12-16 03:59:37,532 - GraphParser Language - INFO - Epoch 88 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=7, decay=0)): 
-2022-12-16 03:59:42,413 - GraphParser Language - INFO - train: 8 loss: 0.1782, arc: 0.1066, type: 0.0716, time: 4.88s
-2022-12-16 03:59:42,413 - GraphParser Language - INFO - Epoch 89 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=7, decay=0)): 
-2022-12-16 03:59:46,933 - GraphParser Language - INFO - train: 8 loss: 0.2222, arc: 0.1357, type: 0.0865, time: 4.52s
-2022-12-16 03:59:46,933 - GraphParser Language - INFO - Epoch 90 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=7, decay=0)): 
-2022-12-16 03:59:51,209 - GraphParser Language - INFO - train: 8 loss: 0.2135, arc: 0.1276, type: 0.0858, time: 4.28s
-2022-12-16 03:59:51,918 - GraphParser Language - INFO - W. Punct: ucorr: 646, lcorr: 518, total: 1023, uas: 63.15%, las: 50.64%, ucm: 13.70%, lcm: 4.11%
-2022-12-16 03:59:51,918 - GraphParser Language - INFO - Wo Punct: ucorr: 546, lcorr: 418, total: 860, uas: 63.49%, las: 48.60%, ucm: 13.70%, lcm: 4.11%
-2022-12-16 03:59:51,918 - GraphParser Language - INFO - Root: corr: 48, total: 73, acc: 65.75%
-2022-12-16 03:59:51,918 - GraphParser Language - INFO - Epoch 91 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=8, decay=0)): 
-2022-12-16 03:59:56,680 - GraphParser Language - INFO - train: 8 loss: 0.1966, arc: 0.1127, type: 0.0839, time: 4.76s
-2022-12-16 03:59:56,681 - GraphParser Language - INFO - Epoch 92 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=8, decay=0)): 
-2022-12-16 04:00:01,474 - GraphParser Language - INFO - train: 8 loss: 0.2037, arc: 0.1203, type: 0.0834, time: 4.79s
-2022-12-16 04:00:01,475 - GraphParser Language - INFO - Epoch 93 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=8, decay=0)): 
-2022-12-16 04:00:05,965 - GraphParser Language - INFO - train: 8 loss: 0.2028, arc: 0.1269, type: 0.0759, time: 4.49s
-2022-12-16 04:00:05,966 - GraphParser Language - INFO - Epoch 94 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=8, decay=0)): 
-2022-12-16 04:00:10,361 - GraphParser Language - INFO - train: 8 loss: 0.2308, arc: 0.1352, type: 0.0955, time: 4.40s
-2022-12-16 04:00:10,362 - GraphParser Language - INFO - Epoch 95 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=8, decay=0)): 
-2022-12-16 04:00:14,967 - GraphParser Language - INFO - train: 8 loss: 0.1581, arc: 0.0929, type: 0.0653, time: 4.61s
-2022-12-16 04:00:15,672 - GraphParser Language - INFO - W. Punct: ucorr: 647, lcorr: 520, total: 1023, uas: 63.25%, las: 50.83%, ucm: 10.96%, lcm: 4.11%
-2022-12-16 04:00:15,672 - GraphParser Language - INFO - Wo Punct: ucorr: 546, lcorr: 419, total: 860, uas: 63.49%, las: 48.72%, ucm: 12.33%, lcm: 4.11%
-2022-12-16 04:00:15,672 - GraphParser Language - INFO - Root: corr: 48, total: 73, acc: 65.75%
-2022-12-16 04:00:15,672 - GraphParser Language - INFO - Epoch 96 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=9, decay=0)): 
-2022-12-16 04:00:19,084 - GraphParser Language - INFO - train: 8 loss: 0.2247, arc: 0.1408, type: 0.0838, time: 3.41s
-2022-12-16 04:00:19,084 - GraphParser Language - INFO - Epoch 97 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=9, decay=0)): 
-2022-12-16 04:00:23,711 - GraphParser Language - INFO - train: 8 loss: 0.2173, arc: 0.1357, type: 0.0816, time: 4.63s
-2022-12-16 04:00:23,711 - GraphParser Language - INFO - Epoch 98 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=9, decay=0)): 
-2022-12-16 04:00:28,245 - GraphParser Language - INFO - train: 8 loss: 0.1881, arc: 0.1137, type: 0.0744, time: 4.53s
-2022-12-16 04:00:28,245 - GraphParser Language - INFO - Epoch 99 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=9, decay=0)): 
-2022-12-16 04:00:32,680 - GraphParser Language - INFO - train: 8 loss: 0.2413, arc: 0.1511, type: 0.0901, time: 4.43s
-2022-12-16 04:00:32,680 - GraphParser Language - INFO - Epoch 100 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=9, decay=0)): 
-2022-12-16 04:00:37,507 - GraphParser Language - INFO - train: 8 loss: 0.1412, arc: 0.0851, type: 0.0561, time: 4.83s
-2022-12-16 04:00:38,208 - GraphParser Language - INFO - W. Punct: ucorr: 658, lcorr: 534, total: 1023, uas: 64.32%, las: 52.20%, ucm: 13.70%, lcm: 5.48%
-2022-12-16 04:00:38,208 - GraphParser Language - INFO - Wo Punct: ucorr: 557, lcorr: 433, total: 860, uas: 64.77%, las: 50.35%, ucm: 13.70%, lcm: 5.48%
-2022-12-16 04:00:38,208 - GraphParser Language - INFO - Root: corr: 49, total: 73, acc: 67.12%
+2022-12-16 06:51:39,047 - GraphParser Language - INFO - load model: ./model/EN-ID.pt
+2022-12-16 06:51:39,106 - GraphParser Language - INFO - Epoch 1 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:51:44,795 - GraphParser Language - INFO - train: 8 loss: 8.2883, arc: 4.0746, type: 4.2138, time: 5.69s
+2022-12-16 06:51:44,795 - GraphParser Language - INFO - Epoch 2 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:51:49,397 - GraphParser Language - INFO - train: 8 loss: 4.5948, arc: 2.2814, type: 2.3134, time: 4.60s
+2022-12-16 06:51:49,397 - GraphParser Language - INFO - Epoch 3 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:51:54,252 - GraphParser Language - INFO - train: 8 loss: 3.5065, arc: 1.8123, type: 1.6942, time: 4.85s
+2022-12-16 06:51:54,253 - GraphParser Language - INFO - Epoch 4 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:51:58,766 - GraphParser Language - INFO - train: 8 loss: 3.2133, arc: 1.7167, type: 1.4966, time: 4.51s
+2022-12-16 06:51:58,766 - GraphParser Language - INFO - Epoch 5 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:52:03,213 - GraphParser Language - INFO - train: 8 loss: 2.8844, arc: 1.5373, type: 1.3471, time: 4.45s
+2022-12-16 06:52:03,923 - GraphParser Language - INFO - W. Punct: ucorr: 580, lcorr: 399, total: 1023, uas: 56.70%, las: 39.00%, ucm: 5.48%, lcm: 2.74%
+2022-12-16 06:52:03,923 - GraphParser Language - INFO - Wo Punct: ucorr: 487, lcorr: 309, total: 860, uas: 56.63%, las: 35.93%, ucm: 8.22%, lcm: 2.74%
+2022-12-16 06:52:03,923 - GraphParser Language - INFO - Root: corr: 52, total: 73, acc: 71.23%
+2022-12-16 06:52:04,686 - GraphParser Language - INFO - Epoch 6 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:52:09,814 - GraphParser Language - INFO - train: 8 loss: 2.4918, arc: 1.2928, type: 1.1990, time: 5.13s
+2022-12-16 06:52:09,814 - GraphParser Language - INFO - Epoch 7 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:52:14,677 - GraphParser Language - INFO - train: 8 loss: 2.4486, arc: 1.3012, type: 1.1474, time: 4.86s
+2022-12-16 06:52:14,678 - GraphParser Language - INFO - Epoch 8 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:52:18,786 - GraphParser Language - INFO - train: 8 loss: 2.3946, arc: 1.2724, type: 1.1222, time: 4.11s
+2022-12-16 06:52:18,786 - GraphParser Language - INFO - Epoch 9 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:52:23,175 - GraphParser Language - INFO - train: 8 loss: 2.0183, arc: 1.0558, type: 0.9625, time: 4.39s
+2022-12-16 06:52:23,175 - GraphParser Language - INFO - Epoch 10 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:52:27,972 - GraphParser Language - INFO - train: 8 loss: 1.9843, arc: 1.0438, type: 0.9405, time: 4.80s
+2022-12-16 06:52:28,673 - GraphParser Language - INFO - W. Punct: ucorr: 629, lcorr: 469, total: 1023, uas: 61.49%, las: 45.85%, ucm: 12.33%, lcm: 5.48%
+2022-12-16 06:52:28,673 - GraphParser Language - INFO - Wo Punct: ucorr: 528, lcorr: 368, total: 860, uas: 61.40%, las: 42.79%, ucm: 12.33%, lcm: 5.48%
+2022-12-16 06:52:28,673 - GraphParser Language - INFO - Root: corr: 54, total: 73, acc: 73.97%
+2022-12-16 06:52:29,462 - GraphParser Language - INFO - Epoch 11 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:52:33,967 - GraphParser Language - INFO - train: 8 loss: 2.1311, arc: 1.1474, type: 0.9837, time: 4.50s
+2022-12-16 06:52:33,967 - GraphParser Language - INFO - Epoch 12 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:52:38,679 - GraphParser Language - INFO - train: 8 loss: 1.8685, arc: 0.9816, type: 0.8869, time: 4.71s
+2022-12-16 06:52:38,679 - GraphParser Language - INFO - Epoch 13 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:52:43,519 - GraphParser Language - INFO - train: 8 loss: 1.9429, arc: 1.0348, type: 0.9082, time: 4.84s
+2022-12-16 06:52:43,520 - GraphParser Language - INFO - Epoch 14 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:52:47,617 - GraphParser Language - INFO - train: 8 loss: 1.6100, arc: 0.8587, type: 0.7513, time: 4.10s
+2022-12-16 06:52:47,617 - GraphParser Language - INFO - Epoch 15 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:52:52,192 - GraphParser Language - INFO - train: 8 loss: 1.8381, arc: 0.9957, type: 0.8424, time: 4.58s
+2022-12-16 06:52:52,889 - GraphParser Language - INFO - W. Punct: ucorr: 644, lcorr: 480, total: 1023, uas: 62.95%, las: 46.92%, ucm: 16.44%, lcm: 5.48%
+2022-12-16 06:52:52,889 - GraphParser Language - INFO - Wo Punct: ucorr: 548, lcorr: 384, total: 860, uas: 63.72%, las: 44.65%, ucm: 16.44%, lcm: 5.48%
+2022-12-16 06:52:52,889 - GraphParser Language - INFO - Root: corr: 52, total: 73, acc: 71.23%
+2022-12-16 06:52:53,661 - GraphParser Language - INFO - Epoch 16 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:52:58,513 - GraphParser Language - INFO - train: 8 loss: 1.6515, arc: 0.8666, type: 0.7849, time: 4.85s
+2022-12-16 06:52:58,513 - GraphParser Language - INFO - Epoch 17 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:53:03,306 - GraphParser Language - INFO - train: 8 loss: 1.3526, arc: 0.7041, type: 0.6485, time: 4.79s
+2022-12-16 06:53:03,307 - GraphParser Language - INFO - Epoch 18 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:53:07,162 - GraphParser Language - INFO - train: 8 loss: 1.5903, arc: 0.8307, type: 0.7597, time: 3.86s
+2022-12-16 06:53:07,163 - GraphParser Language - INFO - Epoch 19 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:53:11,569 - GraphParser Language - INFO - train: 8 loss: 1.3195, arc: 0.6923, type: 0.6272, time: 4.41s
+2022-12-16 06:53:11,569 - GraphParser Language - INFO - Epoch 20 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:53:16,373 - GraphParser Language - INFO - train: 8 loss: 1.4547, arc: 0.7714, type: 0.6833, time: 4.80s
+2022-12-16 06:53:17,066 - GraphParser Language - INFO - W. Punct: ucorr: 657, lcorr: 501, total: 1023, uas: 64.22%, las: 48.97%, ucm: 16.44%, lcm: 4.11%
+2022-12-16 06:53:17,066 - GraphParser Language - INFO - Wo Punct: ucorr: 556, lcorr: 400, total: 860, uas: 64.65%, las: 46.51%, ucm: 16.44%, lcm: 4.11%
+2022-12-16 06:53:17,066 - GraphParser Language - INFO - Root: corr: 49, total: 73, acc: 67.12%
+2022-12-16 06:53:17,842 - GraphParser Language - INFO - Epoch 21 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:53:21,728 - GraphParser Language - INFO - train: 8 loss: 1.5122, arc: 0.8129, type: 0.6993, time: 3.89s
+2022-12-16 06:53:21,728 - GraphParser Language - INFO - Epoch 22 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:53:26,153 - GraphParser Language - INFO - train: 8 loss: 1.3982, arc: 0.7330, type: 0.6653, time: 4.42s
+2022-12-16 06:53:26,153 - GraphParser Language - INFO - Epoch 23 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:53:30,970 - GraphParser Language - INFO - train: 8 loss: 1.2710, arc: 0.6745, type: 0.5965, time: 4.82s
+2022-12-16 06:53:30,970 - GraphParser Language - INFO - Epoch 24 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:53:35,885 - GraphParser Language - INFO - train: 8 loss: 0.9518, arc: 0.4710, type: 0.4808, time: 4.91s
+2022-12-16 06:53:35,885 - GraphParser Language - INFO - Epoch 25 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:53:40,410 - GraphParser Language - INFO - train: 8 loss: 0.9851, arc: 0.5025, type: 0.4826, time: 4.52s
+2022-12-16 06:53:41,106 - GraphParser Language - INFO - W. Punct: ucorr: 640, lcorr: 487, total: 1023, uas: 62.56%, las: 47.61%, ucm: 13.70%, lcm: 4.11%
+2022-12-16 06:53:41,106 - GraphParser Language - INFO - Wo Punct: ucorr: 541, lcorr: 388, total: 860, uas: 62.91%, las: 45.12%, ucm: 13.70%, lcm: 4.11%
+2022-12-16 06:53:41,106 - GraphParser Language - INFO - Root: corr: 46, total: 73, acc: 63.01%
+2022-12-16 06:53:41,107 - GraphParser Language - INFO - Epoch 26 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:53:45,054 - GraphParser Language - INFO - train: 8 loss: 1.1456, arc: 0.6161, type: 0.5296, time: 3.95s
+2022-12-16 06:53:45,054 - GraphParser Language - INFO - Epoch 27 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:53:49,988 - GraphParser Language - INFO - train: 8 loss: 0.9224, arc: 0.4592, type: 0.4632, time: 4.93s
+2022-12-16 06:53:49,988 - GraphParser Language - INFO - Epoch 28 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:53:53,931 - GraphParser Language - INFO - train: 8 loss: 1.0520, arc: 0.5492, type: 0.5027, time: 3.94s
+2022-12-16 06:53:53,931 - GraphParser Language - INFO - Epoch 29 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:53:58,867 - GraphParser Language - INFO - train: 8 loss: 0.7338, arc: 0.3676, type: 0.3662, time: 4.94s
+2022-12-16 06:53:58,868 - GraphParser Language - INFO - Epoch 30 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:54:03,250 - GraphParser Language - INFO - train: 8 loss: 0.9940, arc: 0.5327, type: 0.4613, time: 4.38s
+2022-12-16 06:54:03,948 - GraphParser Language - INFO - W. Punct: ucorr: 652, lcorr: 506, total: 1023, uas: 63.73%, las: 49.46%, ucm: 16.44%, lcm: 5.48%
+2022-12-16 06:54:03,948 - GraphParser Language - INFO - Wo Punct: ucorr: 552, lcorr: 406, total: 860, uas: 64.19%, las: 47.21%, ucm: 16.44%, lcm: 5.48%
+2022-12-16 06:54:03,948 - GraphParser Language - INFO - Root: corr: 46, total: 73, acc: 63.01%
+2022-12-16 06:54:04,735 - GraphParser Language - INFO - Epoch 31 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:54:09,830 - GraphParser Language - INFO - train: 8 loss: 0.5923, arc: 0.2879, type: 0.3043, time: 5.10s
+2022-12-16 06:54:09,831 - GraphParser Language - INFO - Epoch 32 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:54:14,692 - GraphParser Language - INFO - train: 8 loss: 0.8927, arc: 0.4749, type: 0.4177, time: 4.86s
+2022-12-16 06:54:14,692 - GraphParser Language - INFO - Epoch 33 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:54:19,685 - GraphParser Language - INFO - train: 8 loss: 0.8698, arc: 0.4479, type: 0.4219, time: 4.99s
+2022-12-16 06:54:19,685 - GraphParser Language - INFO - Epoch 34 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:54:24,462 - GraphParser Language - INFO - train: 8 loss: 0.9536, arc: 0.5018, type: 0.4518, time: 4.78s
+2022-12-16 06:54:24,463 - GraphParser Language - INFO - Epoch 35 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:54:28,929 - GraphParser Language - INFO - train: 8 loss: 0.7710, arc: 0.3998, type: 0.3711, time: 4.47s
+2022-12-16 06:54:29,626 - GraphParser Language - INFO - W. Punct: ucorr: 636, lcorr: 498, total: 1023, uas: 62.17%, las: 48.68%, ucm: 15.07%, lcm: 4.11%
+2022-12-16 06:54:29,626 - GraphParser Language - INFO - Wo Punct: ucorr: 539, lcorr: 401, total: 860, uas: 62.67%, las: 46.63%, ucm: 16.44%, lcm: 4.11%
+2022-12-16 06:54:29,626 - GraphParser Language - INFO - Root: corr: 47, total: 73, acc: 64.38%
+2022-12-16 06:54:29,627 - GraphParser Language - INFO - Epoch 36 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:54:34,514 - GraphParser Language - INFO - train: 8 loss: 0.7628, arc: 0.3963, type: 0.3665, time: 4.89s
+2022-12-16 06:54:34,514 - GraphParser Language - INFO - Epoch 37 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:54:38,764 - GraphParser Language - INFO - train: 8 loss: 0.8351, arc: 0.4418, type: 0.3934, time: 4.25s
+2022-12-16 06:54:38,764 - GraphParser Language - INFO - Epoch 38 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:54:43,324 - GraphParser Language - INFO - train: 8 loss: 0.6743, arc: 0.3553, type: 0.3190, time: 4.56s
+2022-12-16 06:54:43,324 - GraphParser Language - INFO - Epoch 39 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:54:47,788 - GraphParser Language - INFO - train: 8 loss: 0.6414, arc: 0.3308, type: 0.3106, time: 4.46s
+2022-12-16 06:54:47,788 - GraphParser Language - INFO - Epoch 40 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:54:52,617 - GraphParser Language - INFO - train: 8 loss: 0.6119, arc: 0.3231, type: 0.2888, time: 4.83s
+2022-12-16 06:54:53,328 - GraphParser Language - INFO - W. Punct: ucorr: 643, lcorr: 501, total: 1023, uas: 62.85%, las: 48.97%, ucm: 16.44%, lcm: 4.11%
+2022-12-16 06:54:53,328 - GraphParser Language - INFO - Wo Punct: ucorr: 547, lcorr: 405, total: 860, uas: 63.60%, las: 47.09%, ucm: 16.44%, lcm: 4.11%
+2022-12-16 06:54:53,328 - GraphParser Language - INFO - Root: corr: 48, total: 73, acc: 65.75%
+2022-12-16 06:54:53,328 - GraphParser Language - INFO - Epoch 41 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
+2022-12-16 06:54:58,027 - GraphParser Language - INFO - train: 8 loss: 0.7196, arc: 0.3868, type: 0.3328, time: 4.70s
+2022-12-16 06:54:58,027 - GraphParser Language - INFO - Epoch 42 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
+2022-12-16 06:55:02,339 - GraphParser Language - INFO - train: 8 loss: 0.3472, arc: 0.1937, type: 0.1535, time: 4.31s
+2022-12-16 06:55:02,340 - GraphParser Language - INFO - Epoch 43 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
+2022-12-16 06:55:06,146 - GraphParser Language - INFO - train: 8 loss: 0.7535, arc: 0.4051, type: 0.3485, time: 3.81s
+2022-12-16 06:55:06,146 - GraphParser Language - INFO - Epoch 44 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
+2022-12-16 06:55:10,130 - GraphParser Language - INFO - train: 8 loss: 0.6738, arc: 0.3713, type: 0.3025, time: 3.98s
+2022-12-16 06:55:10,130 - GraphParser Language - INFO - Epoch 45 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
+2022-12-16 06:55:13,730 - GraphParser Language - INFO - train: 8 loss: 0.6302, arc: 0.3341, type: 0.2961, time: 3.60s
+2022-12-16 06:55:14,432 - GraphParser Language - INFO - W. Punct: ucorr: 632, lcorr: 491, total: 1023, uas: 61.78%, las: 48.00%, ucm: 12.33%, lcm: 4.11%
+2022-12-16 06:55:14,433 - GraphParser Language - INFO - Wo Punct: ucorr: 534, lcorr: 394, total: 860, uas: 62.09%, las: 45.81%, ucm: 13.70%, lcm: 4.11%
+2022-12-16 06:55:14,433 - GraphParser Language - INFO - Root: corr: 47, total: 73, acc: 64.38%
+2022-12-16 06:55:14,433 - GraphParser Language - INFO - Epoch 46 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
+2022-12-16 06:55:19,341 - GraphParser Language - INFO - train: 8 loss: 0.5525, arc: 0.2949, type: 0.2576, time: 4.91s
+2022-12-16 06:55:19,341 - GraphParser Language - INFO - Epoch 47 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
+2022-12-16 06:55:24,158 - GraphParser Language - INFO - train: 8 loss: 0.5073, arc: 0.2631, type: 0.2441, time: 4.82s
+2022-12-16 06:55:24,158 - GraphParser Language - INFO - Epoch 48 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
+2022-12-16 06:55:29,073 - GraphParser Language - INFO - train: 8 loss: 0.5773, arc: 0.3090, type: 0.2683, time: 4.91s
+2022-12-16 06:55:29,073 - GraphParser Language - INFO - Epoch 49 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
+2022-12-16 06:55:33,402 - GraphParser Language - INFO - train: 8 loss: 0.5164, arc: 0.2791, type: 0.2373, time: 4.33s
+2022-12-16 06:55:33,402 - GraphParser Language - INFO - Epoch 50 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=3, decay=0)): 
+2022-12-16 06:55:37,820 - GraphParser Language - INFO - train: 8 loss: 0.5640, arc: 0.3071, type: 0.2570, time: 4.42s
+2022-12-16 06:55:38,548 - GraphParser Language - INFO - W. Punct: ucorr: 639, lcorr: 503, total: 1023, uas: 62.46%, las: 49.17%, ucm: 13.70%, lcm: 2.74%
+2022-12-16 06:55:38,549 - GraphParser Language - INFO - Wo Punct: ucorr: 540, lcorr: 404, total: 860, uas: 62.79%, las: 46.98%, ucm: 13.70%, lcm: 2.74%
+2022-12-16 06:55:38,549 - GraphParser Language - INFO - Root: corr: 49, total: 73, acc: 67.12%
+2022-12-16 06:55:38,549 - GraphParser Language - INFO - Epoch 51 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
+2022-12-16 06:55:43,073 - GraphParser Language - INFO - train: 8 loss: 0.4520, arc: 0.2410, type: 0.2110, time: 4.52s
+2022-12-16 06:55:43,073 - GraphParser Language - INFO - Epoch 52 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
+2022-12-16 06:55:47,450 - GraphParser Language - INFO - train: 8 loss: 0.5815, arc: 0.3203, type: 0.2612, time: 4.38s
+2022-12-16 06:55:47,450 - GraphParser Language - INFO - Epoch 53 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
+2022-12-16 06:55:51,606 - GraphParser Language - INFO - train: 8 loss: 0.5325, arc: 0.2906, type: 0.2419, time: 4.16s
+2022-12-16 06:55:51,606 - GraphParser Language - INFO - Epoch 54 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
+2022-12-16 06:55:56,143 - GraphParser Language - INFO - train: 8 loss: 0.4869, arc: 0.2802, type: 0.2067, time: 4.54s
+2022-12-16 06:55:56,143 - GraphParser Language - INFO - Epoch 55 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=4, decay=0)): 
+2022-12-16 06:56:00,047 - GraphParser Language - INFO - train: 8 loss: 0.4136, arc: 0.2238, type: 0.1897, time: 3.90s
+2022-12-16 06:56:00,755 - GraphParser Language - INFO - W. Punct: ucorr: 634, lcorr: 501, total: 1023, uas: 61.97%, las: 48.97%, ucm: 12.33%, lcm: 4.11%
+2022-12-16 06:56:00,755 - GraphParser Language - INFO - Wo Punct: ucorr: 537, lcorr: 404, total: 860, uas: 62.44%, las: 46.98%, ucm: 13.70%, lcm: 4.11%
+2022-12-16 06:56:00,755 - GraphParser Language - INFO - Root: corr: 47, total: 73, acc: 64.38%
+2022-12-16 06:56:00,755 - GraphParser Language - INFO - Epoch 56 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=5, decay=0)): 
+2022-12-16 06:56:05,613 - GraphParser Language - INFO - train: 8 loss: 0.3433, arc: 0.1923, type: 0.1509, time: 4.86s
+2022-12-16 06:56:05,613 - GraphParser Language - INFO - Epoch 57 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=5, decay=0)): 
+2022-12-16 06:56:10,149 - GraphParser Language - INFO - train: 8 loss: 0.4461, arc: 0.2412, type: 0.2049, time: 4.54s
+2022-12-16 06:56:10,149 - GraphParser Language - INFO - Epoch 58 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=5, decay=0)): 
+2022-12-16 06:56:14,553 - GraphParser Language - INFO - train: 8 loss: 0.3858, arc: 0.2005, type: 0.1852, time: 4.40s
+2022-12-16 06:56:14,554 - GraphParser Language - INFO - Epoch 59 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=5, decay=0)): 
+2022-12-16 06:56:19,405 - GraphParser Language - INFO - train: 8 loss: 0.3413, arc: 0.1929, type: 0.1483, time: 4.85s
+2022-12-16 06:56:19,405 - GraphParser Language - INFO - Epoch 60 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=5, decay=0)): 
+2022-12-16 06:56:23,763 - GraphParser Language - INFO - train: 8 loss: 0.2333, arc: 0.1164, type: 0.1169, time: 4.36s
+2022-12-16 06:56:24,480 - GraphParser Language - INFO - W. Punct: ucorr: 632, lcorr: 499, total: 1023, uas: 61.78%, las: 48.78%, ucm: 13.70%, lcm: 4.11%
+2022-12-16 06:56:24,480 - GraphParser Language - INFO - Wo Punct: ucorr: 533, lcorr: 401, total: 860, uas: 61.98%, las: 46.63%, ucm: 13.70%, lcm: 4.11%
+2022-12-16 06:56:24,480 - GraphParser Language - INFO - Root: corr: 47, total: 73, acc: 64.38%
+2022-12-16 06:56:24,480 - GraphParser Language - INFO - Epoch 61 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=6, decay=0)): 
+2022-12-16 06:56:29,044 - GraphParser Language - INFO - train: 8 loss: 0.3467, arc: 0.1915, type: 0.1552, time: 4.56s
+2022-12-16 06:56:29,044 - GraphParser Language - INFO - Epoch 62 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=6, decay=0)): 
+2022-12-16 06:56:34,030 - GraphParser Language - INFO - train: 8 loss: 0.2902, arc: 0.1542, type: 0.1360, time: 4.98s
+2022-12-16 06:56:34,030 - GraphParser Language - INFO - Epoch 63 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=6, decay=0)): 
+2022-12-16 06:56:38,395 - GraphParser Language - INFO - train: 8 loss: 0.4209, arc: 0.2348, type: 0.1861, time: 4.36s
+2022-12-16 06:56:38,395 - GraphParser Language - INFO - Epoch 64 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=6, decay=0)): 
+2022-12-16 06:56:43,086 - GraphParser Language - INFO - train: 8 loss: 0.3486, arc: 0.2002, type: 0.1484, time: 4.69s
+2022-12-16 06:56:43,086 - GraphParser Language - INFO - Epoch 65 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=6, decay=0)): 
+2022-12-16 06:56:47,578 - GraphParser Language - INFO - train: 8 loss: 0.1964, arc: 0.1079, type: 0.0885, time: 4.49s
+2022-12-16 06:56:48,287 - GraphParser Language - INFO - W. Punct: ucorr: 646, lcorr: 511, total: 1023, uas: 63.15%, las: 49.95%, ucm: 13.70%, lcm: 4.11%
+2022-12-16 06:56:48,288 - GraphParser Language - INFO - Wo Punct: ucorr: 548, lcorr: 413, total: 860, uas: 63.72%, las: 48.02%, ucm: 13.70%, lcm: 4.11%
+2022-12-16 06:56:48,288 - GraphParser Language - INFO - Root: corr: 49, total: 73, acc: 67.12%
+2022-12-16 06:56:49,072 - GraphParser Language - INFO - Epoch 66 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:56:53,087 - GraphParser Language - INFO - train: 8 loss: 0.3596, arc: 0.2012, type: 0.1583, time: 4.01s
+2022-12-16 06:56:53,087 - GraphParser Language - INFO - Epoch 67 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:56:57,927 - GraphParser Language - INFO - train: 8 loss: 0.3442, arc: 0.1896, type: 0.1545, time: 4.84s
+2022-12-16 06:56:57,927 - GraphParser Language - INFO - Epoch 68 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:57:02,716 - GraphParser Language - INFO - train: 8 loss: 0.2652, arc: 0.1459, type: 0.1193, time: 4.79s
+2022-12-16 06:57:02,716 - GraphParser Language - INFO - Epoch 69 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:57:07,561 - GraphParser Language - INFO - train: 8 loss: 0.2833, arc: 0.1631, type: 0.1202, time: 4.85s
+2022-12-16 06:57:07,562 - GraphParser Language - INFO - Epoch 70 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:57:11,477 - GraphParser Language - INFO - train: 8 loss: 0.2955, arc: 0.1644, type: 0.1311, time: 3.91s
+2022-12-16 06:57:12,171 - GraphParser Language - INFO - W. Punct: ucorr: 650, lcorr: 521, total: 1023, uas: 63.54%, las: 50.93%, ucm: 15.07%, lcm: 4.11%
+2022-12-16 06:57:12,171 - GraphParser Language - INFO - Wo Punct: ucorr: 551, lcorr: 422, total: 860, uas: 64.07%, las: 49.07%, ucm: 15.07%, lcm: 4.11%
+2022-12-16 06:57:12,171 - GraphParser Language - INFO - Root: corr: 48, total: 73, acc: 65.75%
+2022-12-16 06:57:12,955 - GraphParser Language - INFO - Epoch 71 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:57:17,843 - GraphParser Language - INFO - train: 8 loss: 0.2452, arc: 0.1396, type: 0.1056, time: 4.89s
+2022-12-16 06:57:17,843 - GraphParser Language - INFO - Epoch 72 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:57:22,623 - GraphParser Language - INFO - train: 8 loss: 0.2518, arc: 0.1400, type: 0.1118, time: 4.78s
+2022-12-16 06:57:22,623 - GraphParser Language - INFO - Epoch 73 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:57:27,270 - GraphParser Language - INFO - train: 8 loss: 0.2947, arc: 0.1682, type: 0.1265, time: 4.65s
+2022-12-16 06:57:27,270 - GraphParser Language - INFO - Epoch 74 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:57:31,698 - GraphParser Language - INFO - train: 8 loss: 0.2969, arc: 0.1572, type: 0.1397, time: 4.43s
+2022-12-16 06:57:31,698 - GraphParser Language - INFO - Epoch 75 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:57:36,675 - GraphParser Language - INFO - train: 8 loss: 0.2264, arc: 0.1253, type: 0.1011, time: 4.98s
+2022-12-16 06:57:37,375 - GraphParser Language - INFO - W. Punct: ucorr: 644, lcorr: 518, total: 1023, uas: 62.95%, las: 50.64%, ucm: 15.07%, lcm: 4.11%
+2022-12-16 06:57:37,375 - GraphParser Language - INFO - Wo Punct: ucorr: 548, lcorr: 423, total: 860, uas: 63.72%, las: 49.19%, ucm: 15.07%, lcm: 4.11%
+2022-12-16 06:57:37,375 - GraphParser Language - INFO - Root: corr: 47, total: 73, acc: 64.38%
+2022-12-16 06:57:38,157 - GraphParser Language - INFO - Epoch 76 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:57:42,875 - GraphParser Language - INFO - train: 8 loss: 0.2616, arc: 0.1463, type: 0.1153, time: 4.72s
+2022-12-16 06:57:42,875 - GraphParser Language - INFO - Epoch 77 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:57:47,993 - GraphParser Language - INFO - train: 8 loss: 0.2213, arc: 0.1243, type: 0.0970, time: 5.12s
+2022-12-16 06:57:47,994 - GraphParser Language - INFO - Epoch 78 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:57:52,386 - GraphParser Language - INFO - train: 8 loss: 0.2731, arc: 0.1587, type: 0.1144, time: 4.39s
+2022-12-16 06:57:52,387 - GraphParser Language - INFO - Epoch 79 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:57:56,977 - GraphParser Language - INFO - train: 8 loss: 0.1923, arc: 0.1013, type: 0.0910, time: 4.59s
+2022-12-16 06:57:56,977 - GraphParser Language - INFO - Epoch 80 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:58:01,856 - GraphParser Language - INFO - train: 8 loss: 0.1843, arc: 0.0958, type: 0.0886, time: 4.88s
+2022-12-16 06:58:02,557 - GraphParser Language - INFO - W. Punct: ucorr: 655, lcorr: 527, total: 1023, uas: 64.03%, las: 51.52%, ucm: 13.70%, lcm: 4.11%
+2022-12-16 06:58:02,557 - GraphParser Language - INFO - Wo Punct: ucorr: 553, lcorr: 426, total: 860, uas: 64.30%, las: 49.53%, ucm: 13.70%, lcm: 4.11%
+2022-12-16 06:58:02,557 - GraphParser Language - INFO - Root: corr: 51, total: 73, acc: 69.86%
+2022-12-16 06:58:03,333 - GraphParser Language - INFO - Epoch 81 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:58:07,281 - GraphParser Language - INFO - train: 8 loss: 0.2561, arc: 0.1557, type: 0.1004, time: 3.95s
+2022-12-16 06:58:07,281 - GraphParser Language - INFO - Epoch 82 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:58:12,044 - GraphParser Language - INFO - train: 8 loss: 0.2111, arc: 0.1243, type: 0.0868, time: 4.76s
+2022-12-16 06:58:12,045 - GraphParser Language - INFO - Epoch 83 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:58:16,439 - GraphParser Language - INFO - train: 8 loss: 0.2724, arc: 0.1618, type: 0.1107, time: 4.39s
+2022-12-16 06:58:16,439 - GraphParser Language - INFO - Epoch 84 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:58:21,286 - GraphParser Language - INFO - train: 8 loss: 0.2298, arc: 0.1293, type: 0.1005, time: 4.85s
+2022-12-16 06:58:21,286 - GraphParser Language - INFO - Epoch 85 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:58:25,915 - GraphParser Language - INFO - train: 8 loss: 0.2089, arc: 0.1136, type: 0.0954, time: 4.63s
+2022-12-16 06:58:26,628 - GraphParser Language - INFO - W. Punct: ucorr: 652, lcorr: 527, total: 1023, uas: 63.73%, las: 51.52%, ucm: 16.44%, lcm: 2.74%
+2022-12-16 06:58:26,628 - GraphParser Language - INFO - Wo Punct: ucorr: 552, lcorr: 428, total: 860, uas: 64.19%, las: 49.77%, ucm: 16.44%, lcm: 2.74%
+2022-12-16 06:58:26,628 - GraphParser Language - INFO - Root: corr: 50, total: 73, acc: 68.49%
+2022-12-16 06:58:27,400 - GraphParser Language - INFO - Epoch 86 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:58:32,203 - GraphParser Language - INFO - train: 8 loss: 0.1710, arc: 0.0967, type: 0.0743, time: 4.80s
+2022-12-16 06:58:32,203 - GraphParser Language - INFO - Epoch 87 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:58:37,137 - GraphParser Language - INFO - train: 8 loss: 0.1405, arc: 0.0786, type: 0.0619, time: 4.93s
+2022-12-16 06:58:37,138 - GraphParser Language - INFO - Epoch 88 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:58:42,050 - GraphParser Language - INFO - train: 8 loss: 0.1681, arc: 0.0945, type: 0.0736, time: 4.91s
+2022-12-16 06:58:42,050 - GraphParser Language - INFO - Epoch 89 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:58:46,598 - GraphParser Language - INFO - train: 8 loss: 0.2139, arc: 0.1230, type: 0.0909, time: 4.55s
+2022-12-16 06:58:46,598 - GraphParser Language - INFO - Epoch 90 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=0, decay=0)): 
+2022-12-16 06:58:50,864 - GraphParser Language - INFO - train: 8 loss: 0.1969, arc: 0.1105, type: 0.0864, time: 4.27s
+2022-12-16 06:58:51,597 - GraphParser Language - INFO - W. Punct: ucorr: 659, lcorr: 527, total: 1023, uas: 64.42%, las: 51.52%, ucm: 17.81%, lcm: 2.74%
+2022-12-16 06:58:51,597 - GraphParser Language - INFO - Wo Punct: ucorr: 558, lcorr: 427, total: 860, uas: 64.88%, las: 49.65%, ucm: 17.81%, lcm: 2.74%
+2022-12-16 06:58:51,597 - GraphParser Language - INFO - Root: corr: 49, total: 73, acc: 67.12%
+2022-12-16 06:58:51,598 - GraphParser Language - INFO - Epoch 91 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:58:56,129 - GraphParser Language - INFO - train: 8 loss: 0.1872, arc: 0.1024, type: 0.0849, time: 4.53s
+2022-12-16 06:58:56,129 - GraphParser Language - INFO - Epoch 92 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:59:00,923 - GraphParser Language - INFO - train: 8 loss: 0.1980, arc: 0.1084, type: 0.0896, time: 4.79s
+2022-12-16 06:59:00,923 - GraphParser Language - INFO - Epoch 93 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:59:05,605 - GraphParser Language - INFO - train: 8 loss: 0.1898, arc: 0.1134, type: 0.0764, time: 4.68s
+2022-12-16 06:59:05,606 - GraphParser Language - INFO - Epoch 94 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:59:09,990 - GraphParser Language - INFO - train: 8 loss: 0.2164, arc: 0.1206, type: 0.0958, time: 4.38s
+2022-12-16 06:59:09,990 - GraphParser Language - INFO - Epoch 95 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=1, decay=0)): 
+2022-12-16 06:59:14,589 - GraphParser Language - INFO - train: 8 loss: 0.1395, arc: 0.0788, type: 0.0607, time: 4.60s
+2022-12-16 06:59:15,294 - GraphParser Language - INFO - W. Punct: ucorr: 639, lcorr: 515, total: 1023, uas: 62.46%, las: 50.34%, ucm: 13.70%, lcm: 2.74%
+2022-12-16 06:59:15,294 - GraphParser Language - INFO - Wo Punct: ucorr: 537, lcorr: 414, total: 860, uas: 62.44%, las: 48.14%, ucm: 13.70%, lcm: 2.74%
+2022-12-16 06:59:15,294 - GraphParser Language - INFO - Root: corr: 50, total: 73, acc: 68.49%
+2022-12-16 06:59:15,294 - GraphParser Language - INFO - Epoch 96 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
+2022-12-16 06:59:18,703 - GraphParser Language - INFO - train: 8 loss: 0.2173, arc: 0.1367, type: 0.0806, time: 3.41s
+2022-12-16 06:59:18,703 - GraphParser Language - INFO - Epoch 97 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
+2022-12-16 06:59:23,305 - GraphParser Language - INFO - train: 8 loss: 0.2068, arc: 0.1187, type: 0.0881, time: 4.60s
+2022-12-16 06:59:23,305 - GraphParser Language - INFO - Epoch 98 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
+2022-12-16 06:59:27,661 - GraphParser Language - INFO - train: 8 loss: 0.2005, arc: 0.1159, type: 0.0846, time: 4.36s
+2022-12-16 06:59:27,661 - GraphParser Language - INFO - Epoch 99 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
+2022-12-16 06:59:32,074 - GraphParser Language - INFO - train: 8 loss: 0.2155, arc: 0.1287, type: 0.0867, time: 4.41s
+2022-12-16 06:59:32,074 - GraphParser Language - INFO - Epoch 100 (FastLSTM, optim: adam, learning rate=0.000100, eps=1.0e-04, decay rate=0.75 (schedule=20, patient=2, decay=0)): 
+2022-12-16 06:59:36,888 - GraphParser Language - INFO - train: 8 loss: 0.1474, arc: 0.0856, type: 0.0618, time: 4.81s
+2022-12-16 06:59:37,591 - GraphParser Language - INFO - W. Punct: ucorr: 655, lcorr: 519, total: 1023, uas: 64.03%, las: 50.73%, ucm: 13.70%, lcm: 4.11%
+2022-12-16 06:59:37,591 - GraphParser Language - INFO - Wo Punct: ucorr: 556, lcorr: 420, total: 860, uas: 64.65%, las: 48.84%, ucm: 13.70%, lcm: 4.11%
+2022-12-16 06:59:37,591 - GraphParser Language - INFO - Root: corr: 51, total: 73, acc: 69.86%
