@@ -12,7 +12,7 @@ echo "Current seed is $SEED"
 rm .env
 cp .envfr .env
 
-PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=2 python3 ../src/examples/GraphParser.py \
+PYTHONPATH=../src/ CUDA_VISIBLE_DEVICES=1 python3 ../src/examples/GraphParser.py \
 --mode FastLSTM \
 --no_CoRNN \
 --hidden_size 300 \
