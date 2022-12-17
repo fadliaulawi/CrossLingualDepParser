@@ -29,7 +29,7 @@ def is_punctuation(word, pos, punct_set=None):
 
 
 def eval(words, postags, heads_pred, types_pred, heads, types, word_alphabet, pos_alphabet, lengths,
-         punct_set=None, symbolic_root=False, symbolic_end=False):
+         punct_set=None, symbolic_root=False, symbolic_end=True):
     batch_size, _ = words.shape
     ucorr = 0.
     lcorr = 0.

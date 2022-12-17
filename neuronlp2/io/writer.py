@@ -55,7 +55,7 @@ class CoNLLXWriter(object):
     def close(self):
         self.__source_file.close()
 
-    def write(self, word, pos, head, type, lengths, symbolic_root=False, symbolic_end=False):
+    def write(self, word, pos, head, type, lengths, symbolic_root=False, symbolic_end=True):
         batch_size, _ = word.shape
         start = 1 if symbolic_root else 0
         end = 1 if symbolic_end else 0
