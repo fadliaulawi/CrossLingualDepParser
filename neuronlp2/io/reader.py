@@ -107,8 +107,8 @@ class CoNLLXReader(object):
 
             heads.append(head)
 
-        word_ids.extend(self.tokenizer.convert_tokens_to_ids(['[CLS]'] + [l.lower() for l in words[1:]]))
-        #print(len(words), words)
+        word_ids.extend(self.tokenizer.convert_tokens_to_ids([l.lower() for l in words[1:]]))
+        #print(lines, word_ids)
         #print(len(word_ids), word_ids)
 
         #raise Exception('dah')
