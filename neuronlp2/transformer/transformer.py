@@ -92,7 +92,6 @@ class TransformerEncoder(EncoderBase):
     def forward(self, emb, lengths=None):
         """ See :obj:`EncoderBase.forward()`"""
         self._check_args(emb, lengths)
-        #print('a', emb.size(), self.num_layers)
 
         out = emb
         # Run the forward pass of every layer of the tranformer.

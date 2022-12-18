@@ -12,7 +12,6 @@ class LayerNorm(nn.Module):
         super(LayerNorm, self).__init__()
         self.a_2 = nn.Parameter(torch.ones(features))
         self.b_2 = nn.Parameter(torch.zeros(features))
-        #print(self.a_2.size(), self.b_2.size(), 'a')
         self.eps = eps
 
     def forward(self, x):

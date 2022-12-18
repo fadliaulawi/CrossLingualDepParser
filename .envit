@@ -1,5 +1,0 @@
-#it
-bert=bert-base-italian-xxl-uncased
-cls=102
-sep=103
-pad=0

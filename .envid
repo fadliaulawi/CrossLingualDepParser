@@ -1,5 +1,0 @@
-#id
-bert=indobert-base-uncased
-cls=3
-sep=4
-pad=0

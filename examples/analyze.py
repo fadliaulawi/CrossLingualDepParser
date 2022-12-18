@@ -28,7 +28,7 @@ from neuronlp2.io_multi.multi_vocab import iter_file
 from neuronlp2.utils import load_embedding_dict
 from neuronlp2.io.utils import DIGIT_RE
 
-#from neuronlp2.nn import Embedding
+from neuronlp2.nn import Embedding
 
 uid = uuid.uuid4().hex[:6]
 
@@ -52,7 +52,7 @@ def main():
 
     args = args_parser.parse_args()
 
-    logger = get_logger("Analyzer", filepath="res/res_{}_log.txt".format('_'.join(args.out_filename.split('_')[1:])))
+    logger = get_logger("Analyzer")
 
     test_path = args.test
     model_path = args.model_path
@@ -156,7 +156,7 @@ def biaffine(model_path, model_name, test_path, punct_set, use_gpu, logger, args
     logger.info('use gpu: %s, decoding: %s' % (use_gpu, decoding))
 
     #
-    #extra_embeds_arr = augment_with_extra_embedding(word_alphabet, args.extra_embed, args.extra_embed_src, test_path, logger)
+    extra_embeds_arr = augment_with_extra_embedding(word_alphabet, args.extra_embed, args.extra_embed_src, test_path, logger)
 
     # ===== the reading
     def _read_one(path, is_train):
@@ -166,8 +166,7 @@ def biaffine(model_path, model_name, test_path, punct_set, use_gpu, logger, args
         return one_data
 
     data_test = _read_one(test_path, False)
-    #print(type(data_test[0]), data_test[0])
-    #print(type(data_test[1]), data_test[1])
+
     # data_test = conllx_data.read_data_to_variable(test_path, word_alphabet, char_alphabet, pos_alphabet, type_alphabet,
     #                                               use_gpu=use_gpu, volatile=True, symbolic_root=True)
 
@@ -186,7 +185,7 @@ def biaffine(model_path, model_name, test_path, punct_set, use_gpu, logger, args
     network.load_state_dict(torch.load(model_name))
 
     #
-    #augment_network_embed(word_alphabet.size(), network, extra_embeds_arr)
+    augment_network_embed(word_alphabet.size(), network, extra_embeds_arr)
 
     if use_gpu:
         network.cuda()
@@ -234,17 +233,8 @@ def biaffine(model_path, model_name, test_path, punct_set, use_gpu, logger, args
         sent += 1
 
         word, char, pos, heads, types, masks, lengths = batch
-	#print('word', word)
-	#print('char', char)
-	#print('pos', pos)
-	#print('masks', masks)
-	#print('lengths', lengths)
-	#print('decode', decoding, type(decode))
-
         heads_pred, types_pred = decode(word, char, pos, mask=masks, length=lengths,
                                         leading_symbolic=conllx_data.NUM_SYMBOLIC_TAGS)
-	#print('heads_pred', heads_pred.size, heads_pred)
-	#print('types_pred', types_pred.size, types_pred)
         word = word.data.cpu().numpy()
         pos = pos.data.cpu().numpy()
         lengths = lengths.cpu().numpy()
@@ -257,10 +247,6 @@ def biaffine(model_path, model_name, test_path, punct_set, use_gpu, logger, args
         stats, stats_nopunc, stats_root, num_inst = parser.eval(word, pos, heads_pred, types_pred, heads, types,
                                                                 word_alphabet, pos_alphabet, lengths,
                                                                 punct_set=punct_set, symbolic_root=True)
-        #print('stats', stats)
-	#print('stats_nopunc', stats_nopunc)
-	#print('stats_root', stats_root)
-	#print('num_inst', num_inst)
         ucorr, lcorr, total, ucm, lcm = stats
         ucorr_nopunc, lcorr_nopunc, total_nopunc, ucm_nopunc, lcm_nopunc = stats_nopunc
         corr_root, total_root = stats_root
@@ -285,15 +271,15 @@ def biaffine(model_path, model_name, test_path, punct_set, use_gpu, logger, args
     pred_writer.close()
     gold_writer.close()
 
-    logger.info('\ntime: %.2fs' % (time.time() - start_time))
-    logger.info('test W. Punct:  ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
+    print('\ntime: %.2fs' % (time.time() - start_time))
+    print('test W. Punct:  ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
         test_ucorrect, test_lcorrect, test_total, test_ucorrect * 100 / test_total, test_lcorrect * 100 / test_total,
         test_ucomlpete_match * 100 / test_total_inst, test_lcomplete_match * 100 / test_total_inst))
-    logger.info('test Wo Punct:  ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
+    print('test Wo Punct:  ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
         test_ucorrect_nopunc, test_lcorrect_nopunc, test_total_nopunc,
         test_ucorrect_nopunc * 100 / test_total_nopunc, test_lcorrect_nopunc * 100 / test_total_nopunc,
         test_ucomlpete_match_nopunc * 100 / test_total_inst, test_lcomplete_match_nopunc * 100 / test_total_inst))
-    logger.info('test Root: corr: %d, total: %d, acc: %.2f%%' % (
+    print('test Root: corr: %d, total: %d, acc: %.2f%%' % (
         test_root_correct, test_total_root, test_root_correct * 100 / test_total_root))
 
 

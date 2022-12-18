@@ -7,29 +7,14 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
-#from ..nn import TreeCRF, VarMaskedGRU, VarMaskedRNN, VarMaskedLSTM, VarMaskedFastLSTM
-from ..nn import VarMaskedFastLSTM
-#from ..nn import SkipConnectFastLSTM, SkipConnectGRU, SkipConnectLSTM, SkipConnectRNN
-#from ..nn import Embedding
+from ..nn import TreeCRF, VarMaskedGRU, VarMaskedRNN, VarMaskedLSTM, VarMaskedFastLSTM
+from ..nn import SkipConnectFastLSTM, SkipConnectGRU, SkipConnectLSTM, SkipConnectRNN
+from ..nn import Embedding
 from ..nn import BiAAttention, BiLinear
 from neuronlp2.tasks import parser
 from ..transformer import TransformerEncoder
-#from ..nn.modules.attention_aug import AugFeatureHelper, AugBiAAttention
+from ..nn.modules.attention_aug import AugFeatureHelper, AugBiAAttention
 
-from transformers import BertModel, CamembertModel
-
-import os
-from dotenv import load_dotenv
-load_dotenv()
-
-bert_path = f"../data2.2_more/{os.environ.get('bert')}"
-
-if 'camembert' in bert_path:
-    model = CamembertModel.from_pretrained(bert_path, local_files_only=True, output_hidden_states=True)
-else:
-    model = BertModel.from_pretrained(bert_path, local_files_only=True, output_hidden_states=True)
-
-model.eval()
 
 class PriorOrder(Enum):
     DEPTH = 0
@@ -48,14 +33,9 @@ class BiRecurrentConvBiAffine(nn.Module):
                  ):
         super(BiRecurrentConvBiAffine, self).__init__()
 
-        #print(embedd_word.size(), 'ew')
-        #self.word_embedd = nn.Embedding(num_words, word_dim, init_embedding=embedd_word)
-
-        pos = False
-        char = False
-
-        self.pos_embedd = nn.Embedding(num_pos, pos_dim, _weight=embedd_pos) if pos else None
-        self.char_embedd = nn.Embedding(num_chars, char_dim, _weight=embedd_char) if char else None
+        self.word_embedd = Embedding(num_words, word_dim, init_embedding=embedd_word)
+        self.pos_embedd = Embedding(num_pos, pos_dim, init_embedding=embedd_pos) if pos else None
+        self.char_embedd = Embedding(num_chars, char_dim, init_embedding=embedd_char) if char else None
         self.conv1d = nn.Conv1d(char_dim, num_filters, kernel_size, padding=kernel_size - 1) if char else None
         self.dropout_in = nn.Dropout2d(p=p_in)
         self.dropout_out = nn.Dropout2d(p=p_out)
@@ -69,25 +49,14 @@ class BiRecurrentConvBiAffine(nn.Module):
         self.use_gpu = use_gpu
         self.position_dim = position_dim
 
-        self.word_embedd = None
-
-        if use_gpu:
-           model.cuda()
-           #print(self.model.get_device())
-
-        word_dim = 768
-
-        #print(word_dim, pos_dim, num_filters)
-        #print(rnn_mode)
         if rnn_mode == 'RNN':
-            pass
-#            RNN = VarMaskedRNN
-#        elif rnn_mode == 'LSTM':
-#            RNN = VarMaskedLSTM
+            RNN = VarMaskedRNN
+        elif rnn_mode == 'LSTM':
+            RNN = VarMaskedLSTM
         elif rnn_mode == 'FastLSTM':
             RNN = VarMaskedFastLSTM
-#        elif rnn_mode == 'GRU':
-#            RNN = VarMaskedGRU
+        elif rnn_mode == 'GRU':
+            RNN = VarMaskedGRU
         else:
             raise ValueError('Unknown RNN mode: %s' % rnn_mode)
 
@@ -109,7 +78,6 @@ class BiRecurrentConvBiAffine(nn.Module):
             if self.multi_head_attn:
                 pos_emb_size = position_dim
                 d_model = pos_emb_size + dim_enc
-                #print(pos_emb_size, dim_enc)
                 if position_dim > 0:
                     self.position_embedding = nn.Embedding(max_sent_length, pos_emb_size)
                     if not train_position:
@@ -155,52 +123,12 @@ class BiRecurrentConvBiAffine(nn.Module):
         input = None
 
         if not self.no_word:
-            #print('input_word', type(input_word), input_word.size(), input_word)
-            #print(input_word[0].size(), [i.item() for i in list(input_word[0])])
             # [batch, length, word_dim]
-            tensors = []
-            for i in range(len(input_word)):
-                tokens_tensor = torch.tensor([[i.item() for i in list(input_word[i])]])
-                segments_tensor = torch.tensor([[1] * len(tokens_tensor[0])])
-                #print(self.model.device)
-                tokens_tensor = tokens_tensor.to('cuda:0')
-                segments_tensor = segments_tensor.to('cuda:0')
-                #print(self.model.device, tokens_tensor.device, segments_tensor.device)
-                with torch.no_grad():
-                    outputs = model(tokens_tensor, segments_tensor)
-                    hidden_states = outputs[2]
-
-                token_embeddings = torch.stack(hidden_states, dim=0)
-                token_embeddings = torch.squeeze(token_embeddings, dim=1)
-                token_embeddings = token_embeddings.permute(1,0,2)
-
-                token_vecs_sum = []
-
-                for token in token_embeddings:
-                    #cat_vec = torch.cat((token[-1], token[-2], token[-3], token[-4]), dim=0)
-                    cat_vec = torch.sum(token[-4:], dim=0)
-                    token_vecs_sum.append(cat_vec)
-
-                token_numpy = np.array([t.cpu().numpy() for t in token_vecs_sum])
-                tensors.append(token_numpy)
-
-            tensors = torch.FloatTensor(np.array(tensors))
-            input = Variable(tensors)
-            #print(tensors)
-            #print(tensors.size())
-            #raise Exception('dah')
-
-            #word = self.word_embedd(input_word)
-            #print('word1', type(word), word.size(), word)
+            word = self.word_embedd(input_word)
             # apply dropout on input
-            #word = self.dropout_in(word)
-            #print('word2', type(word), word.size(), word)
-            #input = self.dropout_in(input)
+            word = self.dropout_in(word)
 
-            #input = word
-
-        #print(self.char, self.pos)
-        #print(input.size())
+            input = word
 
         if self.char:
             # [batch, length, char_length, char_dim]
@@ -244,7 +172,6 @@ class BiRecurrentConvBiAffine(nn.Module):
                     position_encoding = self.position_embedding(position_encoding)
                     # src_encoding = src_encoding + position_encoding
                     src_encoding = torch.cat([src_encoding, position_encoding], dim=2)
-                src_encoding = src_encoding.to('cuda:0')
                 src_encoding = self.transformer(src_encoding)
                 output, hn = src_encoding, None
             else:
@@ -265,13 +192,13 @@ class BiRecurrentConvBiAffine(nn.Module):
         # apply dropout
         # [batch, length, dim] --> [batch, 2 * length, dim]
         arc = torch.cat([arc_h, arc_c], dim=1)
-        types = torch.cat([type_h, type_c], dim=1)
+        type = torch.cat([type_h, type_c], dim=1)
 
         arc = self.dropout_out(arc.transpose(1, 2)).transpose(1, 2)
         arc_h, arc_c = arc.chunk(2, 1)
 
-        types = self.dropout_out(types.transpose(1, 2)).transpose(1, 2)
-        type_h, type_c = types.chunk(2, 1)
+        type = self.dropout_out(type.transpose(1, 2)).transpose(1, 2)
+        type_h, type_c = type.chunk(2, 1)
         type_h = type_h.contiguous()
         type_c = type_c.contiguous()
 
@@ -399,8 +326,6 @@ class BiRecurrentConvBiAffine(nn.Module):
         out_arc, out_type, mask, length = self.forward(input_word, input_char, input_pos, mask=mask, length=length,
                                                        hx=hx)
 
-        #print('out_arc', out_arc.size(), out_arc)
-	#print('out_type', out_type[0].size(), out_type[1].size(), out_type)
         # out_type shape [batch, length, type_space]
         type_h, type_c = out_type
         batch, max_len, type_space = type_h.size()
@@ -429,7 +354,6 @@ class BiRecurrentConvBiAffine(nn.Module):
         loss_type = F.log_softmax(out_type, dim=3).permute(0, 3, 1, 2)
         # [batch, num_labels, length, length]
         energy = torch.exp(loss_arc.unsqueeze(1) + loss_type)
-	#print('energy', energy.size(), energy)
 
         return parser.decode_MST(energy.data.cpu().numpy(), length, leading_symbolic=leading_symbolic, labeled=True)
 

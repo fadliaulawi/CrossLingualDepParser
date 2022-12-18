@@ -10,26 +10,22 @@ import torch
 from torch.autograd import Variable
 
 # Special vocabulary symbols - we always put them at the start.
-PAD = "_PAD"
-PAD_POS = "_PAD_POS"
-PAD_TYPE = "_<PAD>"
-PAD_CHAR = "_PAD_CHAR"
-ROOT = "_ROOT"
-ROOT_POS = "_ROOT_POS"
-ROOT_TYPE = "_<ROOT>"
-ROOT_CHAR = "_ROOT_CHAR"
-END = "_END"
-END_POS = "_END_POS"
-END_TYPE = "_<END>"
-END_CHAR = "_END_CHAR"
+PAD = b"_PAD"
+PAD_POS = b"_PAD_POS"
+PAD_TYPE = b"_<PAD>"
+PAD_CHAR = b"_PAD_CHAR"
+ROOT = b"_ROOT"
+ROOT_POS = b"_ROOT_POS"
+ROOT_TYPE = b"_<ROOT>"
+ROOT_CHAR = b"_ROOT_CHAR"
+END = b"_END"
+END_POS = b"_END_POS"
+END_TYPE = b"_<END>"
+END_CHAR = b"_END_CHAR"
 _START_VOCAB = [PAD, ROOT, END]
 
-import os
-from dotenv import load_dotenv 
-load_dotenv()
-
 UNK_ID = 0
-PAD_ID_WORD = int(os.environ.get('pad'))
+PAD_ID_WORD = 1
 PAD_ID_CHAR = 1
 PAD_ID_TAG = 0
 
@@ -243,7 +239,7 @@ def create_alphabets(alphabet_directory, train_path, data_paths=None, max_vocabu
 
 
 def read_data(source_path, word_alphabet, char_alphabet, pos_alphabet, type_alphabet, max_size=None,
-              normalize_digits=True, symbolic_root=False, symbolic_end=True, lang_id="", len_thresh=None):
+              normalize_digits=True, symbolic_root=False, symbolic_end=False, lang_id="", len_thresh=None):
     data = [[] for _ in _buckets]
     max_char_length = [0 for _ in _buckets]
     print('Reading data from %s' % source_path)
@@ -405,7 +401,7 @@ def iterate_batch(data, batch_size, word_alphabet=None, unk_replace=0., shuffle=
 
 
 def read_data_to_variable(source_path, word_alphabet, char_alphabet, pos_alphabet, type_alphabet, max_size=None,
-                          normalize_digits=True, symbolic_root=False, symbolic_end=True,
+                          normalize_digits=True, symbolic_root=False, symbolic_end=False,
                           use_gpu=False, volatile=False, lang_id="", len_thresh=100000):
     data, max_char_length = read_data(source_path, word_alphabet, char_alphabet, pos_alphabet, type_alphabet,
                                       max_size=max_size, normalize_digits=normalize_digits, symbolic_root=symbolic_root,
@@ -459,13 +455,13 @@ def read_data_to_variable(source_path, word_alphabet, char_alphabet, pos_alphabe
                 if word_alphabet.is_singleton(wid):
                     single[i, j] = 1
 
-        words = Variable(torch.from_numpy(wid_inputs))
-        chars = Variable(torch.from_numpy(cid_inputs))
-        pos = Variable(torch.from_numpy(pid_inputs))
-        heads = Variable(torch.from_numpy(hid_inputs))
-        types = Variable(torch.from_numpy(tid_inputs))
-        masks = Variable(torch.from_numpy(masks))
-        single = Variable(torch.from_numpy(single))
+        words = Variable(torch.from_numpy(wid_inputs), volatile=volatile)
+        chars = Variable(torch.from_numpy(cid_inputs), volatile=volatile)
+        pos = Variable(torch.from_numpy(pid_inputs), volatile=volatile)
+        heads = Variable(torch.from_numpy(hid_inputs), volatile=volatile)
+        types = Variable(torch.from_numpy(tid_inputs), volatile=volatile)
+        masks = Variable(torch.from_numpy(masks), volatile=volatile)
+        single = Variable(torch.from_numpy(single), volatile=volatile)
         lengths = torch.from_numpy(lengths)
         if use_gpu:
             words = words.cuda()

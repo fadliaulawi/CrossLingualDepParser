@@ -3,19 +3,6 @@ __author__ = 'max'
 import re
 import numpy as np
 
-from transformers import BertTokenizer, CamembertTokenizer
-
-import os
-from dotenv import load_dotenv
-load_dotenv()
-
-bert_path = f"../data2.2_more/{os.environ.get('bert')}"
-
-if 'camembert' in bert_path:
-    tokenizer = CamembertTokenizer.from_pretrained(bert_path, local_files_only=True)
-else:
-    tokenizer = BertTokenizer.from_pretrained(bert_path, local_files_only=True)
-
 def is_uni_punctuation(word):
     match = re.match("^[^\w\s]+$]", word, flags=re.UNICODE)
     return match is not None
@@ -29,7 +16,7 @@ def is_punctuation(word, pos, punct_set=None):
 
 
 def eval(words, postags, heads_pred, types_pred, heads, types, word_alphabet, pos_alphabet, lengths,
-         punct_set=None, symbolic_root=False, symbolic_end=True):
+         punct_set=None, symbolic_root=False, symbolic_end=False):
     batch_size, _ = words.shape
     ucorr = 0.
     lcorr = 0.
@@ -53,12 +40,11 @@ def eval(words, postags, heads_pred, types_pred, heads, types, word_alphabet, po
         ucm_nopunc = 1.
         lcm_nopunc = 1.
         for j in range(start, lengths[i] - end):
-            #word = word_alphabet.get_instance(words[i, j])
-            #word = word.encode('utf8')
-            word = tokenizer.convert_ids_to_tokens([words[i, j]])[0]
+            word = word_alphabet.get_instance(words[i, j])
+            word = word.encode('utf8')
 
             pos = pos_alphabet.get_instance(postags[i, j])
-            #pos = pos.encode('utf8')
+            pos = pos.encode('utf8')
 
             total += 1
             if heads[i, j] == heads_pred[i, j]:

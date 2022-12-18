@@ -1,12 +1,5 @@
 __author__ = 'max'
 
-from transformers import BertTokenizer, CamembertTokenizer
-
-import os
-from dotenv import load_dotenv
-load_dotenv()
-
-bert_path = f"../data2.2_more/{os.environ.get('bert')}"
 
 class CoNLL03Writer(object):
     def __init__(self, word_alphabet, char_alphabet, pos_alphabet, chunk_alphabet, ner_alphabet):
@@ -44,25 +37,19 @@ class CoNLLXWriter(object):
         self.__pos_alphabet = pos_alphabet
         self.__type_alphabet = type_alphabet
 
-        if 'camembert' in bert_path:
-            self.tokenizer = CamembertTokenizer.from_pretrained(bert_path, local_files_only=True)
-        else:
-            self.tokenizer = BertTokenizer.from_pretrained(bert_path, local_files_only=True)
-
     def start(self, file_path):
         self.__source_file = open(file_path, 'w')
 
     def close(self):
         self.__source_file.close()
 
-    def write(self, word, pos, head, type, lengths, symbolic_root=False, symbolic_end=True):
+    def write(self, word, pos, head, type, lengths, symbolic_root=False, symbolic_end=False):
         batch_size, _ = word.shape
         start = 1 if symbolic_root else 0
         end = 1 if symbolic_end else 0
         for i in range(batch_size):
             for j in range(start, lengths[i] - end):
-                #w = self.__word_alphabet.get_instance(word[i, j]).encode('utf-8')
-                w = self.tokenizer.convert_ids_to_tokens([word[i, j]])[0]
+                w = self.__word_alphabet.get_instance(word[i, j]).encode('utf-8')
                 p = self.__pos_alphabet.get_instance(pos[i, j]).encode('utf-8')
                 t = self.__type_alphabet.get_instance(type[i, j]).encode('utf-8')
                 h = head[i, j]
