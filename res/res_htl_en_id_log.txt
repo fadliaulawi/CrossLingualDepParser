@@ -1,13 +1,13 @@
-2022-12-18 09:05:10,166 - Analyzer - INFO - punctuations(2): PUNCT SYM
-2022-12-18 09:05:10,168 - Analyzer - INFO - Word Alphabet Size: 2286
-2022-12-18 09:05:10,168 - Analyzer - INFO - Character Alphabet Size: 493
-2022-12-18 09:05:10,168 - Analyzer - INFO - POS Alphabet Size: 20
-2022-12-18 09:05:10,168 - Analyzer - INFO - Type Alphabet Size: 40
-2022-12-18 09:05:10,168 - Analyzer - INFO - use gpu: True, decoding: mst
-2022-12-18 09:05:10,168 - Analyzer - INFO - Reading: guess that the language of file ../data2.2_more/jv_test.conllu is jv.
-2022-12-18 09:05:12,010 - Analyzer - INFO - model: ./model/HTL-EN-ID.pt
-2022-12-18 09:05:16,353 - Analyzer - INFO - 
-time: 1.90s
-2022-12-18 09:05:16,353 - Analyzer - INFO - test W. Punct:  ucorr: 616, lcorr: 488, total: 1008, uas: 61.11%, las: 48.41%, ucm: 10.96%, lcm: 2.74%
-2022-12-18 09:05:16,353 - Analyzer - INFO - test Wo Punct:  ucorr: 542, lcorr: 414, total: 868, uas: 62.44%, las: 47.70%, ucm: 10.96%, lcm: 2.74%
-2022-12-18 09:05:16,353 - Analyzer - INFO - test Root: corr: 50, total: 73, acc: 68.49%
+2023-01-03 14:56:14,345 - Analyzer - INFO - punctuations(2): SYM PUNCT
+2023-01-03 14:56:14,346 - Analyzer - INFO - Word Alphabet Size: 2286
+2023-01-03 14:56:14,346 - Analyzer - INFO - Character Alphabet Size: 493
+2023-01-03 14:56:14,346 - Analyzer - INFO - POS Alphabet Size: 20
+2023-01-03 14:56:14,346 - Analyzer - INFO - Type Alphabet Size: 40
+2023-01-03 14:56:14,346 - Analyzer - INFO - use gpu: True, decoding: mst
+2023-01-03 14:56:14,346 - Analyzer - INFO - Reading: guess that the language of file ../data2.2_more/jv_test.conllu is jv.
+2023-01-03 14:56:16,613 - Analyzer - INFO - model: ./model/HTL-EN-ID.pt
+2023-01-03 14:56:22,048 - Analyzer - INFO - 
+time: 3.22s
+2023-01-03 14:56:22,048 - Analyzer - INFO - test W. Punct:  ucorr: 831, lcorr: 775, total: 1008, uas: 82.44%, las: 76.88%, ucm: 27.40%, lcm: 12.33%
+2023-01-03 14:56:22,048 - Analyzer - INFO - test Wo Punct:  ucorr: 724, lcorr: 668, total: 868, uas: 83.41%, las: 76.96%, ucm: 32.88%, lcm: 13.70%
+2023-01-03 14:56:22,048 - Analyzer - INFO - test Root: corr: 64, total: 73, acc: 87.67%
