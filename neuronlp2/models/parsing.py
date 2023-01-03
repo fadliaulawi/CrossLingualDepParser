@@ -44,7 +44,7 @@ class BiRecurrentConvBiAffine(nn.Module):
         #print(embedd_word.size(), 'ew')
         #self.word_embedd = nn.Embedding(num_words, word_dim, init_embedding=embedd_word)
 
-        pos = False
+        #pos = False
         char = False
 
         self.pos_embedd = nn.Embedding(num_pos, pos_dim, _weight=embedd_pos) if pos else None
@@ -179,7 +179,7 @@ class BiRecurrentConvBiAffine(nn.Module):
                 token_numpy = np.array([t.cpu().numpy() for t in token_vecs_sum])
                 tensors.append(token_numpy)
 
-            tensors = torch.FloatTensor(np.array(tensors))
+            tensors = torch.FloatTensor(np.array(tensors)).to('cuda:0')
             input = Variable(tensors)
             #print(tensors)
             #print(tensors.size())

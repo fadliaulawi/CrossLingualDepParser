@@ -111,7 +111,7 @@ def decode_MST(energies, lengths, leading_symbolic=0, labeled=True):
     """
 
     def find_cycle(par):
-        added = np.zeros([length], np.bool)
+        added = np.zeros([length], np.bool_)
         added[0] = True
         cycle = set()
         findcycle = False
@@ -284,7 +284,7 @@ def decode_MST(energies, lengths, leading_symbolic=0, labeled=True):
 
         oldI = np.zeros([length, length], dtype=np.int32)
         oldO = np.zeros([length, length], dtype=np.int32)
-        curr_nodes = np.zeros([length], dtype=np.bool)
+        curr_nodes = np.zeros([length], dtype=np.bool_)
         reps = []
 
         for s in range(length):
