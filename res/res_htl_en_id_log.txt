@@ -1,0 +1,14 @@
+2023-01-08 02:40:19,291 - Analyzer - INFO - punctuations(2): PUNCT SYM
+2023-01-08 02:40:19,518 - Analyzer - INFO - Word Alphabet Size: 175607
+2023-01-08 02:40:19,518 - Analyzer - INFO - Character Alphabet Size: 2291
+2023-01-08 02:40:19,518 - Analyzer - INFO - POS Alphabet Size: 20
+2023-01-08 02:40:19,519 - Analyzer - INFO - Type Alphabet Size: 40
+2023-01-08 02:40:19,519 - Analyzer - INFO - use gpu: True, decoding: mst
+2023-01-08 02:40:19,519 - Analyzer - INFO - Augmenting the vocab with new words of 0, now vocab is 175607.
+2023-01-08 02:40:19,519 - Analyzer - INFO - Reading: guess that the language of file ../data2.2_more/jv_test.conllu is jv.
+2023-01-08 02:47:46,844 - Analyzer - INFO - model: ./model/HTL-EN-ID.pt
+2023-01-08 02:48:53,003 - Analyzer - INFO - 
+time: 65.59s
+2023-01-08 02:48:53,003 - Analyzer - INFO - test W. Punct:  ucorr: 808, lcorr: 742, total: 1008, uas: 80.16%, las: 73.61%, ucm: 27.40%, lcm: 16.44%
+2023-01-08 02:48:53,003 - Analyzer - INFO - test Wo Punct:  ucorr: 706, lcorr: 640, total: 868, uas: 81.34%, las: 73.73%, ucm: 34.25%, lcm: 17.81%
+2023-01-08 02:48:53,003 - Analyzer - INFO - test Root: corr: 60, total: 73, acc: 82.19%
