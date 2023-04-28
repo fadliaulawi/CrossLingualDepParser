@@ -161,11 +161,13 @@ def main():
 
     use_pos = args.pos
     pos_dim = args.pos_dim
-    word_dict, word_dim = utils.load_embedding_dict(word_embedding, word_path)
+    #word_dict, word_dim = utils.load_embedding_dict(word_embedding, word_path)
+    word_dict = None
+    word_dim = 768 # BERT
     char_dict = None
     char_dim = args.char_dim
-    if char_embedding != 'random':
-        char_dict, char_dim = utils.load_embedding_dict(char_embedding, char_path)
+    #if char_embedding != 'random':
+    #    char_dict, char_dim = utils.load_embedding_dict(char_embedding, char_path)
 
     #
     vocab_path = args.vocab_path if args.vocab_path is not None else args.model_path
@@ -256,8 +258,10 @@ def main():
         print('character OOV: %d' % oov)
         return torch.from_numpy(table)
 
-    word_table = construct_word_embedding_table()
-    char_table = construct_char_embedding_table()
+    #word_table = construct_word_embedding_table()
+    #char_table = construct_char_embedding_table()
+    word_table = None
+    char_table = None
 
     window = 3
     if obj == 'cross_entropy':
