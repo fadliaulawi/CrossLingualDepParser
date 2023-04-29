@@ -3,7 +3,7 @@ __author__ = 'max'
 import re
 import numpy as np
 
-from transformers import BertTokenizer, CamembertTokenizer
+from transformers import BertTokenizer, CamembertTokenizer, RobertaTokenizerFast
 
 import os
 from dotenv import load_dotenv
@@ -11,7 +11,9 @@ load_dotenv()
 
 bert_path = f"../data2.2_more/{os.environ.get('bert')}"
 
-if 'camembert' in bert_path:
+if 'roberta' in bert_path:
+    tokenizer = RobertaTokenizerFast.from_pretrained(bert_path, local_files_only=True)
+elif 'camembert' in bert_path:
     tokenizer = CamembertTokenizer.from_pretrained(bert_path, local_files_only=True)
 else:
     tokenizer = BertTokenizer.from_pretrained(bert_path, local_files_only=True)

@@ -16,7 +16,7 @@ from neuronlp2.tasks import parser
 from ..transformer import TransformerEncoder
 #from ..nn.modules.attention_aug import AugFeatureHelper, AugBiAAttention
 
-from transformers import BertModel, CamembertModel
+from transformers import BertModel, CamembertModel, RobertaModel
 
 import os
 from dotenv import load_dotenv
@@ -24,7 +24,9 @@ load_dotenv()
 
 bert_path = f"../data2.2_more/{os.environ.get('bert')}"
 
-if 'camembert' in bert_path:
+if 'roberta' in bert_path:
+    model = RobertaModel.from_pretrained(bert_path, local_files_only=True, output_hidden_states=True)
+elif 'camembert' in bert_path:
     model = CamembertModel.from_pretrained(bert_path, local_files_only=True, output_hidden_states=True)
 else:
     model = BertModel.from_pretrained(bert_path, local_files_only=True, output_hidden_states=True)

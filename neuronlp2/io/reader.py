@@ -9,7 +9,7 @@ from ..io_multi import get_word_index_with_spec
 import os
 import re
 import sys
-from transformers import BertTokenizer, CamembertTokenizer
+from transformers import BertTokenizer, CamembertTokenizer, RobertaTokenizerFast
 
 sys.path.append(".")
 sys.path.append("..")
@@ -30,7 +30,9 @@ class CoNLLXReader(object):
         self.__type_alphabet = type_alphabet
         self.lang_id = lang_id
 
-        if 'camembert' in bert_path:
+        if 'roberta' in bert_path:
+            self.tokenizer = RobertaTokenizerFast.from_pretrained(bert_path, local_files_only=True)
+        elif 'camembert' in bert_path:
             self.tokenizer = CamembertTokenizer.from_pretrained(bert_path, local_files_only=True)
         else:
             self.tokenizer = BertTokenizer.from_pretrained(bert_path, local_files_only=True)
