@@ -163,6 +163,7 @@ def main():
     pos_dim = args.pos_dim
     #word_dict, word_dim = utils.load_embedding_dict(word_embedding, word_path)
     word_dict = None
+    word_dim = 768 #BERT
     char_dict = None
     char_dim = args.char_dim
     #if char_embedding != 'random':
