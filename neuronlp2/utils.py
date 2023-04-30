@@ -2,7 +2,7 @@ __author__ = 'max'
 
 import pickle
 import numpy as np
-from gensim.models import KeyedVectors
+#from gensim.models import KeyedVectors
 import gzip
 
 from .io import utils
