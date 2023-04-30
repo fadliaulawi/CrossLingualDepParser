@@ -261,6 +261,8 @@ def main():
 
     #word_table = construct_word_embedding_table()
     #char_table = construct_char_embedding_table()
+    word_table = None
+    char_table = None
 
     window = 3
     if obj == 'cross_entropy':
