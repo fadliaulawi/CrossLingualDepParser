@@ -65,6 +65,7 @@ def main():
         logger.info("punctuations(%d): %s" % (len(punct_set), ' '.join(punct_set)))
 
     use_gpu = args.gpu
+    use_gpu = False #TEMP
     parser = args.parser
 
     if parser == 'stackptr':

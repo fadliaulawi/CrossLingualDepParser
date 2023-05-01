@@ -210,8 +210,9 @@ def main():
     data_dev, _ = _read_one(dev_path, False)
     data_test, _ = _read_one(test_path, False)
     # =====
-    shutil.rmtree("tmp/{}".format(lang), ignore_errors=True)
-    os.mkdir("tmp/{}".format(lang))
+    #shutil.rmtree("tmp/{}".format(lang), ignore_errors=True)
+    #os.mkdir("tmp/{}".format(lang))
+    os.remove(f"tmp/{lang}/train_log.txt")
     lang_logger = get_logger("GraphParser Language", "tmp/{}/train_log.txt".format(lang))
 
     punct_set = None
@@ -441,9 +442,9 @@ def main():
         # evaluate performance on dev data
         network.eval()
         pred_filename = 'tmp/%s/%s%s_pred_dev%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
-        pred_writer.start(pred_filename)
+        #pred_writer.start(pred_filename)
         gold_filename = 'tmp/%s/%s%s_gold_dev%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
-        gold_writer.start(gold_filename)
+        #gold_writer.start(gold_filename)
 
         dev_ucorr = 0.0
         dev_lcorr = 0.0
@@ -468,8 +469,8 @@ def main():
             heads = heads.data.cpu().numpy()
             types = types.data.cpu().numpy()
 
-            pred_writer.write(word, pos, heads_pred, types_pred, lengths, symbolic_root=True)
-            gold_writer.write(word, pos, heads, types, lengths, symbolic_root=True)
+            #pred_writer.write(word, pos, heads_pred, types_pred, lengths, symbolic_root=True)
+            #gold_writer.write(word, pos, heads, types, lengths, symbolic_root=True)
 
             stats, stats_nopunc, stats_root, num_inst = parser.eval(word, pos, heads_pred, types_pred, heads, types, word_alphabet, pos_alphabet, lengths, punct_set=punct_set, symbolic_root=True)
             ucorr, lcorr, total, ucm, lcm = stats
@@ -493,8 +494,8 @@ def main():
 
             dev_total_inst += num_inst
 
-        pred_writer.close()
-        gold_writer.close()
+        #pred_writer.close()
+        #gold_writer.close()
         lang_logger.info('W. Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
             dev_ucorr, dev_lcorr, dev_total, dev_ucorr * 100 / dev_total, dev_lcorr * 100 / dev_total, dev_ucomlpete * 100 / dev_total_inst, dev_lcomplete * 100 / dev_total_inst))
         lang_logger.info('Wo Punct: ucorr: %d, lcorr: %d, total: %d, uas: %.2f%%, las: %.2f%%, ucm: %.2f%%, lcm: %.2f%%' % (
@@ -522,9 +523,9 @@ def main():
             torch.save(network.state_dict(), model_name)
 
             pred_filename = 'tmp/%s/%s%s_pred_test%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
-            pred_writer.start(pred_filename)
+            #pred_writer.start(pred_filename)
             gold_filename = 'tmp/%s/%s%s_gold_test%d' % (lang, datetime.now().strftime('%Y%m%d'), datetime.now().strftime('%H%M%S'), epoch)
-            gold_writer.start(gold_filename)
+            #gold_writer.start(gold_filename)
 
             test_ucorrect = 0.0
             test_lcorrect = 0.0
@@ -550,8 +551,8 @@ def main():
                 heads = heads.data.cpu().numpy()
                 types = types.data.cpu().numpy()
 
-                pred_writer.write(word, pos, heads_pred, types_pred, lengths, symbolic_root=True)
-                gold_writer.write(word, pos, heads, types, lengths, symbolic_root=True)
+                #pred_writer.write(word, pos, heads_pred, types_pred, lengths, symbolic_root=True)
+                #gold_writer.write(word, pos, heads, types, lengths, symbolic_root=True)
 
                 stats, stats_nopunc, stats_root, num_inst = parser.eval(word, pos, heads_pred, types_pred, heads, types, word_alphabet, pos_alphabet, lengths, punct_set=punct_set, symbolic_root=True)
                 ucorr, lcorr, total, ucm, lcm = stats
@@ -575,8 +576,8 @@ def main():
 
                 test_total_inst += num_inst
 
-            pred_writer.close()
-            gold_writer.close()
+            #pred_writer.close()
+            #gold_writer.close()
         else:
             if dev_ucorr_nopunc * 100 / dev_total_nopunc < dev_ucorrect_nopunc * 100 / dev_total_nopunc - 5 or patient >= schedule:
                 # network = torch.load(model_name)
