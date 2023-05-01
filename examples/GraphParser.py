@@ -193,7 +193,7 @@ def main():
 
     logger.info("Reading Data")
     use_gpu = torch.cuda.is_available()
-    #use_gpu = True
+    use_gpu = False
 
     # ===== the reading
     def _read_one(path, is_train):
