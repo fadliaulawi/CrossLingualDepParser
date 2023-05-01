@@ -212,7 +212,7 @@ def main():
     # =====
     #shutil.rmtree("tmp/{}".format(lang), ignore_errors=True)
     #os.mkdir("tmp/{}".format(lang))
-    os.remove(f"tmp/{lang}/train_log.txt")
+    os.remove("tmp/{}/train_log.txt".format(lang))
     lang_logger = get_logger("GraphParser Language", "tmp/{}/train_log.txt".format(lang))
 
     punct_set = None
