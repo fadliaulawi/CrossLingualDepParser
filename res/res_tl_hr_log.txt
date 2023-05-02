@@ -1,14 +1,14 @@
-2023-01-08 03:06:01,265 - Analyzer - INFO - punctuations(2): PUNCT SYM
-2023-01-08 03:06:01,481 - Analyzer - INFO - Word Alphabet Size: 175607
-2023-01-08 03:06:01,481 - Analyzer - INFO - Character Alphabet Size: 2291
-2023-01-08 03:06:01,481 - Analyzer - INFO - POS Alphabet Size: 20
-2023-01-08 03:06:01,481 - Analyzer - INFO - Type Alphabet Size: 40
-2023-01-08 03:06:01,482 - Analyzer - INFO - use gpu: True, decoding: mst
-2023-01-08 03:06:01,482 - Analyzer - INFO - Augmenting the vocab with new words of 0, now vocab is 175607.
-2023-01-08 03:06:01,482 - Analyzer - INFO - Reading: guess that the language of file ../data2.2_more/jv_test.conllu is jv.
-2023-01-08 03:13:29,142 - Analyzer - INFO - model: ./model/TL-HR.pt
-2023-01-08 03:14:34,954 - Analyzer - INFO - 
-time: 65.17s
-2023-01-08 03:14:34,954 - Analyzer - INFO - test W. Punct:  ucorr: 814, lcorr: 748, total: 1008, uas: 80.75%, las: 74.21%, ucm: 30.14%, lcm: 17.81%
-2023-01-08 03:14:34,954 - Analyzer - INFO - test Wo Punct:  ucorr: 708, lcorr: 642, total: 868, uas: 81.57%, las: 73.96%, ucm: 35.62%, lcm: 19.18%
-2023-01-08 03:14:34,954 - Analyzer - INFO - test Root: corr: 60, total: 73, acc: 82.19%
+2023-05-02 00:27:55,258 - Analyzer - INFO - punctuations(2): PUNCT SYM
+2023-05-02 00:27:55,922 - Analyzer - INFO - Word Alphabet Size: 175607
+2023-05-02 00:27:55,922 - Analyzer - INFO - Character Alphabet Size: 2291
+2023-05-02 00:27:55,922 - Analyzer - INFO - POS Alphabet Size: 20
+2023-05-02 00:27:55,922 - Analyzer - INFO - Type Alphabet Size: 40
+2023-05-02 00:27:55,922 - Analyzer - INFO - use gpu: False, decoding: mst
+2023-05-02 00:27:55,922 - Analyzer - INFO - Augmenting the vocab with new words of 0, now vocab is 175607.
+2023-05-02 00:27:55,922 - Analyzer - INFO - Reading: guess that the language of file ../data2.2_more/jv_test.conllu is jv.
+2023-05-02 00:27:55,977 - Analyzer - INFO - model: ./model/TL-HR.pt
+2023-05-02 00:28:08,114 - Analyzer - INFO - 
+time: 9.67s
+2023-05-02 00:28:08,114 - Analyzer - INFO - test W. Punct:  ucorr: 1196, lcorr: 1098, total: 1434, uas: 83.40%, las: 76.57%, ucm: 26.00%, lcm: 17.00%
+2023-05-02 00:28:08,114 - Analyzer - INFO - test Wo Punct:  ucorr: 1054, lcorr: 956, total: 1242, uas: 84.86%, las: 76.97%, ucm: 33.00%, lcm: 18.00%
+2023-05-02 00:28:08,114 - Analyzer - INFO - test Root: corr: 83, total: 100, acc: 83.00%
