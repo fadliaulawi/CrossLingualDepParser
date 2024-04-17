@@ -1,6 +1,6 @@
 # Cross-Lingual Transfer with Order Differences
 
-This repo contains the code and models for the NAACL19 paper: "On Difficulties of Cross-Lingual Transfer with Order Differences: A Case Study on Dependency Parsing" [[arxiv]](https://arxiv.org/pdf/1811.00570.pdf) [[paper]](https://www.aclweb.org/anthology/N19-1253) [[bib]](https://aclweb.org/anthology/papers/N/N19/N19-1253.bib)
+This repo contains the code and models for the AACL-SRW23 paper: "Cross-lingual Transfer Learning for Javanese Dependency Parsing" [[arxiv]](https://arxiv.org/abs/2401.12072) [[paper]](https://aclanthology.org/2023.ijcnlp-srw.1)
 
 This is build based upon [NeuroNLP2](https://github.com/XuezheMax/NeuroNLP2) and PyTorch-0.3.
 
@@ -46,7 +46,6 @@ The rest provides more details for the steps of the runnings.
 * Extra: for these scripts, the file paths should be changed to the correct ones: `--word_path` for embedding file, `--train --dev --test` for corresponding data files.
 * Step 3: testing with the trained models (see [`examples/run_more/run_analyze.sh`](examples/run_more/run_analyze.sh)). Also, the paths for extra language data (`--test`) and extra language embeddings (`--extra_embed`) should be set correspondingly.
 * ---
-* Our trained models (English as source, 5 different random runs) can be found [here](https://www.google.com/url?q=https://drive.google.com/drive/u/2/folders/1je4RUuxcVT7VhNyy6dftv85cO-maHc1e&sa=D&source=hangouts&ust=1552094237684000&usg=AFQjCNE-fUsWqekSm_vtCOEQGOx8wU4W5A).
 * Warning: the embeddings of zh and ja are not well aligned, and our paper reports de-lexicalized results, which can be obtained by adding the flag `--no_word` both for training and testing.
 * Warning2: the outputs do not keep the original ordering of the input file, and are sorted by sentence length. Both the system output and gold parses in the new ordering are outputted (*_pred, *_gold).
 
@@ -57,14 +56,24 @@ The rest provides more details for the steps of the runnings.
 If you find this repo useful, please cite our paper.
 
 ```
-@inproceedings{ahmad-etal-2019-difficulties,
-    title = "On Difficulties of Cross-Lingual Transfer with Order Differences: A Case Study on 
-            Dependency Parsing",
-    author = "Ahmad, Wasi  and Zhang, Zhisong  and Ma, Xuezhe  and
-            Hovy, Eduard  and Chang, Kai-Wei  and Peng, Nanyun",
-    booktitle = "Proceedings of the 2019 Conference of the North {A}merican Chapter of the Association for 
-            Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)",
-    year = "2019",
-    pages = "2440--2452"
+@inproceedings{ghiffari-etal-2023-cross,
+    title = "Cross-lingual Transfer Learning for {J}avanese Dependency Parsing",
+    author = "Ghiffari, Fadli Aulawi Al  and
+      Alfina, Ika  and
+      Azizah, Kurniawati",
+    editor = "Li, Dongfang  and
+      Mahendra, Rahmad  and
+      Tang, Zilu Peter  and
+      Jang, Hyeju  and
+      Murawaki, Yugo  and
+      Wong, Derek Fai",
+    booktitle = "Proceedings of the 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics: Student Research Workshop",
+    month = nov,
+    year = "2023",
+    address = "Nusa Dua, Bali",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.ijcnlp-srw.1",
+    doi = "10.18653/v1/2023.ijcnlp-srw.1",
+    pages = "1--9",
 }
 ```
