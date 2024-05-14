@@ -1,6 +1,6 @@
-# Cross-Lingual Transfer with Order Differences
+# Cross-lingual Transfer Learning for Javanese Dependency Parsing
 
-This repo contains the code and models for the AACL-SRW23 paper: "Cross-lingual Transfer Learning for Javanese Dependency Parsing" [[arxiv]](https://arxiv.org/abs/2401.12072) [[paper]](https://aclanthology.org/2023.ijcnlp-srw.1)
+This repo contains the code and models for the AACL-SRW 2023 paper: "Cross-lingual Transfer Learning for Javanese Dependency Parsing" [[arxiv]](https://arxiv.org/abs/2401.12072) [[paper]](https://aclanthology.org/2023.ijcnlp-srw.1)
 
 This is build based upon [NeuroNLP2](https://github.com/XuezheMax/NeuroNLP2) and PyTorch-0.3.
 
